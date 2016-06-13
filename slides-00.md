@@ -6,7 +6,7 @@
 ## Agenda
 
 * Presentación
-* Problemas entre infraestructura y desarrollo
+* Interacción entre infraestructura y desarrollo
 * Necesidad de ambientes independientes
 * Soluciones y más problemas
 * DevOps
