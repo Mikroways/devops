@@ -1,0 +1,5 @@
+theme: league
+title: DevOps intro
+revealjs_config:
+  parallaxBackgroundImage: 'images/index-background.jpg'
+  parallaxBackgroundSize: '3000px 2120px'
