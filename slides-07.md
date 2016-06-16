@@ -44,10 +44,22 @@ Asimismo, mostraremos que estas soluciones introdujeron nuevos **problemas**
 * Para determinar cómo compartir un mismo servidor entre aplicaciones, es
   conveniente realizar un análisis del que se obtenga una matriz de aplicaciones
   agrupadas según criticidad
-  * Las aplicaciones deberán correr dentro de un mismo servidor con usuario
-    diferente
-  * Ser riguroso en cuanto a los accesos en le filesystem evitado que un usuario
-    de aplicación gane acceso sobre datos de otra aplicación
-
+---
+## Nuevas tendencias
+* Surgen herramientas que requieren investigación antes de su puesta en
+  producción
+  * nginx, HA-proxy, traefik, varnish
+  * Montar aplicaciones en lenguajes poco usuales
+    * Python, Ruby, Erlang, Node
+  * Bases de datos NoSQL
+    * MongoDB, Redis
+  * Sistemas de colas AMQP: RabbitMQ, Qpid
+---
+## Alta disponibilidad / Failover / Actualizaciones
+* En los stacks de un servicio determinado se compone de partes diferentes que
+  podemos requerir garantizar alta disponibilidad y/o failover
+* Actualizar un servicio es una tarea artesanal y costosa
+  * Sobre todo si es un servicio distribuido con muchas dependencias
 ***
+
 
