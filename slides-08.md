@@ -104,4 +104,20 @@ Existen diversos productos que promueven IaC
   * Deployment Continuo
 ---
 ## Integración Continua
+
+* Para comprender bien este concepto, tenemos que considerar el trabajo diario
+  de un equipo de desarrolladores
+* Cada desarrollador trabaja en una rama determinada en el SCM
+* Si varios desarrolladores trabajan sobre una rama diferente, se ramifican las
+  versiones produciéndose un problema a la hora de integrar ramas: *Merge hell*
+---
+## Integración Continua
+
+
+![git branches](images/branches-git.png)
+
+<small class="fragment">
+**¿Cómo es posible garantizar un merge satisfactorio en todos los casos?**
+</small>
+
 ---
