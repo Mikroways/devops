@@ -6,6 +6,13 @@ directory '/opt/sites/wordpress' do
   owner 'vagrant'
 end
 
+execute 'clone repo' do
+  command 'git clone --mirror --depth 1 --no-single-branch https://github.com/WordPress/WordPress.git /opt/sites/wordpress/repo'
+  creates '/opt/sites/wordpress/repo'
+  user 'vagrant'
+  group 'vagrant'
+end
+
 
 mysql_service 'default' do
   initial_root_password 'change me'
@@ -33,3 +40,4 @@ mysql_database_user 'wordpress' do
   host          '%'
   action        [:create, :grant ]
 end
+

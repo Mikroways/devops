@@ -3145,3 +3145,383 @@ define('NONCE_SALT',       'R:Radg|W-f-!k4@u#1(g9jq(F7GfnZ+|Y:E4XC?m$*-XrVE0-2L>
   INFO [4539b490] Running mysql -u wordpress_devops -pdocker -h172.17.0.1 wordpress_devops < /tmp/wordpress-20160619005131.sql as car@localhost
  DEBUG [4539b490] Command: mysql -u wordpress_devops -pdocker -h172.17.0.1 wordpress_devops < /tmp/wordpress-20160619005131.sql
   INFO [4539b490] Finished in 1.706 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-19 09:32:56 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [69dc5926] Running /usr/bin/env mkdir -p /tmp/my_wordpress/ as vagrant@33.33.33.10
+ DEBUG [69dc5926] Command: /usr/bin/env mkdir -p /tmp/my_wordpress/
+  INFO [69dc5926] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/my_wordpress/git-ssh.sh 0.0%
+  INFO Uploading /tmp/my_wordpress/git-ssh.sh 100.0%
+  INFO [537899e3] Running /usr/bin/env chmod +rx /tmp/my_wordpress/git-ssh.sh as vagrant@33.33.33.10
+ DEBUG [537899e3] Command: /usr/bin/env chmod +rx /tmp/my_wordpress/git-ssh.sh
+  INFO [537899e3] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO [827ce991] Running /usr/bin/env git ls-remote --heads https://github.com/WordPress/WordPress.git as vagrant@33.33.33.10
+ DEBUG [827ce991] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_wordpress/git-ssh.sh" ; /usr/bin/env git ls-remote --heads https://github.com/WordPress/WordPress.git )
+ DEBUG [827ce991] 	bc050faba822d11d74771030ae2e5c2df215810b	refs/heads/1.5-branch
+62fae847b265a58290b3d399cba5db73baf633fa	refs/heads/2.0-branch
+2e915e21afb444f7b3f8a65600330b2362cc8609	refs/heads/2.1-branch
+40262adc37b2e0963686e5a5151eff6ad52ec56f	refs/heads/2.2-branch
+3b042772a99518cbbb102dbe224aeabf12f45f28	refs/heads/2.3-branch
+cffdcdb09cc5a462eab242a12c84500b245c1130	refs/heads/2.5-branch
+f472aac416f8ee2215439c7efb4f622927b7c165	refs/heads/2.6-branch
+b754b95b9c92d0b97b51e05398867ab0ec3ebd23	refs/heads/2.7-branch
+efddc4c955b111e5102ede4b2fcaa602ed3b6db5	refs/heads/2.8-branch
+d55565eba94e9e520157c543529f23914ed984fe	refs/heads/2.9-branch
+1617431ac2c0a5ff094f99bc5048b547276eab2a	refs/heads/3.0-branch
+603de77f7eae4d21f8dc378a035885c8c879ab72	refs/heads/3.1-branch
+17d06e7b59c20e8b7401d9513461a0d15db6c3a9	refs/heads/3.2-branch
+6cf15a2f7cb1138ebc7ddabb67192eb76a452a33	refs/heads/3.3-branch
+5467b0c48cbe53b7f9e5c1af1c7adfb956b5211b	refs/heads/3.4-branch
+7c4fa210a281b0f70804c5b89df9e93a2ad6eb79	refs/heads/3.5-branch
+9d4f26a51405e58300a6fc8c377d55427501e063	refs/heads/3.6-branch
+5543fabff38bd7e1d01a7dd7625ae6ea870f8501	refs/heads/3.7-branch
+00de4f6c3ce95e0e900e42f52a2dab2a025bed0a	refs/heads/3.8-branch
+7f38e9a815ee9633f06a2b10d11810e59404489c	refs/heads/3.9-branch
+7277742a5d484b31dd9609e4347d0849930373e2	refs/heads/4.0-branch
+2dbd645312e236127a6597b106902cc0d8096305	refs/heads/4.1-branch
+94306911e2d181781caf63c702f9b8fa1f1666c1	refs/heads/4.2-branch
+4b5e93ba4085fae20586f089810e8d144b7d100d	refs/heads/4.3-branch
+90afd7e46c1e91cb479092806362beeedb5e5ca5	refs/heads/4.4-branch
+9b7c749c86c2774083b69b7de5983aeb4b54c044	refs/heads/4.5-branch
+542e462d9d86988c4822b9b38ed176b757420e56	refs/heads/master
+  INFO [827ce991] Finished in 1.444 seconds with exit status 0 (successful).
+  INFO [091c2a58] Running /usr/bin/env mkdir -p /opt/sites/wordpress/shared /opt/sites/wordpress/releases as vagrant@33.33.33.10
+ DEBUG [091c2a58] Command: /usr/bin/env mkdir -p /opt/sites/wordpress/shared /opt/sites/wordpress/releases
+  INFO [091c2a58] Finished in 0.030 seconds with exit status 0 (successful).
+  INFO [95318c46] Running /usr/bin/env mkdir -p /opt/sites/wordpress/shared/wp-content/languages /opt/sites/wordpress/shared/wp-content/plugins /opt/sites/wordpress/shared/wp-content/themes /opt/sites/wordpress/shared/wp-content/uploads as vagrant@33.33.33.10
+ DEBUG [95318c46] Command: /usr/bin/env mkdir -p /opt/sites/wordpress/shared/wp-content/languages /opt/sites/wordpress/shared/wp-content/plugins /opt/sites/wordpress/shared/wp-content/themes /opt/sites/wordpress/shared/wp-content/uploads
+  INFO [95318c46] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO [c97facf8] Running /usr/bin/env mkdir -p /opt/sites/wordpress/shared as vagrant@33.33.33.10
+ DEBUG [c97facf8] Command: /usr/bin/env mkdir -p /opt/sites/wordpress/shared
+  INFO [c97facf8] Finished in 0.031 seconds with exit status 0 (successful).
+ DEBUG [67a5229a] Running if test ! -d /opt/sites/wordpress/shared; then echo "Directory does not exist '/opt/sites/wordpress/shared'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [67a5229a] Command: if test ! -d /opt/sites/wordpress/shared; then echo "Directory does not exist '/opt/sites/wordpress/shared'" 1>&2; false; fi
+ DEBUG [67a5229a] Finished in 0.034 seconds with exit status 0 (successful).
+ DEBUG [f8a86c86] Running curl -s -k https://api.wordpress.org/secret-key/1.1/salt as vagrant@33.33.33.10
+ DEBUG [f8a86c86] Command: curl -s -k https://api.wordpress.org/secret-key/1.1/salt
+ DEBUG [f8a86c86] 	define('AUTH_KEY',         '-i|ow,$n0tglZ2(cJiS7q.MyTF?*1-I9DwTDU%?)&&Z%O~O/^&,w`(jwY90u-PL*');
+define('SECURE_AUTH_KEY',  ',Hr.kb%8nAis4:6+~O2@Y?cUtyp6bWIO;vr7P)O+-0!l~`^yS_l #1a+mH+g{U=.');
+define('LOGGED_IN_KEY',    'RbG+2y!NKX<<X,.*;JF.{Y^N%b23U%l}y+dD7/dTT7)r*m/_QcT1Zo~$,NJK8Ohe');
+define('NONCE_KEY',        'w<d_E`H}E!->)>b~]@j{*22C(2|py/9J<a,Q[6Y`Opb+t0fmW$-*L{-VTe8TD7^|');
+define('AUTH_SALT',        '4fiFwlW])pU}&Y:}nM(n[%%fPBn16 2p-1L%p,/uy*} L[-LUKI2AmH51S0-Cl4l');
+define('SECURE_AUTH_SALT', '(-Y*;ls-Tw@^cgELq(. 6|qLe94oxf2S&m_LJN`]s[wt!BilrRL>|Q-05A.~q.pz');
+define('LOGGED_IN_SALT',   'ESn<l^^~.@`-,S4|^x>V7d2<8@-p{h=%BBWohy7psARFS_XT2-<B7]{Xw$=#yE=`');
+define('NONCE_SALT',       'CE:wH(sqr|TsEbl[s+1Ln7WW8n?QV_z]kBa7Erhb@*IE<u6D#5+^/gKLeO/&>.~G');
+ DEBUG [f8a86c86] Finished in 1.368 seconds with exit status 0 (successful).
+ DEBUG Uploading /opt/sites/wordpress/shared/wp-config.php 0.0%
+  INFO Uploading /opt/sites/wordpress/shared/wp-config.php 100.0%
+  INFO [320f2257] Running chmod +r /opt/sites/wordpress/shared/wp-config.php as vagrant@33.33.33.10
+ DEBUG [320f2257] Command: chmod +r /opt/sites/wordpress/shared/wp-config.php
+  INFO [320f2257] Finished in 0.038 seconds with exit status 0 (successful).
+ DEBUG [4f6a4790] Running [ -f /opt/sites/wordpress/shared/wp-config.php ] as vagrant@33.33.33.10
+ DEBUG [4f6a4790] Command: [ -f /opt/sites/wordpress/shared/wp-config.php ]
+ DEBUG [4f6a4790] Finished in 0.034 seconds with exit status 0 (successful).
+ DEBUG [f26e6187] Running [ -f /opt/sites/wordpress/current/REVISION ] as vagrant@33.33.33.10
+ DEBUG [f26e6187] Command: [ -f /opt/sites/wordpress/current/REVISION ]
+ DEBUG [f26e6187] Finished in 0.030 seconds with exit status 0 (successful).
+ DEBUG [ba1dc374] Running /usr/bin/env cat /opt/sites/wordpress/current/REVISION 2>/dev/null as vagrant@33.33.33.10
+ DEBUG [ba1dc374] Command: /usr/bin/env cat /opt/sites/wordpress/current/REVISION 2>/dev/null
+ DEBUG [ba1dc374] 	d11bf53a9998cf8ba267c983074c1eb8f3f91dcb
+ DEBUG [ba1dc374] Finished in 0.024 seconds with exit status 0 (successful).
+ DEBUG [bf7c95da] Running [ -f /opt/sites/wordpress/repo/HEAD ] as vagrant@33.33.33.10
+ DEBUG [bf7c95da] Command: [ -f /opt/sites/wordpress/repo/HEAD ]
+ DEBUG [bf7c95da] Finished in 0.028 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /opt/sites/wordpress/repo
+ DEBUG [3ead738b] Running if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [3ead738b] Command: if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi
+ DEBUG [3ead738b] Finished in 0.030 seconds with exit status 0 (successful).
+  INFO [643e8f66] Running /usr/bin/env git fetch --depth 1 origin 4.5.2 as vagrant@33.33.33.10
+ DEBUG [643e8f66] Command: cd /opt/sites/wordpress/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_wordpress/git-ssh.sh" ; /usr/bin/env git fetch --depth 1 origin 4.5.2 )
+ DEBUG [643e8f66] 	From https://github.com/WordPress/WordPress
+ DEBUG [643e8f66] 	 * tag               4.5.2      -> FETCH_HEAD
+  INFO [643e8f66] Finished in 5.017 seconds with exit status 0 (successful).
+ DEBUG [32c5a64a] Running if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [32c5a64a] Command: if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi
+ DEBUG [32c5a64a] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [47bee69a] Running /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619123300 as vagrant@33.33.33.10
+ DEBUG [47bee69a] Command: cd /opt/sites/wordpress/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_wordpress/git-ssh.sh" ; /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619123300 )
+  INFO [47bee69a] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [9a6b9d5c] Running /usr/bin/env git archive 4.5.2 | tar -x -f - -C /opt/sites/wordpress/releases/20160619123300 as vagrant@33.33.33.10
+ DEBUG [9a6b9d5c] Command: cd /opt/sites/wordpress/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_wordpress/git-ssh.sh" ; /usr/bin/env git archive 4.5.2 | tar -x -f - -C /opt/sites/wordpress/releases/20160619123300 )
+  INFO [9a6b9d5c] Finished in 0.536 seconds with exit status 0 (successful).
+ DEBUG [b3d91196] Running if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [b3d91196] Command: if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi
+ DEBUG [b3d91196] Finished in 0.039 seconds with exit status 0 (successful).
+ DEBUG [49ce920b] Running /usr/bin/env git rev-list --max-count=1 4.5.2 as vagrant@33.33.33.10
+ DEBUG [49ce920b] Command: cd /opt/sites/wordpress/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_wordpress/git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 4.5.2 )
+ DEBUG [49ce920b] 	d11bf53a9998cf8ba267c983074c1eb8f3f91dcb
+ DEBUG [49ce920b] Finished in 0.038 seconds with exit status 0 (successful).
+ DEBUG [1d5ae804] Running if test ! -d /opt/sites/wordpress/releases/20160619123300; then echo "Directory does not exist '/opt/sites/wordpress/releases/20160619123300'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [1d5ae804] Command: if test ! -d /opt/sites/wordpress/releases/20160619123300; then echo "Directory does not exist '/opt/sites/wordpress/releases/20160619123300'" 1>&2; false; fi
+ DEBUG [1d5ae804] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [5b0a678f] Running /usr/bin/env echo "d11bf53a9998cf8ba267c983074c1eb8f3f91dcb" >> REVISION as vagrant@33.33.33.10
+ DEBUG [5b0a678f] Command: cd /opt/sites/wordpress/releases/20160619123300 && /usr/bin/env echo "d11bf53a9998cf8ba267c983074c1eb8f3f91dcb" >> REVISION
+  INFO [5b0a678f] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [693187a6] Running /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619123300 as vagrant@33.33.33.10
+ DEBUG [693187a6] Command: /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619123300
+  INFO [693187a6] Finished in 0.033 seconds with exit status 0 (successful).
+ DEBUG [f6506cb0] Running [ -L /opt/sites/wordpress/releases/20160619123300/wp-config.php ] as vagrant@33.33.33.10
+ DEBUG [f6506cb0] Command: [ -L /opt/sites/wordpress/releases/20160619123300/wp-config.php ]
+ DEBUG [f6506cb0] Finished in 0.036 seconds with exit status 1 (failed).
+ DEBUG [20d0c36c] Running [ -f /opt/sites/wordpress/releases/20160619123300/wp-config.php ] as vagrant@33.33.33.10
+ DEBUG [20d0c36c] Command: [ -f /opt/sites/wordpress/releases/20160619123300/wp-config.php ]
+ DEBUG [20d0c36c] Finished in 0.036 seconds with exit status 1 (failed).
+  INFO [769be5f2] Running /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-config.php /opt/sites/wordpress/releases/20160619123300/wp-config.php as vagrant@33.33.33.10
+ DEBUG [769be5f2] Command: /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-config.php /opt/sites/wordpress/releases/20160619123300/wp-config.php
+  INFO [769be5f2] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [6cd836bc] Running /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619123300/wp-content as vagrant@33.33.33.10
+ DEBUG [6cd836bc] Command: /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619123300/wp-content
+  INFO [6cd836bc] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG [b2154b91] Running [ -L /opt/sites/wordpress/releases/20160619123300/wp-content/languages ] as vagrant@33.33.33.10
+ DEBUG [b2154b91] Command: [ -L /opt/sites/wordpress/releases/20160619123300/wp-content/languages ]
+ DEBUG [b2154b91] Finished in 0.029 seconds with exit status 1 (failed).
+ DEBUG [c4cc8d9d] Running [ -d /opt/sites/wordpress/releases/20160619123300/wp-content/languages ] as vagrant@33.33.33.10
+ DEBUG [c4cc8d9d] Command: [ -d /opt/sites/wordpress/releases/20160619123300/wp-content/languages ]
+ DEBUG [c4cc8d9d] Finished in 0.029 seconds with exit status 1 (failed).
+  INFO [9ba50276] Running /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/languages /opt/sites/wordpress/releases/20160619123300/wp-content/languages as vagrant@33.33.33.10
+ DEBUG [9ba50276] Command: /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/languages /opt/sites/wordpress/releases/20160619123300/wp-content/languages
+  INFO [9ba50276] Finished in 0.038 seconds with exit status 0 (successful).
+ DEBUG [5a895503] Running [ -L /opt/sites/wordpress/releases/20160619123300/wp-content/plugins ] as vagrant@33.33.33.10
+ DEBUG [5a895503] Command: [ -L /opt/sites/wordpress/releases/20160619123300/wp-content/plugins ]
+ DEBUG [5a895503] Finished in 0.026 seconds with exit status 1 (failed).
+ DEBUG [463fa2b8] Running [ -d /opt/sites/wordpress/releases/20160619123300/wp-content/plugins ] as vagrant@33.33.33.10
+ DEBUG [463fa2b8] Command: [ -d /opt/sites/wordpress/releases/20160619123300/wp-content/plugins ]
+ DEBUG [463fa2b8] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [e067a9a6] Running /usr/bin/env rm -rf /opt/sites/wordpress/releases/20160619123300/wp-content/plugins as vagrant@33.33.33.10
+ DEBUG [e067a9a6] Command: /usr/bin/env rm -rf /opt/sites/wordpress/releases/20160619123300/wp-content/plugins
+  INFO [e067a9a6] Finished in 0.029 seconds with exit status 0 (successful).
+  INFO [4e4a8eaf] Running /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/plugins /opt/sites/wordpress/releases/20160619123300/wp-content/plugins as vagrant@33.33.33.10
+ DEBUG [4e4a8eaf] Command: /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/plugins /opt/sites/wordpress/releases/20160619123300/wp-content/plugins
+  INFO [4e4a8eaf] Finished in 0.032 seconds with exit status 0 (successful).
+ DEBUG [1c643c94] Running [ -L /opt/sites/wordpress/releases/20160619123300/wp-content/themes ] as vagrant@33.33.33.10
+ DEBUG [1c643c94] Command: [ -L /opt/sites/wordpress/releases/20160619123300/wp-content/themes ]
+ DEBUG [1c643c94] Finished in 0.036 seconds with exit status 1 (failed).
+ DEBUG [4cd48b32] Running [ -d /opt/sites/wordpress/releases/20160619123300/wp-content/themes ] as vagrant@33.33.33.10
+ DEBUG [4cd48b32] Command: [ -d /opt/sites/wordpress/releases/20160619123300/wp-content/themes ]
+ DEBUG [4cd48b32] Finished in 0.030 seconds with exit status 0 (successful).
+  INFO [593ab6e7] Running /usr/bin/env rm -rf /opt/sites/wordpress/releases/20160619123300/wp-content/themes as vagrant@33.33.33.10
+ DEBUG [593ab6e7] Command: /usr/bin/env rm -rf /opt/sites/wordpress/releases/20160619123300/wp-content/themes
+  INFO [593ab6e7] Finished in 0.043 seconds with exit status 0 (successful).
+  INFO [239820c3] Running /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/themes /opt/sites/wordpress/releases/20160619123300/wp-content/themes as vagrant@33.33.33.10
+ DEBUG [239820c3] Command: /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/themes /opt/sites/wordpress/releases/20160619123300/wp-content/themes
+  INFO [239820c3] Finished in 0.036 seconds with exit status 0 (successful).
+ DEBUG [206d5064] Running [ -L /opt/sites/wordpress/releases/20160619123300/wp-content/uploads ] as vagrant@33.33.33.10
+ DEBUG [206d5064] Command: [ -L /opt/sites/wordpress/releases/20160619123300/wp-content/uploads ]
+ DEBUG [206d5064] Finished in 0.032 seconds with exit status 1 (failed).
+ DEBUG [a02ce2f6] Running [ -d /opt/sites/wordpress/releases/20160619123300/wp-content/uploads ] as vagrant@33.33.33.10
+ DEBUG [a02ce2f6] Command: [ -d /opt/sites/wordpress/releases/20160619123300/wp-content/uploads ]
+ DEBUG [a02ce2f6] Finished in 0.028 seconds with exit status 1 (failed).
+  INFO [ef1e17ac] Running /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/uploads /opt/sites/wordpress/releases/20160619123300/wp-content/uploads as vagrant@33.33.33.10
+ DEBUG [ef1e17ac] Command: /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/uploads /opt/sites/wordpress/releases/20160619123300/wp-content/uploads
+  INFO [ef1e17ac] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [19f871f8] Running /usr/bin/env ln -s /opt/sites/wordpress/releases/20160619123300 /opt/sites/wordpress/releases/current as vagrant@33.33.33.10
+ DEBUG [19f871f8] Command: /usr/bin/env ln -s /opt/sites/wordpress/releases/20160619123300 /opt/sites/wordpress/releases/current
+  INFO [19f871f8] Finished in 0.036 seconds with exit status 0 (successful).
+  INFO [a962c89b] Running /usr/bin/env mv /opt/sites/wordpress/releases/current /opt/sites/wordpress as vagrant@33.33.33.10
+ DEBUG [a962c89b] Command: /usr/bin/env mv /opt/sites/wordpress/releases/current /opt/sites/wordpress
+  INFO [a962c89b] Finished in 0.028 seconds with exit status 0 (successful).
+ DEBUG [a8bd2093] Running /usr/bin/env ls -xtr /opt/sites/wordpress/releases as vagrant@33.33.33.10
+ DEBUG [a8bd2093] Command: /usr/bin/env ls -xtr /opt/sites/wordpress/releases
+ DEBUG [a8bd2093] 	20160618232044	20160619033441	20160619033854	20160619123300
+ DEBUG [a8bd2093] Finished in 0.034 seconds with exit status 0 (successful).
+ DEBUG [b8781c9a] Running if test ! -d /opt/sites/wordpress/releases; then echo "Directory does not exist '/opt/sites/wordpress/releases'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [b8781c9a] Command: if test ! -d /opt/sites/wordpress/releases; then echo "Directory does not exist '/opt/sites/wordpress/releases'" 1>&2; false; fi
+ DEBUG [b8781c9a] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [5940ec4e] Running /usr/bin/env echo "Branch 4.5.2 (at d11bf53a9998cf8ba267c983074c1eb8f3f91dcb) deployed as release 20160619123300 by car" >> /opt/sites/wordpress/revisions.log as vagrant@33.33.33.10
+ DEBUG [5940ec4e] Command: cd /opt/sites/wordpress/releases && /usr/bin/env echo "Branch 4.5.2 (at d11bf53a9998cf8ba267c983074c1eb8f3f91dcb) deployed as release 20160619123300 by car" >> /opt/sites/wordpress/revisions.log
+  INFO [5940ec4e] Finished in 0.034 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-19 09:34:02 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [5ddef79b] Running /usr/bin/env mkdir -p /tmp/my_wordpress/ as vagrant@33.33.33.10
+ DEBUG [5ddef79b] Command: /usr/bin/env mkdir -p /tmp/my_wordpress/
+  INFO [5ddef79b] Finished in 0.219 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/my_wordpress/git-ssh.sh 0.0%
+  INFO Uploading /tmp/my_wordpress/git-ssh.sh 100.0%
+  INFO [6a809082] Running /usr/bin/env chmod +rx /tmp/my_wordpress/git-ssh.sh as vagrant@33.33.33.10
+ DEBUG [6a809082] Command: /usr/bin/env chmod +rx /tmp/my_wordpress/git-ssh.sh
+  INFO [6a809082] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [cf4c7be7] Running /usr/bin/env git ls-remote --heads https://github.com/WordPress/WordPress.git as vagrant@33.33.33.10
+ DEBUG [cf4c7be7] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_wordpress/git-ssh.sh" ; /usr/bin/env git ls-remote --heads https://github.com/WordPress/WordPress.git )
+ DEBUG [cf4c7be7] 	bc050faba822d11d74771030ae2e5c2df215810b	refs/heads/1.5-branch
+62fae847b265a58290b3d399cba5db73baf633fa	refs/heads/2.0-branch
+2e915e21afb444f7b3f8a65600330b2362cc8609	refs/heads/2.1-branch
+40262adc37b2e0963686e5a5151eff6ad52ec56f	refs/heads/2.2-branch
+3b042772a99518cbbb102dbe224aeabf12f45f28	refs/heads/2.3-branch
+cffdcdb09cc5a462eab242a12c84500b245c1130	refs/heads/2.5-branch
+f472aac416f8ee2215439c7efb4f622927b7c165	refs/heads/2.6-branch
+b754b95b9c92d0b97b51e05398867ab0ec3ebd23	refs/heads/2.7-branch
+efddc4c955b111e5102ede4b2fcaa602ed3b6db5	refs/heads/2.8-branch
+d55565eba94e9e520157c543529f23914ed984fe	refs/heads/2.9-branch
+1617431ac2c0a5ff094f99bc5048b547276eab2a	refs/heads/3.0-branch
+603de77f7eae4d21f8dc378a035885c8c879ab72	refs/heads/3.1-branch
+17d06e7b59c20e8b7401d9513461a0d15db6c3a9	refs/heads/3.2-branch
+6cf15a2f7cb1138ebc7ddabb67192eb76a452a33	refs/heads/3.3-branch
+5467b0c48cbe53b7f9e5c1af1c7adfb956b5211b	refs/heads/3.4-branch
+7c4fa210a281b0f70804c5b89df9e93a2ad6eb79	refs/heads/3.5-branch
+9d4f26a51405e58300a6fc8c377d55427501e063	refs/heads/3.6-branch
+5543fabff38bd7e1d01a7dd7625ae6ea870f8501	refs/heads/3.7-branch
+00de4f6c3ce95e0e900e42f52a2dab2a025bed0a	refs/heads/3.8-branch
+7f38e9a815ee9633f06a2b10d11810e59404489c	refs/heads/3.9-branch
+7277742a5d484b31dd9609e4347d0849930373e2	refs/heads/4.0-branch
+2dbd645312e236127a6597b106902cc0d8096305	refs/heads/4.1-branch
+94306911e2d181781caf63c702f9b8fa1f1666c1	refs/heads/4.2-branch
+4b5e93ba4085fae20586f089810e8d144b7d100d	refs/heads/4.3-branch
+90afd7e46c1e91cb479092806362beeedb5e5ca5	refs/heads/4.4-branch
+9b7c749c86c2774083b69b7de5983aeb4b54c044	refs/heads/4.5-branch
+542e462d9d86988c4822b9b38ed176b757420e56	refs/heads/master
+  INFO [cf4c7be7] Finished in 1.934 seconds with exit status 0 (successful).
+  INFO [0a62dc01] Running /usr/bin/env mkdir -p /opt/sites/wordpress/shared /opt/sites/wordpress/releases as vagrant@33.33.33.10
+ DEBUG [0a62dc01] Command: /usr/bin/env mkdir -p /opt/sites/wordpress/shared /opt/sites/wordpress/releases
+  INFO [0a62dc01] Finished in 0.036 seconds with exit status 0 (successful).
+  INFO [776312ba] Running /usr/bin/env mkdir -p /opt/sites/wordpress/shared/wp-content/languages /opt/sites/wordpress/shared/wp-content/plugins /opt/sites/wordpress/shared/wp-content/themes /opt/sites/wordpress/shared/wp-content/uploads as vagrant@33.33.33.10
+ DEBUG [776312ba] Command: /usr/bin/env mkdir -p /opt/sites/wordpress/shared/wp-content/languages /opt/sites/wordpress/shared/wp-content/plugins /opt/sites/wordpress/shared/wp-content/themes /opt/sites/wordpress/shared/wp-content/uploads
+  INFO [776312ba] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO [b0cedd8c] Running /usr/bin/env mkdir -p /opt/sites/wordpress/shared as vagrant@33.33.33.10
+ DEBUG [b0cedd8c] Command: /usr/bin/env mkdir -p /opt/sites/wordpress/shared
+  INFO [b0cedd8c] Finished in 0.034 seconds with exit status 0 (successful).
+ DEBUG [24b154d3] Running if test ! -d /opt/sites/wordpress/shared; then echo "Directory does not exist '/opt/sites/wordpress/shared'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [24b154d3] Command: if test ! -d /opt/sites/wordpress/shared; then echo "Directory does not exist '/opt/sites/wordpress/shared'" 1>&2; false; fi
+ DEBUG [24b154d3] Finished in 0.030 seconds with exit status 0 (successful).
+ DEBUG [88dc6e35] Running curl -s -k https://api.wordpress.org/secret-key/1.1/salt as vagrant@33.33.33.10
+ DEBUG [88dc6e35] Command: curl -s -k https://api.wordpress.org/secret-key/1.1/salt
+ DEBUG [88dc6e35] 	define('AUTH_KEY',         'OM2?.}$F?*}b/N)2)?&W.Zh(=SCZ2w/439 -rC7jTD-ZR%-$n^s:=g3wzKeQ+@=j');
+define('SECURE_AUTH_KEY',  'g QJu-*5o%nD5-6*o=Z1$Id7U-Wus2{IF%-EI2{PAea|LE)+J9T+(Q!Nv_.,^DYK');
+define('LOGGED_IN_KEY',    '~GEW|UyO+K+E7()-1&TBop$)4I(mrKx_[aYSK*+>91LU&e>zTH&;cFy@hJ -x#}:');
+define('NONCE_KEY',        'ob43 So`-4GKe%oqK>{mMs.&)vDt>`6+Gg54Mf>-Iq%&yi5`g)Ru>CIet)FK6&7=');
+define('AUTH_SALT',        '[uJ5!?;cLX>9JGx?tM-`K!r>Z~IcOTMRmT7z{dDw}a4GZ+#wrGyGrWnG-nZIoI2;');
+define('SECURE_AUTH_SALT', '}7(~[skw$.UyZ/BIVujxTIn-xLQwZJ_}/669q+R@/,-zbYZ[c1Zxgo^-kwF(ic<:');
+define('LOGGED_IN_SALT',   'J5BJ,_LYs7|JLcAsuX|(.<MWZ8</0ME*61n5:#XMJY9(ex}>sovT40$4|Hqd$1nI');
+define('NONCE_SALT',       'yqr7#kx_.H2cCYs5GVh`p4`kk4`|7YzE<.QN[Nu)Ca}McVugBOO~/+!Tef37-8O!');
+ DEBUG [88dc6e35] Finished in 0.885 seconds with exit status 0 (successful).
+ DEBUG Uploading /opt/sites/wordpress/shared/wp-config.php 0.0%
+  INFO Uploading /opt/sites/wordpress/shared/wp-config.php 100.0%
+  INFO [938cfd35] Running chmod +r /opt/sites/wordpress/shared/wp-config.php as vagrant@33.33.33.10
+ DEBUG [938cfd35] Command: chmod +r /opt/sites/wordpress/shared/wp-config.php
+  INFO [938cfd35] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG [79c8eb38] Running [ -f /opt/sites/wordpress/shared/wp-config.php ] as vagrant@33.33.33.10
+ DEBUG [79c8eb38] Command: [ -f /opt/sites/wordpress/shared/wp-config.php ]
+ DEBUG [79c8eb38] Finished in 0.022 seconds with exit status 0 (successful).
+ DEBUG [3daf9e37] Running [ -f /opt/sites/wordpress/current/REVISION ] as vagrant@33.33.33.10
+ DEBUG [3daf9e37] Command: [ -f /opt/sites/wordpress/current/REVISION ]
+ DEBUG [3daf9e37] Finished in 0.033 seconds with exit status 0 (successful).
+ DEBUG [e0f1811f] Running /usr/bin/env cat /opt/sites/wordpress/current/REVISION 2>/dev/null as vagrant@33.33.33.10
+ DEBUG [e0f1811f] Command: /usr/bin/env cat /opt/sites/wordpress/current/REVISION 2>/dev/null
+ DEBUG [e0f1811f] 	d11bf53a9998cf8ba267c983074c1eb8f3f91dcb
+ DEBUG [e0f1811f] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [a5a8ed6d] Running [ -f /opt/sites/wordpress/repo/HEAD ] as vagrant@33.33.33.10
+ DEBUG [a5a8ed6d] Command: [ -f /opt/sites/wordpress/repo/HEAD ]
+ DEBUG [a5a8ed6d] Finished in 0.032 seconds with exit status 1 (failed).
+ DEBUG [5a4b9fdc] Running if test ! -d /opt/sites/wordpress; then echo "Directory does not exist '/opt/sites/wordpress'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [5a4b9fdc] Command: if test ! -d /opt/sites/wordpress; then echo "Directory does not exist '/opt/sites/wordpress'" 1>&2; false; fi
+ DEBUG [5a4b9fdc] Finished in 0.028 seconds with exit status 0 (successful).
+  INFO [7657cddc] Running /usr/bin/env git clone --mirror --depth 1 --no-single-branch https://github.com/WordPress/WordPress.git /opt/sites/wordpress/repo as vagrant@33.33.33.10
+ DEBUG [7657cddc] Command: cd /opt/sites/wordpress && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_wordpress/git-ssh.sh" ; /usr/bin/env git clone --mirror --depth 1 --no-single-branch https://github.com/WordPress/WordPress.git /opt/sites/wordpress/repo )
+ DEBUG [7657cddc] 	Cloning into bare repository '/opt/sites/wordpress/repo'...
+  INFO [7657cddc] Finished in 291.394 seconds with exit status 0 (successful).
+ DEBUG [226ce1ce] Running if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [226ce1ce] Command: if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi
+ DEBUG [226ce1ce] Finished in 0.030 seconds with exit status 0 (successful).
+  INFO [827c3560] Running /usr/bin/env git fetch --depth 1 origin 4.5.2 as vagrant@33.33.33.10
+ DEBUG [827c3560] Command: cd /opt/sites/wordpress/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_wordpress/git-ssh.sh" ; /usr/bin/env git fetch --depth 1 origin 4.5.2 )
+ DEBUG [827c3560] 	From https://github.com/WordPress/WordPress
+ DEBUG [827c3560] 	 * tag               4.5.2      -> FETCH_HEAD
+  INFO [827c3560] Finished in 3.605 seconds with exit status 0 (successful).
+ DEBUG [918f70c5] Running if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [918f70c5] Command: if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi
+ DEBUG [918f70c5] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [2a421f97] Running /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619123405 as vagrant@33.33.33.10
+ DEBUG [2a421f97] Command: cd /opt/sites/wordpress/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_wordpress/git-ssh.sh" ; /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619123405 )
+  INFO [2a421f97] Finished in 0.034 seconds with exit status 0 (successful).
+  INFO [82879291] Running /usr/bin/env git archive 4.5.2 | tar -x -f - -C /opt/sites/wordpress/releases/20160619123405 as vagrant@33.33.33.10
+ DEBUG [82879291] Command: cd /opt/sites/wordpress/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_wordpress/git-ssh.sh" ; /usr/bin/env git archive 4.5.2 | tar -x -f - -C /opt/sites/wordpress/releases/20160619123405 )
+  INFO [82879291] Finished in 0.512 seconds with exit status 0 (successful).
+ DEBUG [cc7319f6] Running if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [cc7319f6] Command: if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi
+ DEBUG [cc7319f6] Finished in 0.032 seconds with exit status 0 (successful).
+ DEBUG [175f1d10] Running /usr/bin/env git rev-list --max-count=1 4.5.2 as vagrant@33.33.33.10
+ DEBUG [175f1d10] Command: cd /opt/sites/wordpress/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_wordpress/git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 4.5.2 )
+ DEBUG [175f1d10] 	d11bf53a9998cf8ba267c983074c1eb8f3f91dcb
+ DEBUG [175f1d10] Finished in 0.034 seconds with exit status 0 (successful).
+ DEBUG [d60dff15] Running if test ! -d /opt/sites/wordpress/releases/20160619123405; then echo "Directory does not exist '/opt/sites/wordpress/releases/20160619123405'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [d60dff15] Command: if test ! -d /opt/sites/wordpress/releases/20160619123405; then echo "Directory does not exist '/opt/sites/wordpress/releases/20160619123405'" 1>&2; false; fi
+ DEBUG [d60dff15] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO [539da243] Running /usr/bin/env echo "d11bf53a9998cf8ba267c983074c1eb8f3f91dcb" >> REVISION as vagrant@33.33.33.10
+ DEBUG [539da243] Command: cd /opt/sites/wordpress/releases/20160619123405 && /usr/bin/env echo "d11bf53a9998cf8ba267c983074c1eb8f3f91dcb" >> REVISION
+  INFO [539da243] Finished in 0.030 seconds with exit status 0 (successful).
+  INFO [2a26c015] Running /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619123405 as vagrant@33.33.33.10
+ DEBUG [2a26c015] Command: /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619123405
+  INFO [2a26c015] Finished in 0.030 seconds with exit status 0 (successful).
+ DEBUG [81fff9ba] Running [ -L /opt/sites/wordpress/releases/20160619123405/wp-config.php ] as vagrant@33.33.33.10
+ DEBUG [81fff9ba] Command: [ -L /opt/sites/wordpress/releases/20160619123405/wp-config.php ]
+ DEBUG [81fff9ba] Finished in 0.031 seconds with exit status 1 (failed).
+ DEBUG [63366706] Running [ -f /opt/sites/wordpress/releases/20160619123405/wp-config.php ] as vagrant@33.33.33.10
+ DEBUG [63366706] Command: [ -f /opt/sites/wordpress/releases/20160619123405/wp-config.php ]
+ DEBUG [63366706] Finished in 0.035 seconds with exit status 1 (failed).
+  INFO [4aa80831] Running /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-config.php /opt/sites/wordpress/releases/20160619123405/wp-config.php as vagrant@33.33.33.10
+ DEBUG [4aa80831] Command: /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-config.php /opt/sites/wordpress/releases/20160619123405/wp-config.php
+  INFO [4aa80831] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [e7d55fd1] Running /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619123405/wp-content as vagrant@33.33.33.10
+ DEBUG [e7d55fd1] Command: /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619123405/wp-content
+  INFO [e7d55fd1] Finished in 0.028 seconds with exit status 0 (successful).
+ DEBUG [e22b5b6e] Running [ -L /opt/sites/wordpress/releases/20160619123405/wp-content/languages ] as vagrant@33.33.33.10
+ DEBUG [e22b5b6e] Command: [ -L /opt/sites/wordpress/releases/20160619123405/wp-content/languages ]
+ DEBUG [e22b5b6e] Finished in 0.021 seconds with exit status 1 (failed).
+ DEBUG [62d3e2ac] Running [ -d /opt/sites/wordpress/releases/20160619123405/wp-content/languages ] as vagrant@33.33.33.10
+ DEBUG [62d3e2ac] Command: [ -d /opt/sites/wordpress/releases/20160619123405/wp-content/languages ]
+ DEBUG [62d3e2ac] Finished in 0.024 seconds with exit status 1 (failed).
+  INFO [218dccef] Running /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/languages /opt/sites/wordpress/releases/20160619123405/wp-content/languages as vagrant@33.33.33.10
+ DEBUG [218dccef] Command: /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/languages /opt/sites/wordpress/releases/20160619123405/wp-content/languages
+  INFO [218dccef] Finished in 0.030 seconds with exit status 0 (successful).
+ DEBUG [4e534498] Running [ -L /opt/sites/wordpress/releases/20160619123405/wp-content/plugins ] as vagrant@33.33.33.10
+ DEBUG [4e534498] Command: [ -L /opt/sites/wordpress/releases/20160619123405/wp-content/plugins ]
+ DEBUG [4e534498] Finished in 0.034 seconds with exit status 1 (failed).
+ DEBUG [137ddd8a] Running [ -d /opt/sites/wordpress/releases/20160619123405/wp-content/plugins ] as vagrant@33.33.33.10
+ DEBUG [137ddd8a] Command: [ -d /opt/sites/wordpress/releases/20160619123405/wp-content/plugins ]
+ DEBUG [137ddd8a] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [ba9d215a] Running /usr/bin/env rm -rf /opt/sites/wordpress/releases/20160619123405/wp-content/plugins as vagrant@33.33.33.10
+ DEBUG [ba9d215a] Command: /usr/bin/env rm -rf /opt/sites/wordpress/releases/20160619123405/wp-content/plugins
+  INFO [ba9d215a] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [da7fd969] Running /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/plugins /opt/sites/wordpress/releases/20160619123405/wp-content/plugins as vagrant@33.33.33.10
+ DEBUG [da7fd969] Command: /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/plugins /opt/sites/wordpress/releases/20160619123405/wp-content/plugins
+  INFO [da7fd969] Finished in 0.042 seconds with exit status 0 (successful).
+ DEBUG [a858524d] Running [ -L /opt/sites/wordpress/releases/20160619123405/wp-content/themes ] as vagrant@33.33.33.10
+ DEBUG [a858524d] Command: [ -L /opt/sites/wordpress/releases/20160619123405/wp-content/themes ]
+ DEBUG [a858524d] Finished in 0.043 seconds with exit status 1 (failed).
+ DEBUG [4325fdaa] Running [ -d /opt/sites/wordpress/releases/20160619123405/wp-content/themes ] as vagrant@33.33.33.10
+ DEBUG [4325fdaa] Command: [ -d /opt/sites/wordpress/releases/20160619123405/wp-content/themes ]
+ DEBUG [4325fdaa] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO [c9035de6] Running /usr/bin/env rm -rf /opt/sites/wordpress/releases/20160619123405/wp-content/themes as vagrant@33.33.33.10
+ DEBUG [c9035de6] Command: /usr/bin/env rm -rf /opt/sites/wordpress/releases/20160619123405/wp-content/themes
+  INFO [c9035de6] Finished in 0.078 seconds with exit status 0 (successful).
+  INFO [08be952e] Running /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/themes /opt/sites/wordpress/releases/20160619123405/wp-content/themes as vagrant@33.33.33.10
+ DEBUG [08be952e] Command: /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/themes /opt/sites/wordpress/releases/20160619123405/wp-content/themes
+  INFO [08be952e] Finished in 0.039 seconds with exit status 0 (successful).
+ DEBUG [ec19133d] Running [ -L /opt/sites/wordpress/releases/20160619123405/wp-content/uploads ] as vagrant@33.33.33.10
+ DEBUG [ec19133d] Command: [ -L /opt/sites/wordpress/releases/20160619123405/wp-content/uploads ]
+ DEBUG [ec19133d] Finished in 0.029 seconds with exit status 1 (failed).
+ DEBUG [2a43513b] Running [ -d /opt/sites/wordpress/releases/20160619123405/wp-content/uploads ] as vagrant@33.33.33.10
+ DEBUG [2a43513b] Command: [ -d /opt/sites/wordpress/releases/20160619123405/wp-content/uploads ]
+ DEBUG [2a43513b] Finished in 0.025 seconds with exit status 1 (failed).
+  INFO [4ba63bbe] Running /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/uploads /opt/sites/wordpress/releases/20160619123405/wp-content/uploads as vagrant@33.33.33.10
+ DEBUG [4ba63bbe] Command: /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/uploads /opt/sites/wordpress/releases/20160619123405/wp-content/uploads
+  INFO [4ba63bbe] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [1333506d] Running /usr/bin/env ln -s /opt/sites/wordpress/releases/20160619123405 /opt/sites/wordpress/releases/current as vagrant@33.33.33.10
+ DEBUG [1333506d] Command: /usr/bin/env ln -s /opt/sites/wordpress/releases/20160619123405 /opt/sites/wordpress/releases/current
+  INFO [1333506d] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO [55f73620] Running /usr/bin/env mv /opt/sites/wordpress/releases/current /opt/sites/wordpress as vagrant@33.33.33.10
+ DEBUG [55f73620] Command: /usr/bin/env mv /opt/sites/wordpress/releases/current /opt/sites/wordpress
+  INFO [55f73620] Finished in 0.034 seconds with exit status 0 (successful).
+ DEBUG [1d9d2c01] Running /usr/bin/env ls -xtr /opt/sites/wordpress/releases as vagrant@33.33.33.10
+ DEBUG [1d9d2c01] Command: /usr/bin/env ls -xtr /opt/sites/wordpress/releases
+ DEBUG [1d9d2c01] 	20160618232044	20160619033441	20160619033854	20160619123300	20160619123405
+ DEBUG [1d9d2c01] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 5 deployed releases on 33.33.33.10
+  INFO No old releases (keeping newest 5) on 33.33.33.10
+ DEBUG [45ae7f18] Running if test ! -d /opt/sites/wordpress/releases; then echo "Directory does not exist '/opt/sites/wordpress/releases'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [45ae7f18] Command: if test ! -d /opt/sites/wordpress/releases; then echo "Directory does not exist '/opt/sites/wordpress/releases'" 1>&2; false; fi
+ DEBUG [45ae7f18] Finished in 0.028 seconds with exit status 0 (successful).
+  INFO [3c6df553] Running /usr/bin/env echo "Branch 4.5.2 (at d11bf53a9998cf8ba267c983074c1eb8f3f91dcb) deployed as release 20160619123405 by car" >> /opt/sites/wordpress/revisions.log as vagrant@33.33.33.10
+ DEBUG [3c6df553] Command: cd /opt/sites/wordpress/releases && /usr/bin/env echo "Branch 4.5.2 (at d11bf53a9998cf8ba267c983074c1eb8f3f91dcb) deployed as release 20160619123405 by car" >> /opt/sites/wordpress/revisions.log
+  INFO [3c6df553] Finished in 0.034 seconds with exit status 0 (successful).

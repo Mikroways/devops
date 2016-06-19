@@ -4,10 +4,13 @@ node.set['rbenv']['user_installs'] = [
     'global'  => '2.3.0',
     'gems'    => {
       '2.3.0'    => [
-        { 'name'    => 'bundler' },
+        { 'name' => 'bundler' },
       ],
+      '3.1.6' => [
+        { 'name' => 'jekyll' }
+      ]
     }
-  }
+}
 ]
 
 include_recipe 'ruby_build'

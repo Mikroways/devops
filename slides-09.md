@@ -21,7 +21,22 @@ promueven el desempeño ágil de nuestra tarea
       * Usando Docker
 ---
 ## Automatizando los deploys
+* Esta tarea tiene como objetivo automatizar la repetitiva tarea de instalar una
+  aplicación en un servidor remoto teniendo en cuenta todas las consideraciones
+  necesarias para hacerlo
+* No todos los desarrollos tienen las mismas necesidades
+  * Realizar un build
+  * Publicar artefacto
+  * Instalar dependencias
+  * Subir/Descargar código/artefacto
+  * Correr scripts
 ---
+## Otras Herramientas
+http://rundeck.org/
+fabric: http://www.fabfile.org/
+rocketer http://rocketeer.autopergamene.eu/
+harrow.io
+deployer http://deployer.org/
 ## Capistrano
 
 gem install capistrano o bundler
