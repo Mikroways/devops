@@ -3525,3 +3525,674 @@ define('NONCE_SALT',       'yqr7#kx_.H2cCYs5GVh`p4`kk4`|7YzE<.QN[Nu)Ca}McVugBOO~
   INFO [3c6df553] Running /usr/bin/env echo "Branch 4.5.2 (at d11bf53a9998cf8ba267c983074c1eb8f3f91dcb) deployed as release 20160619123405 by car" >> /opt/sites/wordpress/revisions.log as vagrant@33.33.33.10
  DEBUG [3c6df553] Command: cd /opt/sites/wordpress/releases && /usr/bin/env echo "Branch 4.5.2 (at d11bf53a9998cf8ba267c983074c1eb8f3f91dcb) deployed as release 20160619123405 by car" >> /opt/sites/wordpress/revisions.log
   INFO [3c6df553] Finished in 0.034 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-19 11:02:50 -0300 cap production dedploy
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-19 11:02:53 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [02078a08] Running /usr/bin/env mkdir -p /tmp/my_wordpress/ as vagrant@33.33.33.10
+ DEBUG [02078a08] Command: /usr/bin/env mkdir -p /tmp/my_wordpress/
+  INFO [02078a08] Finished in 0.513 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/my_wordpress/git-ssh.sh 0.0%
+  INFO Uploading /tmp/my_wordpress/git-ssh.sh 100.0%
+  INFO [736cb958] Running /usr/bin/env chmod +rx /tmp/my_wordpress/git-ssh.sh as vagrant@33.33.33.10
+ DEBUG [736cb958] Command: /usr/bin/env chmod +rx /tmp/my_wordpress/git-ssh.sh
+  INFO [736cb958] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [db8ec871] Running /usr/bin/env git ls-remote --heads https://github.com/WordPress/WordPress.git as vagrant@33.33.33.10
+ DEBUG [db8ec871] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_wordpress/git-ssh.sh" ; /usr/bin/env git ls-remote --heads https://github.com/WordPress/WordPress.git )
+ DEBUG [db8ec871] 	bc050faba822d11d74771030ae2e5c2df215810b	refs/heads/1.5-branch
+62fae847b265a58290b3d399cba5db73baf633fa	refs/heads/2.0-branch
+2e915e21afb444f7b3f8a65600330b2362cc8609	refs/heads/2.1-branch
+40262adc37b2e0963686e5a5151eff6ad52ec56f	refs/heads/2.2-branch
+3b042772a99518cbbb102dbe224aeabf12f45f28	refs/heads/2.3-branch
+cffdcdb09cc5a462eab242a12c84500b245c1130	refs/heads/2.5-branch
+f472aac416f8ee2215439c7efb4f622927b7c165	refs/heads/2.6-branch
+b754b95b9c92d0b97b51e05398867ab0ec3ebd23	refs/heads/2.7-branch
+efddc4c955b111e5102ede4b2fcaa602ed3b6db5	refs/heads/2.8-branch
+d55565eba94e9e520157c543529f23914ed984fe	refs/heads/2.9-branch
+1617431ac2c0a5ff094f99bc5048b547276eab2a	refs/heads/3.0-branch
+603de77f7eae4d21f8dc378a035885c8c879ab72	refs/heads/3.1-branch
+17d06e7b59c20e8b7401d9513461a0d15db6c3a9	refs/heads/3.2-branch
+6cf15a2f7cb1138ebc7ddabb67192eb76a452a33	refs/heads/3.3-branch
+5467b0c48cbe53b7f9e5c1af1c7adfb956b5211b	refs/heads/3.4-branch
+7c4fa210a281b0f70804c5b89df9e93a2ad6eb79	refs/heads/3.5-branch
+9d4f26a51405e58300a6fc8c377d55427501e063	refs/heads/3.6-branch
+5543fabff38bd7e1d01a7dd7625ae6ea870f8501	refs/heads/3.7-branch
+00de4f6c3ce95e0e900e42f52a2dab2a025bed0a	refs/heads/3.8-branch
+7f38e9a815ee9633f06a2b10d11810e59404489c	refs/heads/3.9-branch
+7277742a5d484b31dd9609e4347d0849930373e2	refs/heads/4.0-branch
+2dbd645312e236127a6597b106902cc0d8096305	refs/heads/4.1-branch
+94306911e2d181781caf63c702f9b8fa1f1666c1	refs/heads/4.2-branch
+4b5e93ba4085fae20586f089810e8d144b7d100d	refs/heads/4.3-branch
+90afd7e46c1e91cb479092806362beeedb5e5ca5	refs/heads/4.4-branch
+9b7c749c86c2774083b69b7de5983aeb4b54c044	refs/heads/4.5-branch
+07cef1ce625983e904665b92513b74f2e480d6a7	refs/heads/master
+  INFO [db8ec871] Finished in 2.543 seconds with exit status 0 (successful).
+  INFO [0dd86a34] Running /usr/bin/env mkdir -p /opt/sites/wordpress/shared /opt/sites/wordpress/releases as vagrant@33.33.33.10
+ DEBUG [0dd86a34] Command: /usr/bin/env mkdir -p /opt/sites/wordpress/shared /opt/sites/wordpress/releases
+  INFO [0dd86a34] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [dc537b16] Running /usr/bin/env mkdir -p /opt/sites/wordpress/shared/wp-content/languages /opt/sites/wordpress/shared/wp-content/plugins /opt/sites/wordpress/shared/wp-content/themes /opt/sites/wordpress/shared/wp-content/uploads as vagrant@33.33.33.10
+ DEBUG [dc537b16] Command: /usr/bin/env mkdir -p /opt/sites/wordpress/shared/wp-content/languages /opt/sites/wordpress/shared/wp-content/plugins /opt/sites/wordpress/shared/wp-content/themes /opt/sites/wordpress/shared/wp-content/uploads
+  INFO [dc537b16] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [d58cbe71] Running /usr/bin/env mkdir -p /opt/sites/wordpress/shared as vagrant@33.33.33.10
+ DEBUG [d58cbe71] Command: /usr/bin/env mkdir -p /opt/sites/wordpress/shared
+  INFO [d58cbe71] Finished in 0.033 seconds with exit status 0 (successful).
+ DEBUG [98068f86] Running if test ! -d /opt/sites/wordpress/shared; then echo "Directory does not exist '/opt/sites/wordpress/shared'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [98068f86] Command: if test ! -d /opt/sites/wordpress/shared; then echo "Directory does not exist '/opt/sites/wordpress/shared'" 1>&2; false; fi
+ DEBUG [98068f86] Finished in 0.033 seconds with exit status 0 (successful).
+ DEBUG [7e821267] Running curl -s -k https://api.wordpress.org/secret-key/1.1/salt as vagrant@33.33.33.10
+ DEBUG [7e821267] Command: curl -s -k https://api.wordpress.org/secret-key/1.1/salt
+ DEBUG [7e821267] 	define('AUTH_KEY',         '&`bNiT.d03XM >1#=n3^_9:1Rr]qH|COuV,(|jx-,1TdjER8+g89vTGfOBx@^`0l');
+define('SECURE_AUTH_KEY',  'L&Nk|Da@2I4,i*q^}z -^xtiOX<i!%IM BCCi3OBa5MzUbGkBhl9KR%I5nQf#^t}');
+define('LOGGED_IN_KEY',    'O|-Wv}l|Y21+mBGra7bIK(wuZmJV8Gg6O6O+b0`{@mquW(0BJiog1l?MzO@DFgRX');
+define('NONCE_KEY',        '7 a5B*+.Ooy|+h.C$|f/~cy1>eS><AN6~vw@.+Rk-a+)ApvHz7CmTTu=-^BT=!zm');
+define('AUTH_SALT',        '|l7kp>lj]YtdW-*Lwk-Fio}x9Zz$lJ6hERza<h.~4_7YZ`7rk4E%_#gqXI-KM?g%');
+define('SECURE_AUTH_SALT', 'MW<aYrgdD-_96#Sh.m^uX]]~dW-a8nyh; p9:Dbfs=W&>2|ZB#Oq27J(#FN+#{|u');
+define('LOGGED_IN_SALT',   '^ZpD!|^l8ggESW6-x~/|<WnPNh*O<-QT#HF@:}PDS*2*UT-|D4k-ZB|0Ys:d%^r2');
+define('NONCE_SALT',       'eXl[Vn-gWuq7j5aF2&qL/7w2Z~]Uv|8O/Y.oFA0C1>|j<pU+.(Rz6qil85;Ne/|=');
+ DEBUG [7e821267] Finished in 1.415 seconds with exit status 0 (successful).
+ DEBUG Uploading /opt/sites/wordpress/shared/wp-config.php 0.0%
+  INFO Uploading /opt/sites/wordpress/shared/wp-config.php 100.0%
+  INFO [8f042acd] Running chmod +r /opt/sites/wordpress/shared/wp-config.php as vagrant@33.33.33.10
+ DEBUG [8f042acd] Command: chmod +r /opt/sites/wordpress/shared/wp-config.php
+  INFO [8f042acd] Finished in 0.028 seconds with exit status 0 (successful).
+ DEBUG [2ae2958c] Running [ -f /opt/sites/wordpress/shared/wp-config.php ] as vagrant@33.33.33.10
+ DEBUG [2ae2958c] Command: [ -f /opt/sites/wordpress/shared/wp-config.php ]
+ DEBUG [2ae2958c] Finished in 0.032 seconds with exit status 0 (successful).
+ DEBUG [0d452752] Running [ -f /opt/sites/wordpress/current/REVISION ] as vagrant@33.33.33.10
+ DEBUG [0d452752] Command: [ -f /opt/sites/wordpress/current/REVISION ]
+ DEBUG [0d452752] Finished in 0.021 seconds with exit status 1 (failed).
+ DEBUG [06b232d3] Running [ -f /opt/sites/wordpress/repo/HEAD ] as vagrant@33.33.33.10
+ DEBUG [06b232d3] Command: [ -f /opt/sites/wordpress/repo/HEAD ]
+ DEBUG [06b232d3] Finished in 0.029 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /opt/sites/wordpress/repo
+ DEBUG [e85f00ac] Running if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [e85f00ac] Command: if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi
+ DEBUG [e85f00ac] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [c4d3a39d] Running /usr/bin/env git fetch --depth 1 origin 4.5.2 as vagrant@33.33.33.10
+ DEBUG [c4d3a39d] Command: cd /opt/sites/wordpress/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_wordpress/git-ssh.sh" ; /usr/bin/env git fetch --depth 1 origin 4.5.2 )
+ DEBUG [c4d3a39d] 	From https://github.com/WordPress/WordPress
+ DEBUG [c4d3a39d] 	 * tag               4.5.2      -> FETCH_HEAD
+  INFO [c4d3a39d] Finished in 4.892 seconds with exit status 0 (successful).
+ DEBUG [cbdb1c6e] Running if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [cbdb1c6e] Command: if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi
+ DEBUG [cbdb1c6e] Finished in 0.029 seconds with exit status 0 (successful).
+  INFO [9c36b83d] Running /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619140258 as vagrant@33.33.33.10
+ DEBUG [9c36b83d] Command: cd /opt/sites/wordpress/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_wordpress/git-ssh.sh" ; /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619140258 )
+  INFO [9c36b83d] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [c1e957ab] Running /usr/bin/env git archive 4.5.2 | tar -x -f - -C /opt/sites/wordpress/releases/20160619140258 as vagrant@33.33.33.10
+ DEBUG [c1e957ab] Command: cd /opt/sites/wordpress/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_wordpress/git-ssh.sh" ; /usr/bin/env git archive 4.5.2 | tar -x -f - -C /opt/sites/wordpress/releases/20160619140258 )
+  INFO [c1e957ab] Finished in 1.005 seconds with exit status 0 (successful).
+ DEBUG [d3db2bac] Running if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [d3db2bac] Command: if test ! -d /opt/sites/wordpress/repo; then echo "Directory does not exist '/opt/sites/wordpress/repo'" 1>&2; false; fi
+ DEBUG [d3db2bac] Finished in 0.037 seconds with exit status 0 (successful).
+ DEBUG [865ca403] Running /usr/bin/env git rev-list --max-count=1 4.5.2 as vagrant@33.33.33.10
+ DEBUG [865ca403] Command: cd /opt/sites/wordpress/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_wordpress/git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 4.5.2 )
+ DEBUG [865ca403] 	d11bf53a9998cf8ba267c983074c1eb8f3f91dcb
+ DEBUG [865ca403] Finished in 0.039 seconds with exit status 0 (successful).
+ DEBUG [80308811] Running if test ! -d /opt/sites/wordpress/releases/20160619140258; then echo "Directory does not exist '/opt/sites/wordpress/releases/20160619140258'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [80308811] Command: if test ! -d /opt/sites/wordpress/releases/20160619140258; then echo "Directory does not exist '/opt/sites/wordpress/releases/20160619140258'" 1>&2; false; fi
+ DEBUG [80308811] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO [af25e489] Running /usr/bin/env echo "d11bf53a9998cf8ba267c983074c1eb8f3f91dcb" >> REVISION as vagrant@33.33.33.10
+ DEBUG [af25e489] Command: cd /opt/sites/wordpress/releases/20160619140258 && /usr/bin/env echo "d11bf53a9998cf8ba267c983074c1eb8f3f91dcb" >> REVISION
+  INFO [af25e489] Finished in 0.034 seconds with exit status 0 (successful).
+  INFO [fc88133a] Running /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619140258 as vagrant@33.33.33.10
+ DEBUG [fc88133a] Command: /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619140258
+  INFO [fc88133a] Finished in 0.032 seconds with exit status 0 (successful).
+ DEBUG [10d182c3] Running [ -L /opt/sites/wordpress/releases/20160619140258/wp-config.php ] as vagrant@33.33.33.10
+ DEBUG [10d182c3] Command: [ -L /opt/sites/wordpress/releases/20160619140258/wp-config.php ]
+ DEBUG [10d182c3] Finished in 0.028 seconds with exit status 1 (failed).
+ DEBUG [b3d86228] Running [ -f /opt/sites/wordpress/releases/20160619140258/wp-config.php ] as vagrant@33.33.33.10
+ DEBUG [b3d86228] Command: [ -f /opt/sites/wordpress/releases/20160619140258/wp-config.php ]
+ DEBUG [b3d86228] Finished in 0.030 seconds with exit status 1 (failed).
+  INFO [ac8680bf] Running /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-config.php /opt/sites/wordpress/releases/20160619140258/wp-config.php as vagrant@33.33.33.10
+ DEBUG [ac8680bf] Command: /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-config.php /opt/sites/wordpress/releases/20160619140258/wp-config.php
+  INFO [ac8680bf] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [03c281b8] Running /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619140258/wp-content as vagrant@33.33.33.10
+ DEBUG [03c281b8] Command: /usr/bin/env mkdir -p /opt/sites/wordpress/releases/20160619140258/wp-content
+  INFO [03c281b8] Finished in 0.031 seconds with exit status 0 (successful).
+ DEBUG [beaa75b8] Running [ -L /opt/sites/wordpress/releases/20160619140258/wp-content/languages ] as vagrant@33.33.33.10
+ DEBUG [beaa75b8] Command: [ -L /opt/sites/wordpress/releases/20160619140258/wp-content/languages ]
+ DEBUG [beaa75b8] Finished in 0.031 seconds with exit status 1 (failed).
+ DEBUG [074825f7] Running [ -d /opt/sites/wordpress/releases/20160619140258/wp-content/languages ] as vagrant@33.33.33.10
+ DEBUG [074825f7] Command: [ -d /opt/sites/wordpress/releases/20160619140258/wp-content/languages ]
+ DEBUG [074825f7] Finished in 0.030 seconds with exit status 1 (failed).
+  INFO [a04ef9cb] Running /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/languages /opt/sites/wordpress/releases/20160619140258/wp-content/languages as vagrant@33.33.33.10
+ DEBUG [a04ef9cb] Command: /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/languages /opt/sites/wordpress/releases/20160619140258/wp-content/languages
+  INFO [a04ef9cb] Finished in 0.024 seconds with exit status 0 (successful).
+ DEBUG [bee4316e] Running [ -L /opt/sites/wordpress/releases/20160619140258/wp-content/plugins ] as vagrant@33.33.33.10
+ DEBUG [bee4316e] Command: [ -L /opt/sites/wordpress/releases/20160619140258/wp-content/plugins ]
+ DEBUG [bee4316e] Finished in 0.021 seconds with exit status 1 (failed).
+ DEBUG [db840efd] Running [ -d /opt/sites/wordpress/releases/20160619140258/wp-content/plugins ] as vagrant@33.33.33.10
+ DEBUG [db840efd] Command: [ -d /opt/sites/wordpress/releases/20160619140258/wp-content/plugins ]
+ DEBUG [db840efd] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO [f1945e0a] Running /usr/bin/env rm -rf /opt/sites/wordpress/releases/20160619140258/wp-content/plugins as vagrant@33.33.33.10
+ DEBUG [f1945e0a] Command: /usr/bin/env rm -rf /opt/sites/wordpress/releases/20160619140258/wp-content/plugins
+  INFO [f1945e0a] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [4da72b89] Running /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/plugins /opt/sites/wordpress/releases/20160619140258/wp-content/plugins as vagrant@33.33.33.10
+ DEBUG [4da72b89] Command: /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/plugins /opt/sites/wordpress/releases/20160619140258/wp-content/plugins
+  INFO [4da72b89] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [7093e350] Running [ -L /opt/sites/wordpress/releases/20160619140258/wp-content/themes ] as vagrant@33.33.33.10
+ DEBUG [7093e350] Command: [ -L /opt/sites/wordpress/releases/20160619140258/wp-content/themes ]
+ DEBUG [7093e350] Finished in 0.024 seconds with exit status 1 (failed).
+ DEBUG [4839620a] Running [ -d /opt/sites/wordpress/releases/20160619140258/wp-content/themes ] as vagrant@33.33.33.10
+ DEBUG [4839620a] Command: [ -d /opt/sites/wordpress/releases/20160619140258/wp-content/themes ]
+ DEBUG [4839620a] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [c15408cf] Running /usr/bin/env rm -rf /opt/sites/wordpress/releases/20160619140258/wp-content/themes as vagrant@33.33.33.10
+ DEBUG [c15408cf] Command: /usr/bin/env rm -rf /opt/sites/wordpress/releases/20160619140258/wp-content/themes
+  INFO [c15408cf] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [944089b5] Running /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/themes /opt/sites/wordpress/releases/20160619140258/wp-content/themes as vagrant@33.33.33.10
+ DEBUG [944089b5] Command: /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/themes /opt/sites/wordpress/releases/20160619140258/wp-content/themes
+  INFO [944089b5] Finished in 0.031 seconds with exit status 0 (successful).
+ DEBUG [9f324c4e] Running [ -L /opt/sites/wordpress/releases/20160619140258/wp-content/uploads ] as vagrant@33.33.33.10
+ DEBUG [9f324c4e] Command: [ -L /opt/sites/wordpress/releases/20160619140258/wp-content/uploads ]
+ DEBUG [9f324c4e] Finished in 0.025 seconds with exit status 1 (failed).
+ DEBUG [25398194] Running [ -d /opt/sites/wordpress/releases/20160619140258/wp-content/uploads ] as vagrant@33.33.33.10
+ DEBUG [25398194] Command: [ -d /opt/sites/wordpress/releases/20160619140258/wp-content/uploads ]
+ DEBUG [25398194] Finished in 0.021 seconds with exit status 1 (failed).
+  INFO [867bad4b] Running /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/uploads /opt/sites/wordpress/releases/20160619140258/wp-content/uploads as vagrant@33.33.33.10
+ DEBUG [867bad4b] Command: /usr/bin/env ln -s /opt/sites/wordpress/shared/wp-content/uploads /opt/sites/wordpress/releases/20160619140258/wp-content/uploads
+  INFO [867bad4b] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [a3a7a5a9] Running /usr/bin/env ln -s /opt/sites/wordpress/releases/20160619140258 /opt/sites/wordpress/releases/current as vagrant@33.33.33.10
+ DEBUG [a3a7a5a9] Command: /usr/bin/env ln -s /opt/sites/wordpress/releases/20160619140258 /opt/sites/wordpress/releases/current
+  INFO [a3a7a5a9] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [80b101c1] Running /usr/bin/env mv /opt/sites/wordpress/releases/current /opt/sites/wordpress as vagrant@33.33.33.10
+ DEBUG [80b101c1] Command: /usr/bin/env mv /opt/sites/wordpress/releases/current /opt/sites/wordpress
+  INFO [80b101c1] Finished in 0.032 seconds with exit status 0 (successful).
+ DEBUG [297a9fc3] Running /usr/bin/env ls -xtr /opt/sites/wordpress/releases as vagrant@33.33.33.10
+ DEBUG [297a9fc3] Command: /usr/bin/env ls -xtr /opt/sites/wordpress/releases
+ DEBUG [297a9fc3] 	20160619140258
+ DEBUG [297a9fc3] Finished in 0.026 seconds with exit status 0 (successful).
+ DEBUG [3402b32d] Running if test ! -d /opt/sites/wordpress/releases; then echo "Directory does not exist '/opt/sites/wordpress/releases'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [3402b32d] Command: if test ! -d /opt/sites/wordpress/releases; then echo "Directory does not exist '/opt/sites/wordpress/releases'" 1>&2; false; fi
+ DEBUG [3402b32d] Finished in 0.028 seconds with exit status 0 (successful).
+  INFO [3c44a1be] Running /usr/bin/env echo "Branch 4.5.2 (at d11bf53a9998cf8ba267c983074c1eb8f3f91dcb) deployed as release 20160619140258 by car" >> /opt/sites/wordpress/revisions.log as vagrant@33.33.33.10
+ DEBUG [3c44a1be] Command: cd /opt/sites/wordpress/releases && /usr/bin/env echo "Branch 4.5.2 (at d11bf53a9998cf8ba267c983074c1eb8f3f91dcb) deployed as release 20160619140258 by car" >> /opt/sites/wordpress/revisions.log
+  INFO [3c44a1be] Finished in 0.030 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-19 11:04:37 -0300 cap production wp:db:push
+  INFO ---------------------------------------------------------------------------
+  INFO [cbe850db] Running mysqldump -u wordpress_devops -pdocker -h172.17.0.1 wordpress_devops > /tmp/wordpress-20160619110437.sql as car@localhost
+ DEBUG [cbe850db] Command: mysqldump -u wordpress_devops -pdocker -h172.17.0.1 wordpress_devops > /tmp/wordpress-20160619110437.sql
+  INFO [cbe850db] Finished in 0.114 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 0.0%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 3.61%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 7.22%
+  INFO Uploading /tmp/wordpress-20160619110437.sql 10.83%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 14.44%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 18.05%
+  INFO Uploading /tmp/wordpress-20160619110437.sql 21.66%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 25.27%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 28.88%
+  INFO Uploading /tmp/wordpress-20160619110437.sql 32.49%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 36.1%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 39.71%
+  INFO Uploading /tmp/wordpress-20160619110437.sql 43.33%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 46.94%
+  INFO Uploading /tmp/wordpress-20160619110437.sql 50.55%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 54.16%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 57.77%
+  INFO Uploading /tmp/wordpress-20160619110437.sql 61.38%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 64.99%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 68.6%
+  INFO Uploading /tmp/wordpress-20160619110437.sql 72.21%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 75.82%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 79.43%
+  INFO Uploading /tmp/wordpress-20160619110437.sql 83.04%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 86.65%
+  INFO Uploading /tmp/wordpress-20160619110437.sql 90.26%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 93.87%
+ DEBUG Uploading /tmp/wordpress-20160619110437.sql 97.48%
+  INFO Uploading /tmp/wordpress-20160619110437.sql 100.0%
+  INFO [220909bd] Running mysql -u wordpress -ppass_wordpress -h127.0.0.1 wordpress < /tmp/wordpress-20160619110437.sql as vagrant@33.33.33.10
+ DEBUG [220909bd] Command: mysql -u wordpress -ppass_wordpress -h127.0.0.1 wordpress < /tmp/wordpress-20160619110437.sql
+  INFO [220909bd] Finished in 0.361 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-19 11:04:44 -0300 cap production wp:upload
+  INFO ---------------------------------------------------------------------------
+  INFO [4ae5f806] Running /usr/bin/env rsync -azv --rsh=ssh --progress my-site/wp-content/ vagrant@33.33.33.10:/opt/sites/wordpress/shared/wp-content as car@localhost
+ DEBUG [4ae5f806] Command: /usr/bin/env rsync -azv --rsh=ssh --progress my-site/wp-content/ vagrant@33.33.33.10:/opt/sites/wordpress/shared/wp-content
+ DEBUG [4ae5f806] 	sending incremental file list
+ DEBUG [4ae5f806] 	./
+ DEBUG [4ae5f806] 	index.php
+ DEBUG [4ae5f806] 	             28 100%    0.00kB/s    0:00:00               28 100%    0.00kB/s    0:00:00 (xfr#1, to-chk=233/235)
+ DEBUG [4ae5f806] 	plugins/
+ DEBUG [4ae5f806] 	plugins/hello.php
+ DEBUG [4ae5f806] 	          2,255 100%  314.59kB/s    0:00:00            2,255 100%  314.59kB/s    0:00:00 (xfr#2, to-chk=229/235)
+ DEBUG [4ae5f806] 	plugins/index.php
+ DEBUG [4ae5f806] 	             28 100%    3.91kB/s    0:00:00               28 100%    3.91kB/s    0:00:00 (xfr#3, to-chk=228/235)
+ DEBUG [4ae5f806] 	plugins/akismet/
+ DEBUG [4ae5f806] 	plugins/akismet/.htaccess
+ DEBUG [4ae5f806] 	            616 100%   31.66kB/s    0:00:00              616 100%   31.66kB/s    0:00:00 (xfr#4, to-chk=226/235)
+ DEBUG [4ae5f806] 	plugins/akismet/LICENSE.txt
+ DEBUG [4ae5f806] 	         18,092 100%  841.33kB/s    0:00:00           18,092 100%  841.33kB/s    0:00:00 (xfr#5, to-chk=225/235)
+ DEBUG [4ae5f806] 	plugins/akismet/akismet.php
+ DEBUG [4ae5f806] 	          2,379 100%   72.60kB/s    0:00:00            2,379 100%   72.60kB/s    0:00:00 (xfr#6, to-chk=224/235)
+ DEBUG [4ae5f806] 	plugins/akismet/class.akismet-admin.php
+ DEBUG [4ae5f806] 	         32,768  82%  864.86kB/s    0:00:00           39,526 100% 1015.78kB/s    0:00:00 (xfr#7, to-chk=223/235)
+ DEBUG [4ae5f806] 	plugins/akismet/class.akismet-widget.php
+ DEBUG [4ae5f806] 	          2,719 100%   69.88kB/s    0:00:00            2,719 100%   69.88kB/s    0:00:00 (xfr#8, to-chk=222/235)
+ DEBUG [4ae5f806] 	plugins/akismet/class.akismet.php
+ DEBUG [4ae5f806] 	         32,768  71%  780.49kB/s    0:00:00           45,860 100%    1.02MB/s    0:00:00 (xfr#9, to-chk=221/235)
+ DEBUG [4ae5f806] 	plugins/akismet/index.php
+ DEBUG [4ae5f806] 	             26 100%    0.59kB/s    0:00:00               26 100%    0.59kB/s    0:00:00 (xfr#10, to-chk=220/235)
+ DEBUG [4ae5f806] 	plugins/akismet/readme.txt
+ DEBUG [4ae5f806] 	         13,394 100%  290.67kB/s    0:00:00           13,394 100%  290.67kB/s    0:00:00 (xfr#11, to-chk=219/235)
+ DEBUG [4ae5f806] 	plugins/akismet/wrapper.php
+ DEBUG [4ae5f806] 	          6,427 100%  136.44kB/s    0:00:00            6,427 100%  136.44kB/s    0:00:00 (xfr#12, to-chk=218/235)
+ DEBUG [4ae5f806] 	plugins/akismet/_inc/
+ DEBUG [4ae5f806] 	plugins/akismet/_inc/akismet.css
+ DEBUG [4ae5f806] 	          8,748 100%  181.77kB/s    0:00:00            8,748 100%  181.77kB/s    0:00:00 (xfr#13, to-chk=215/235)
+ DEBUG [4ae5f806] 	plugins/akismet/_inc/akismet.js
+ DEBUG [4ae5f806] 	          6,295 100%  128.07kB/s    0:00:00            6,295 100%  128.07kB/s    0:00:00 (xfr#14, to-chk=214/235)
+ DEBUG [4ae5f806] 	plugins/akismet/_inc/form.js
+ DEBUG [4ae5f806] 	            700 100%   13.95kB/s    0:00:00              700 100%   13.95kB/s    0:00:00 (xfr#15, to-chk=213/235)
+ DEBUG [4ae5f806] 	plugins/akismet/_inc/img/
+ DEBUG [4ae5f806] 	plugins/akismet/_inc/img/logo-full-2x.png
+ DEBUG [4ae5f806] 	          4,970 100%   97.07kB/s    0:00:00            4,970 100%   97.07kB/s    0:00:00 (xfr#16, to-chk=211/235)
+ DEBUG [4ae5f806] 	plugins/akismet/views/
+ DEBUG [4ae5f806] 	plugins/akismet/views/config.php
+ DEBUG [4ae5f806] 	         10,682 100%  204.54kB/s    0:00:00           10,682 100%  204.54kB/s    0:00:00 (xfr#17, to-chk=210/235)
+ DEBUG [4ae5f806] 	plugins/akismet/views/get.php
+ DEBUG [4ae5f806] 	            595 100%   11.17kB/s    0:00:00              595 100%   11.17kB/s    0:00:00 (xfr#18, to-chk=209/235)
+ DEBUG [4ae5f806] 	plugins/akismet/views/notice.php
+ DEBUG [4ae5f806] 	          8,697 100%  160.25kB/s    0:00:00            8,697 100%  160.25kB/s    0:00:00 (xfr#19, to-chk=208/235)
+ DEBUG [4ae5f806] 	plugins/akismet/views/start.php
+ DEBUG [4ae5f806] 	          6,547 100%  118.40kB/s    0:00:00            6,547 100%  118.40kB/s    0:00:00 (xfr#20, to-chk=207/235)
+ DEBUG [4ae5f806] 	plugins/akismet/views/stats.php
+ DEBUG [4ae5f806] 	            551 100%    9.96kB/s    0:00:00              551 100%    9.96kB/s    0:00:00 (xfr#21, to-chk=206/235)
+ DEBUG [4ae5f806] 	plugins/akismet/views/strict.php
+ DEBUG [4ae5f806] 	            761 100%   13.51kB/s    0:00:00              761 100%   13.51kB/s    0:00:00 (xfr#22, to-chk=205/235)
+ DEBUG [4ae5f806] 	themes/
+ DEBUG [4ae5f806] 	themes/index.php
+ DEBUG [4ae5f806] 	             28 100%    0.42kB/s    0:00:00               28 100%    0.42kB/s    0:00:00 (xfr#23, to-chk=204/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/
+ DEBUG [4ae5f806] 	themes/twentyfifteen/404.php
+ DEBUG [4ae5f806] 	            809 100%   10.53kB/s    0:00:00              809 100%   10.40kB/s    0:00:00 (xfr#24, to-chk=200/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/archive.php
+ DEBUG [4ae5f806] 	          1,914 100%   23.08kB/s    0:00:00            1,914 100%   23.08kB/s    0:00:00 (xfr#25, to-chk=199/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/author-bio.php
+ DEBUG [4ae5f806] 	          1,141 100%   12.11kB/s    0:00:00            1,141 100%   12.11kB/s    0:00:00 (xfr#26, to-chk=198/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/comments.php
+ DEBUG [4ae5f806] 	          1,473 100%   14.24kB/s    0:00:00            1,473 100%   14.24kB/s    0:00:00 (xfr#27, to-chk=197/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/content-link.php
+ DEBUG [4ae5f806] 	          1,753 100%   15.85kB/s    0:00:00            1,753 100%   15.85kB/s    0:00:00 (xfr#28, to-chk=196/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/content-none.php
+ DEBUG [4ae5f806] 	          1,166 100%    9.90kB/s    0:00:00            1,166 100%    9.90kB/s    0:00:00 (xfr#29, to-chk=195/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/content-page.php
+ DEBUG [4ae5f806] 	          1,117 100%    9.32kB/s    0:00:00            1,117 100%    9.32kB/s    0:00:00 (xfr#30, to-chk=194/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/content-search.php
+ DEBUG [4ae5f806] 	          1,101 100%    8.33kB/s    0:00:00            1,101 100%    8.33kB/s    0:00:00 (xfr#31, to-chk=193/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/content.php
+ DEBUG [4ae5f806] 	          1,702 100%    8.89kB/s    0:00:00            1,702 100%    8.89kB/s    0:00:00 (xfr#32, to-chk=192/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/footer.php
+ DEBUG [4ae5f806] 	            823 100%    3.92kB/s    0:00:00              823 100%    3.92kB/s    0:00:00 (xfr#33, to-chk=191/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/functions.php
+ DEBUG [4ae5f806] 	         12,755 100%   55.86kB/s    0:00:00           12,755 100%   55.86kB/s    0:00:00 (xfr#34, to-chk=190/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/header.php
+ DEBUG [4ae5f806] 	          1,846 100%    6.75kB/s    0:00:00            1,846 100%    6.75kB/s    0:00:00 (xfr#35, to-chk=189/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/image.php
+ DEBUG [4ae5f806] 	          2,940 100%    9.77kB/s    0:00:00            2,940 100%    9.77kB/s    0:00:00 (xfr#36, to-chk=188/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/index.php
+ DEBUG [4ae5f806] 	          1,765 100%    5.54kB/s    0:00:00            1,765 100%    5.54kB/s    0:00:00 (xfr#37, to-chk=187/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/page.php
+ DEBUG [4ae5f806] 	            902 100%    2.53kB/s    0:00:00              902 100%    2.53kB/s    0:00:00 (xfr#38, to-chk=186/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/readme.txt
+ DEBUG [4ae5f806] 	          3,251 100%    8.08kB/s    0:00:00            3,251 100%    8.08kB/s    0:00:00 (xfr#39, to-chk=185/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/rtl.css
+ DEBUG [4ae5f806] 	         12,384 100%   30.01kB/s    0:00:00           12,384 100%   30.01kB/s    0:00:00 (xfr#40, to-chk=184/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/screenshot.png
+ DEBUG [4ae5f806] 	         32,768   5%   75.65kB/s    0:00:07          576,231 100%    1.23MB/s    0:00:00 (xfr#41, to-chk=183/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/search.php
+ DEBUG [4ae5f806] 	          1,405 100%    3.06kB/s    0:00:00            1,405 100%    3.06kB/s    0:00:00 (xfr#42, to-chk=182/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/sidebar.php
+ DEBUG [4ae5f806] 	          1,313 100%    2.86kB/s    0:00:00            1,313 100%    2.86kB/s    0:00:00 (xfr#43, to-chk=181/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/single.php
+ DEBUG [4ae5f806] 	          1,528 100%    3.33kB/s    0:00:00            1,528 100%    3.33kB/s    0:00:00 (xfr#44, to-chk=180/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/style.css
+ DEBUG [4ae5f806] 	         32,768  33%   68.52kB/s    0:00:00           97,760 100%  202.26kB/s    0:00:00 (xfr#45, to-chk=179/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/css/
+ DEBUG [4ae5f806] 	themes/twentyfifteen/css/editor-style.css
+ DEBUG [4ae5f806] 	          5,757 100%   11.74kB/s    0:00:00            5,757 100%   11.74kB/s    0:00:00 (xfr#46, to-chk=173/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/css/ie.css
+ DEBUG [4ae5f806] 	         14,133 100%   28.46kB/s    0:00:00           14,133 100%   28.46kB/s    0:00:00 (xfr#47, to-chk=172/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/css/ie7.css
+ DEBUG [4ae5f806] 	          1,159 100%    2.33kB/s    0:00:00            1,159 100%    2.33kB/s    0:00:00 (xfr#48, to-chk=171/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/genericons/
+ DEBUG [4ae5f806] 	themes/twentyfifteen/genericons/COPYING.txt
+ DEBUG [4ae5f806] 	          1,424 100%    2.86kB/s    0:00:00            1,424 100%    2.86kB/s    0:00:00 (xfr#49, to-chk=170/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/genericons/Genericons.eot
+ DEBUG [4ae5f806] 	         22,760 100%   43.58kB/s    0:00:00           22,760 100%   43.58kB/s    0:00:00 (xfr#50, to-chk=169/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/genericons/Genericons.svg
+ DEBUG [4ae5f806] 	         32,768  41%   61.66kB/s    0:00:00           78,913 100%  147.91kB/s    0:00:00 (xfr#51, to-chk=168/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/genericons/Genericons.ttf
+ DEBUG [4ae5f806] 	         22,576 100%   41.52kB/s    0:00:00           22,576 100%   41.52kB/s    0:00:00 (xfr#52, to-chk=167/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/genericons/Genericons.woff
+ DEBUG [4ae5f806] 	         14,360 100%   26.41kB/s    0:00:00           14,360 100%   26.41kB/s    0:00:00 (xfr#53, to-chk=166/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/genericons/LICENSE.txt
+ DEBUG [4ae5f806] 	         18,092 100%   32.72kB/s    0:00:00           18,092 100%   32.72kB/s    0:00:00 (xfr#54, to-chk=165/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/genericons/README.md
+ DEBUG [4ae5f806] 	          6,569 100%   11.73kB/s    0:00:00            6,569 100%   11.73kB/s    0:00:00 (xfr#55, to-chk=164/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/genericons/genericons.css
+ DEBUG [4ae5f806] 	         27,519 100%   48.16kB/s    0:00:00           27,519 100%   48.16kB/s    0:00:00 (xfr#56, to-chk=163/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/inc/
+ DEBUG [4ae5f806] 	themes/twentyfifteen/inc/back-compat.php
+ DEBUG [4ae5f806] 	          2,165 100%    3.78kB/s    0:00:00            2,165 100%    3.78kB/s    0:00:00 (xfr#57, to-chk=162/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/inc/custom-header.php
+ DEBUG [4ae5f806] 	          9,431 100%   16.16kB/s    0:00:00            9,431 100%   16.16kB/s    0:00:00 (xfr#58, to-chk=161/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/inc/customizer.php
+ DEBUG [4ae5f806] 	         21,461 100%   36.70kB/s    0:00:00           21,461 100%   36.70kB/s    0:00:00 (xfr#59, to-chk=160/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/inc/template-tags.php
+ DEBUG [4ae5f806] 	          8,304 100%   13.96kB/s    0:00:00            8,304 100%   13.96kB/s    0:00:00 (xfr#60, to-chk=159/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/js/
+ DEBUG [4ae5f806] 	themes/twentyfifteen/js/color-scheme-control.js
+ DEBUG [4ae5f806] 	          2,915 100%    4.78kB/s    0:00:00            2,915 100%    4.78kB/s    0:00:00 (xfr#61, to-chk=158/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/js/customize-preview.js
+ DEBUG [4ae5f806] 	            832 100%    1.36kB/s    0:00:00              832 100%    1.36kB/s    0:00:00 (xfr#62, to-chk=157/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/js/functions.js
+ DEBUG [4ae5f806] 	          5,920 100%    9.54kB/s    0:00:00            5,920 100%    9.54kB/s    0:00:00 (xfr#63, to-chk=156/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/js/html5.js
+ DEBUG [4ae5f806] 	          2,432 100%    3.92kB/s    0:00:00            2,432 100%    3.92kB/s    0:00:00 (xfr#64, to-chk=155/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/js/keyboard-image-navigation.js
+ DEBUG [4ae5f806] 	            487 100%    0.77kB/s    0:00:00              487 100%    0.77kB/s    0:00:00 (xfr#65, to-chk=154/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/js/skip-link-focus-fix.js
+ DEBUG [4ae5f806] 	            727 100%    1.15kB/s    0:00:00              727 100%    1.15kB/s    0:00:00 (xfr#66, to-chk=153/235)
+ DEBUG [4ae5f806] 	themes/twentyfifteen/languages/
+ DEBUG [4ae5f806] 	themes/twentyfifteen/languages/twentyfifteen.pot
+ DEBUG [4ae5f806] 	          7,091 100%   11.21kB/s    0:00:00            7,091 100%   11.21kB/s    0:00:00 (xfr#67, to-chk=152/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/
+ DEBUG [4ae5f806] 	themes/twentyfourteen/404.php
+ DEBUG [4ae5f806] 	            719 100%    1.11kB/s    0:00:00              719 100%    1.11kB/s    0:00:00 (xfr#68, to-chk=151/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/archive.php
+ DEBUG [4ae5f806] 	          2,162 100%    3.28kB/s    0:00:00            2,162 100%    3.28kB/s    0:00:00 (xfr#69, to-chk=150/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/author.php
+ DEBUG [4ae5f806] 	          1,928 100%    2.89kB/s    0:00:00            1,928 100%    2.89kB/s    0:00:00 (xfr#70, to-chk=149/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/category.php
+ DEBUG [4ae5f806] 	          1,537 100%    2.26kB/s    0:00:00            1,537 100%    2.26kB/s    0:00:00 (xfr#71, to-chk=148/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/comments.php
+ DEBUG [4ae5f806] 	          2,317 100%    3.36kB/s    0:00:00            2,317 100%    3.36kB/s    0:00:00 (xfr#72, to-chk=147/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/content-aside.php
+ DEBUG [4ae5f806] 	          2,308 100%    3.34kB/s    0:00:00            2,308 100%    3.34kB/s    0:00:00 (xfr#73, to-chk=146/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/content-audio.php
+ DEBUG [4ae5f806] 	          2,308 100%    3.34kB/s    0:00:00            2,308 100%    3.34kB/s    0:00:00 (xfr#74, to-chk=145/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/content-featured-post.php
+ DEBUG [4ae5f806] 	          1,123 100%    1.60kB/s    0:00:00            1,123 100%    1.60kB/s    0:00:00 (xfr#75, to-chk=144/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/content-gallery.php
+ DEBUG [4ae5f806] 	          2,314 100%    3.26kB/s    0:00:00            2,314 100%    3.26kB/s    0:00:00 (xfr#76, to-chk=143/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/content-image.php
+ DEBUG [4ae5f806] 	          2,308 100%    3.20kB/s    0:00:00            2,308 100%    3.20kB/s    0:00:00 (xfr#77, to-chk=142/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/content-link.php
+ DEBUG [4ae5f806] 	          2,305 100%    3.17kB/s    0:00:00            2,305 100%    3.17kB/s    0:00:00 (xfr#78, to-chk=141/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/content-none.php
+ DEBUG [4ae5f806] 	            961 100%    1.32kB/s    0:00:00              961 100%    1.32kB/s    0:00:00 (xfr#79, to-chk=140/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/content-page.php
+ DEBUG [4ae5f806] 	            871 100%    1.18kB/s    0:00:00              871 100%    1.18kB/s    0:00:00 (xfr#80, to-chk=139/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/content-quote.php
+ DEBUG [4ae5f806] 	          2,308 100%    3.13kB/s    0:00:00            2,308 100%    3.13kB/s    0:00:00 (xfr#81, to-chk=138/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/content-video.php
+ DEBUG [4ae5f806] 	          2,308 100%    3.13kB/s    0:00:00            2,308 100%    3.13kB/s    0:00:00 (xfr#82, to-chk=137/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/content.php
+ DEBUG [4ae5f806] 	          2,325 100%    3.15kB/s    0:00:00            2,325 100%    3.15kB/s    0:00:00 (xfr#83, to-chk=136/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/featured-content.php
+ DEBUG [4ae5f806] 	            945 100%    1.28kB/s    0:00:00              945 100%    1.28kB/s    0:00:00 (xfr#84, to-chk=135/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/footer.php
+ DEBUG [4ae5f806] 	            729 100%    0.98kB/s    0:00:00              729 100%    0.98kB/s    0:00:00 (xfr#85, to-chk=134/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/functions.php
+ DEBUG [4ae5f806] 	         16,536 100%   22.21kB/s    0:00:00           16,536 100%   22.21kB/s    0:00:00 (xfr#86, to-chk=133/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/header.php
+ DEBUG [4ae5f806] 	          2,412 100%    3.24kB/s    0:00:00            2,412 100%    3.24kB/s    0:00:00 (xfr#87, to-chk=132/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/image.php
+ DEBUG [4ae5f806] 	          2,703 100%    3.63kB/s    0:00:00            2,703 100%    3.63kB/s    0:00:00 (xfr#88, to-chk=131/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/index.php
+ DEBUG [4ae5f806] 	          1,580 100%    2.12kB/s    0:00:00            1,580 100%    2.12kB/s    0:00:00 (xfr#89, to-chk=130/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/page.php
+ DEBUG [4ae5f806] 	          1,187 100%    1.59kB/s    0:00:00            1,187 100%    1.59kB/s    0:00:00 (xfr#90, to-chk=129/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/readme.txt
+ DEBUG [4ae5f806] 	          3,461 100%    4.64kB/s    0:00:00            3,461 100%    4.64kB/s    0:00:00 (xfr#91, to-chk=128/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/rtl.css
+ DEBUG [4ae5f806] 	         15,579 100%   20.50kB/s    0:00:00           15,579 100%   20.50kB/s    0:00:00 (xfr#92, to-chk=127/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/screenshot.png
+ DEBUG [4ae5f806] 	         32,768   3%   42.44kB/s    0:00:21          933,301 100%    1.11MB/s    0:00:00 (xfr#93, to-chk=126/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/search.php
+ DEBUG [4ae5f806] 	          1,231 100%    1.50kB/s    0:00:00            1,231 100%    1.50kB/s    0:00:00 (xfr#94, to-chk=125/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/sidebar-content.php
+ DEBUG [4ae5f806] 	            340 100%    0.41kB/s    0:00:00              340 100%    0.41kB/s    0:00:00 (xfr#95, to-chk=124/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/sidebar-footer.php
+ DEBUG [4ae5f806] 	            395 100%    0.48kB/s    0:00:00              395 100%    0.48kB/s    0:00:00 (xfr#96, to-chk=123/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/sidebar.php
+ DEBUG [4ae5f806] 	            848 100%    1.03kB/s    0:00:00              848 100%    1.03kB/s    0:00:00 (xfr#97, to-chk=122/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/single.php
+ DEBUG [4ae5f806] 	          1,033 100%    1.25kB/s    0:00:00            1,033 100%    1.25kB/s    0:00:00 (xfr#98, to-chk=121/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/style.css
+ DEBUG [4ae5f806] 	         32,768  42%   39.07kB/s    0:00:01           77,429 100%   91.54kB/s    0:00:00 (xfr#99, to-chk=120/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/tag.php
+ DEBUG [4ae5f806] 	          1,594 100%    1.88kB/s    0:00:00            1,594 100%    1.88kB/s    0:00:00 (xfr#100, to-chk=119/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/taxonomy-post_format.php
+ DEBUG [4ae5f806] 	          2,365 100%    2.79kB/s    0:00:00            2,365 100%    2.79kB/s    0:00:00 (xfr#101, to-chk=118/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/css/
+ DEBUG [4ae5f806] 	themes/twentyfourteen/css/editor-style.css
+ DEBUG [4ae5f806] 	         11,679 100%   13.72kB/s    0:00:00           11,679 100%   13.72kB/s    0:00:00 (xfr#102, to-chk=110/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/css/ie.css
+ DEBUG [4ae5f806] 	         24,683 100%   28.76kB/s    0:00:00           24,683 100%   28.76kB/s    0:00:00 (xfr#103, to-chk=109/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/genericons/
+ DEBUG [4ae5f806] 	themes/twentyfourteen/genericons/COPYING.txt
+ DEBUG [4ae5f806] 	          1,424 100%    1.66kB/s    0:00:00            1,424 100%    1.66kB/s    0:00:00 (xfr#104, to-chk=108/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/genericons/Genericons-Regular.otf
+ DEBUG [4ae5f806] 	         18,212 100%   20.90kB/s    0:00:00           18,212 100%   20.90kB/s    0:00:00 (xfr#105, to-chk=107/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/genericons/LICENSE.txt
+ DEBUG [4ae5f806] 	         18,092 100%   20.71kB/s    0:00:00           18,092 100%   20.69kB/s    0:00:00 (xfr#106, to-chk=106/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/genericons/README.txt
+ DEBUG [4ae5f806] 	          5,896 100%    6.70kB/s    0:00:00            5,896 100%    6.70kB/s    0:00:00 (xfr#107, to-chk=105/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/genericons/genericons.css
+ DEBUG [4ae5f806] 	         31,045 100%   35.05kB/s    0:00:00           31,045 100%   35.05kB/s    0:00:00 (xfr#108, to-chk=104/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/genericons/font/
+ DEBUG [4ae5f806] 	themes/twentyfourteen/genericons/font/genericons-regular-webfont.eot
+ DEBUG [4ae5f806] 	         14,935 100%   16.80kB/s    0:00:00           14,935 100%   16.80kB/s    0:00:00 (xfr#109, to-chk=102/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/genericons/font/genericons-regular-webfont.svg
+ DEBUG [4ae5f806] 	         32,768  81%   36.24kB/s    0:00:00           40,045 100%   44.19kB/s    0:00:00 (xfr#110, to-chk=101/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/genericons/font/genericons-regular-webfont.ttf
+ DEBUG [4ae5f806] 	         27,348 100%   30.01kB/s    0:00:00           27,348 100%   30.01kB/s    0:00:00 (xfr#111, to-chk=100/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/genericons/font/genericons-regular-webfont.woff
+ DEBUG [4ae5f806] 	         17,224 100%   18.69kB/s    0:00:00           17,224 100%   18.69kB/s    0:00:00 (xfr#112, to-chk=99/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/images/
+ DEBUG [4ae5f806] 	themes/twentyfourteen/images/pattern-dark.svg
+ DEBUG [4ae5f806] 	          1,176 100%    1.27kB/s    0:00:00            1,176 100%    1.27kB/s    0:00:00 (xfr#113, to-chk=98/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/images/pattern-light.svg
+ DEBUG [4ae5f806] 	            540 100%    0.58kB/s    0:00:00              540 100%    0.58kB/s    0:00:00 (xfr#114, to-chk=97/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/inc/
+ DEBUG [4ae5f806] 	themes/twentyfourteen/inc/back-compat.php
+ DEBUG [4ae5f806] 	          2,189 100%    2.33kB/s    0:00:00            2,189 100%    2.33kB/s    0:00:00 (xfr#115, to-chk=96/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/inc/custom-header.php
+ DEBUG [4ae5f806] 	          4,519 100%    4.78kB/s    0:00:00            4,519 100%    4.78kB/s    0:00:00 (xfr#116, to-chk=95/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/inc/customizer.php
+ DEBUG [4ae5f806] 	          6,635 100%    6.94kB/s    0:00:00            6,635 100%    6.94kB/s    0:00:00 (xfr#117, to-chk=94/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/inc/featured-content.php
+ DEBUG [4ae5f806] 	         15,187 100%   15.74kB/s    0:00:00           15,187 100%   15.74kB/s    0:00:00 (xfr#118, to-chk=93/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/inc/template-tags.php
+ DEBUG [4ae5f806] 	          7,224 100%    7.39kB/s    0:00:00            7,224 100%    7.39kB/s    0:00:00 (xfr#119, to-chk=92/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/inc/widgets.php
+ DEBUG [4ae5f806] 	         10,615 100%   10.87kB/s    0:00:00           10,615 100%   10.87kB/s    0:00:00 (xfr#120, to-chk=91/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/js/
+ DEBUG [4ae5f806] 	themes/twentyfourteen/js/customizer.js
+ DEBUG [4ae5f806] 	            950 100%    0.97kB/s    0:00:00              950 100%    0.97kB/s    0:00:00 (xfr#121, to-chk=90/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/js/featured-content-admin.js
+ DEBUG [4ae5f806] 	            329 100%    0.34kB/s    0:00:00              329 100%    0.34kB/s    0:00:00 (xfr#122, to-chk=89/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/js/functions.js
+ DEBUG [4ae5f806] 	          6,042 100%    6.13kB/s    0:00:00            6,042 100%    6.13kB/s    0:00:00 (xfr#123, to-chk=88/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/js/html5.js
+ DEBUG [4ae5f806] 	          2,428 100%    2.46kB/s    0:00:00            2,428 100%    2.46kB/s    0:00:00 (xfr#124, to-chk=87/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/js/keyboard-image-navigation.js
+ DEBUG [4ae5f806] 	            497 100%    0.50kB/s    0:00:00              497 100%    0.50kB/s    0:00:00 (xfr#125, to-chk=86/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/js/slider.js
+ DEBUG [4ae5f806] 	         18,801 100%   18.77kB/s    0:00:00           18,801 100%   18.77kB/s    0:00:00 (xfr#126, to-chk=85/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/languages/
+ DEBUG [4ae5f806] 	themes/twentyfourteen/languages/twentyfourteen.pot
+ DEBUG [4ae5f806] 	         11,072 100%   11.04kB/s    0:00:00           11,072 100%   11.04kB/s    0:00:00 (xfr#127, to-chk=84/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/page-templates/
+ DEBUG [4ae5f806] 	themes/twentyfourteen/page-templates/contributors.php
+ DEBUG [4ae5f806] 	          1,296 100%    1.29kB/s    0:00:00            1,296 100%    1.29kB/s    0:00:00 (xfr#128, to-chk=83/235)
+ DEBUG [4ae5f806] 	themes/twentyfourteen/page-templates/full-width.php
+ DEBUG [4ae5f806] 	            939 100%    0.94kB/s    0:00:00              939 100%    0.94kB/s    0:00:00 (xfr#129, to-chk=82/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/
+ DEBUG [4ae5f806] 	themes/twentysixteen/404.php
+ DEBUG [4ae5f806] 	            879 100%    0.87kB/s    0:00:00              879 100%    0.87kB/s    0:00:00 (xfr#130, to-chk=81/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/archive.php
+ DEBUG [4ae5f806] 	          1,960 100%    1.91kB/s    0:00:00            1,960 100%    1.91kB/s    0:00:01 (xfr#131, to-chk=80/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/comments.php
+ DEBUG [4ae5f806] 	          1,972 100%    1.91kB/s    0:00:00            1,972 100%    1.91kB/s    0:00:01 (xfr#132, to-chk=79/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/footer.php
+ DEBUG [4ae5f806] 	          1,868 100%    1.81kB/s    0:00:00            1,868 100%    1.81kB/s    0:00:01 (xfr#133, to-chk=78/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/functions.php
+ DEBUG [4ae5f806] 	         14,589 100%   14.08kB/s    0:00:00           14,589 100%   14.08kB/s    0:00:01 (xfr#134, to-chk=77/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/header.php
+ DEBUG [4ae5f806] 	          4,148 100%    4.00kB/s    0:00:00            4,148 100%    4.00kB/s    0:00:01 (xfr#135, to-chk=76/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/image.php
+ DEBUG [4ae5f806] 	          3,554 100%    3.43kB/s    0:00:00            3,554 100%    3.43kB/s    0:00:01 (xfr#136, to-chk=75/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/index.php
+ DEBUG [4ae5f806] 	          1,804 100%    1.74kB/s    0:00:00            1,804 100%    1.74kB/s    0:00:01 (xfr#137, to-chk=74/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/page.php
+ DEBUG [4ae5f806] 	            980 100%    0.94kB/s    0:00:00              980 100%    0.94kB/s    0:00:01 (xfr#138, to-chk=73/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/readme.txt
+ DEBUG [4ae5f806] 	          2,887 100%    2.77kB/s    0:00:00            2,887 100%    2.77kB/s    0:00:01 (xfr#139, to-chk=72/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/rtl.css
+ DEBUG [4ae5f806] 	         12,925 100%   12.41kB/s    0:00:00           12,925 100%   12.41kB/s    0:00:01 (xfr#140, to-chk=71/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/screenshot.png
+ DEBUG [4ae5f806] 	         32,768   7%   31.10kB/s    0:00:13           65,536  14%   62.08kB/s    0:00:06          463,555 100%  431.54kB/s    0:00:01 (xfr#141, to-chk=70/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/search.php
+ DEBUG [4ae5f806] 	          1,481 100%   76.12kB/s    0:00:00            1,481 100%   76.12kB/s    0:00:00 (xfr#142, to-chk=69/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/searchform.php
+ DEBUG [4ae5f806] 	            744 100%   29.06kB/s    0:00:00              744 100%   29.06kB/s    0:00:00 (xfr#143, to-chk=68/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/sidebar-content-bottom.php
+ DEBUG [4ae5f806] 	            794 100%   31.02kB/s    0:00:00              794 100%   31.02kB/s    0:00:00 (xfr#144, to-chk=67/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/sidebar.php
+ DEBUG [4ae5f806] 	            390 100%   15.23kB/s    0:00:00              390 100%   15.23kB/s    0:00:00 (xfr#145, to-chk=66/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/single.php
+ DEBUG [4ae5f806] 	          1,714 100%   66.95kB/s    0:00:00            1,714 100%   66.95kB/s    0:00:00 (xfr#146, to-chk=65/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/style.css
+ DEBUG [4ae5f806] 	         32,768  47%    1.16MB/s    0:00:00           68,939 100%    2.35MB/s    0:00:00 (xfr#147, to-chk=64/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/css/
+ DEBUG [4ae5f806] 	themes/twentysixteen/css/editor-style.css
+ DEBUG [4ae5f806] 	          6,630 100%  231.24kB/s    0:00:00            6,630 100%  231.24kB/s    0:00:00 (xfr#148, to-chk=57/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/css/ie.css
+ DEBUG [4ae5f806] 	            748 100%   25.19kB/s    0:00:00              748 100%   25.19kB/s    0:00:00 (xfr#149, to-chk=56/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/css/ie7.css
+ DEBUG [4ae5f806] 	          2,565 100%   86.38kB/s    0:00:00            2,565 100%   86.38kB/s    0:00:00 (xfr#150, to-chk=55/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/css/ie8.css
+ DEBUG [4ae5f806] 	          3,475 100%  117.02kB/s    0:00:00            3,475 100%  117.02kB/s    0:00:00 (xfr#151, to-chk=54/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/genericons/
+ DEBUG [4ae5f806] 	themes/twentysixteen/genericons/COPYING.txt
+ DEBUG [4ae5f806] 	          1,424 100%   46.35kB/s    0:00:00            1,424 100%   46.35kB/s    0:00:00 (xfr#152, to-chk=53/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/genericons/Genericons.eot
+ DEBUG [4ae5f806] 	         22,374 100%  704.83kB/s    0:00:00           22,374 100%  704.83kB/s    0:00:00 (xfr#153, to-chk=52/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/genericons/Genericons.svg
+ DEBUG [4ae5f806] 	         32,768  42%  711.11kB/s    0:00:00           76,980 100%    1.53MB/s    0:00:00 (xfr#154, to-chk=51/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/genericons/Genericons.ttf
+ DEBUG [4ae5f806] 	         22,188 100%  442.20kB/s    0:00:00           22,188 100%  442.20kB/s    0:00:00 (xfr#155, to-chk=50/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/genericons/Genericons.woff
+ DEBUG [4ae5f806] 	         13,988 100%  216.83kB/s    0:00:00           13,988 100%  216.83kB/s    0:00:00 (xfr#156, to-chk=49/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/genericons/LICENSE.txt
+ DEBUG [4ae5f806] 	         18,092 100%  267.70kB/s    0:00:00           18,092 100%  267.70kB/s    0:00:00 (xfr#157, to-chk=48/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/genericons/README.md
+ DEBUG [4ae5f806] 	         10,630 100%  128.16kB/s    0:00:00           10,630 100%  128.16kB/s    0:00:00 (xfr#158, to-chk=47/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/genericons/genericons.css
+ DEBUG [4ae5f806] 	         28,266 100%  287.54kB/s    0:00:00           28,266 100%  287.54kB/s    0:00:00 (xfr#159, to-chk=46/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/inc/
+ DEBUG [4ae5f806] 	themes/twentysixteen/inc/back-compat.php
+ DEBUG [4ae5f806] 	          2,328 100%   23.44kB/s    0:00:00            2,328 100%   23.44kB/s    0:00:00 (xfr#160, to-chk=45/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/inc/customizer.php
+ DEBUG [4ae5f806] 	         30,505 100%  300.91kB/s    0:00:00           30,505 100%  300.91kB/s    0:00:00 (xfr#161, to-chk=44/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/inc/template-tags.php
+ DEBUG [4ae5f806] 	          8,107 100%   79.17kB/s    0:00:00            8,107 100%   79.17kB/s    0:00:00 (xfr#162, to-chk=43/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/js/
+ DEBUG [4ae5f806] 	themes/twentysixteen/js/color-scheme-control.js
+ DEBUG [4ae5f806] 	          2,951 100%   26.20kB/s    0:00:00            2,951 100%   26.20kB/s    0:00:00 (xfr#163, to-chk=42/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/js/customize-preview.js
+ DEBUG [4ae5f806] 	          1,061 100%    9.42kB/s    0:00:00            1,061 100%    9.42kB/s    0:00:00 (xfr#164, to-chk=41/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/js/functions.js
+ DEBUG [4ae5f806] 	          6,820 100%   60.00kB/s    0:00:00            6,820 100%   60.00kB/s    0:00:00 (xfr#165, to-chk=40/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/js/html5.js
+ DEBUG [4ae5f806] 	         10,330 100%   90.07kB/s    0:00:00           10,330 100%   90.07kB/s    0:00:00 (xfr#166, to-chk=39/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/js/keyboard-image-navigation.js
+ DEBUG [4ae5f806] 	            527 100%    4.22kB/s    0:00:00              527 100%    4.22kB/s    0:00:00 (xfr#167, to-chk=38/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/js/skip-link-focus-fix.js
+ DEBUG [4ae5f806] 	          1,059 100%    8.41kB/s    0:00:00            1,059 100%    8.41kB/s    0:00:00 (xfr#168, to-chk=37/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/languages/
+ DEBUG [4ae5f806] 	themes/twentysixteen/languages/twentysixteen.pot
+ DEBUG [4ae5f806] 	          7,650 100%   60.74kB/s    0:00:00            7,650 100%   60.74kB/s    0:00:00 (xfr#169, to-chk=36/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/template-parts/
+ DEBUG [4ae5f806] 	themes/twentysixteen/template-parts/biography.php
+ DEBUG [4ae5f806] 	          1,166 100%    9.18kB/s    0:00:00            1,166 100%    9.18kB/s    0:00:00 (xfr#170, to-chk=35/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/template-parts/content-none.php
+ DEBUG [4ae5f806] 	          1,091 100%    8.59kB/s    0:00:00            1,091 100%    8.59kB/s    0:00:00 (xfr#171, to-chk=34/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/template-parts/content-page.php
+ DEBUG [4ae5f806] 	          1,223 100%    9.63kB/s    0:00:00            1,223 100%    9.63kB/s    0:00:00 (xfr#172, to-chk=33/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/template-parts/content-search.php
+ DEBUG [4ae5f806] 	          1,300 100%   10.24kB/s    0:00:00            1,300 100%   10.24kB/s    0:00:00 (xfr#173, to-chk=32/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/template-parts/content-single.php
+ DEBUG [4ae5f806] 	          1,436 100%   11.22kB/s    0:00:00            1,436 100%   11.22kB/s    0:00:00 (xfr#174, to-chk=31/235)
+ DEBUG [4ae5f806] 	themes/twentysixteen/template-parts/content.php
+ DEBUG [4ae5f806] 	          1,721 100%   13.45kB/s    0:00:00            1,721 100%   13.45kB/s    0:00:00 (xfr#175, to-chk=30/235)
+ DEBUG [4ae5f806] 	uploads/
+ DEBUG [4ae5f806] 	uploads/2016/
+ DEBUG [4ae5f806] 	uploads/2016/06/
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-1-1024x239.jpg
+ DEBUG [4ae5f806] 	          4,528 100%   32.04kB/s    0:00:00            4,528 100%   32.04kB/s    0:00:00 (xfr#176, to-chk=27/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-1-1200x280.jpg
+ DEBUG [4ae5f806] 	          6,088 100%   41.00kB/s    0:00:00            6,088 100%   41.00kB/s    0:00:00 (xfr#177, to-chk=26/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-1-150x150.jpg
+ DEBUG [4ae5f806] 	          1,088 100%    7.18kB/s    0:00:00            1,088 100%    7.18kB/s    0:00:00 (xfr#178, to-chk=25/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-1-300x70.jpg
+ DEBUG [4ae5f806] 	          1,068 100%    6.56kB/s    0:00:00            1,068 100%    6.56kB/s    0:00:00 (xfr#179, to-chk=24/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-1-768x179.jpg
+ DEBUG [4ae5f806] 	          2,992 100%   17.50kB/s    0:00:00            2,992 100%   17.50kB/s    0:00:00 (xfr#180, to-chk=23/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-1.jpg
+ DEBUG [4ae5f806] 	          6,088 100%   35.39kB/s    0:00:00            6,088 100%   35.39kB/s    0:00:00 (xfr#181, to-chk=22/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-1024x240.jpg
+ DEBUG [4ae5f806] 	          8,296 100%   46.83kB/s    0:00:00            8,296 100%   46.83kB/s    0:00:00 (xfr#182, to-chk=21/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-1200x281.jpg
+ DEBUG [4ae5f806] 	         10,543 100%   59.17kB/s    0:00:00           10,543 100%   59.17kB/s    0:00:00 (xfr#183, to-chk=20/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-150x150.jpg
+ DEBUG [4ae5f806] 	          1,224 100%    6.68kB/s    0:00:00            1,224 100%    6.68kB/s    0:00:00 (xfr#184, to-chk=19/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-2-1024x239.jpg
+ DEBUG [4ae5f806] 	          4,528 100%   24.03kB/s    0:00:00            4,528 100%   24.03kB/s    0:00:00 (xfr#185, to-chk=18/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-2-1200x280.jpg
+ DEBUG [4ae5f806] 	          6,088 100%   32.14kB/s    0:00:00            6,088 100%   31.96kB/s    0:00:00 (xfr#186, to-chk=17/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-2-150x150.jpg
+ DEBUG [4ae5f806] 	          1,088 100%    5.62kB/s    0:00:00            1,088 100%    5.62kB/s    0:00:00 (xfr#187, to-chk=16/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-2-300x70.jpg
+ DEBUG [4ae5f806] 	          1,068 100%    5.52kB/s    0:00:00            1,068 100%    5.52kB/s    0:00:00 (xfr#188, to-chk=15/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-2-768x179.jpg
+ DEBUG [4ae5f806] 	          2,992 100%   15.46kB/s    0:00:00            2,992 100%   15.46kB/s    0:00:00 (xfr#189, to-chk=14/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-2.jpg
+ DEBUG [4ae5f806] 	          6,088 100%   29.58kB/s    0:00:00            6,088 100%   29.58kB/s    0:00:00 (xfr#190, to-chk=13/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-300x70.jpg
+ DEBUG [4ae5f806] 	          2,109 100%    9.67kB/s    0:00:00            2,109 100%    9.67kB/s    0:00:00 (xfr#191, to-chk=12/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888-768x180.jpg
+ DEBUG [4ae5f806] 	          5,661 100%   24.57kB/s    0:00:00            5,661 100%   24.57kB/s    0:00:00 (xfr#192, to-chk=11/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/cropped-index-background-e1466272010888.jpg
+ DEBUG [4ae5f806] 	         10,583 100%   45.73kB/s    0:00:00           10,583 100%   45.53kB/s    0:00:00 (xfr#193, to-chk=10/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/devops-150x150.jpg
+ DEBUG [4ae5f806] 	          7,311 100%   29.87kB/s    0:00:00            7,311 100%   29.87kB/s    0:00:00 (xfr#194, to-chk=9/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/devops-e1466271924136.jpg
+ DEBUG [4ae5f806] 	          4,678 100%   19.03kB/s    0:00:00            4,678 100%   19.03kB/s    0:00:00 (xfr#195, to-chk=8/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/devops.jpg
+ DEBUG [4ae5f806] 	          9,987 100%   39.49kB/s    0:00:00            9,987 100%   39.49kB/s    0:00:00 (xfr#196, to-chk=7/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/index-background-1024x724.jpg
+ DEBUG [4ae5f806] 	         19,838 100%   75.68kB/s    0:00:00           19,838 100%   75.68kB/s    0:00:00 (xfr#197, to-chk=6/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/index-background-1200x848.jpg
+ DEBUG [4ae5f806] 	         25,057 100%   90.97kB/s    0:00:00           25,057 100%   90.97kB/s    0:00:00 (xfr#198, to-chk=5/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/index-background-150x150.jpg
+ DEBUG [4ae5f806] 	          1,971 100%    6.92kB/s    0:00:00            1,971 100%    6.92kB/s    0:00:00 (xfr#199, to-chk=4/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/index-background-300x212.jpg
+ DEBUG [4ae5f806] 	          3,675 100%   12.77kB/s    0:00:00            3,675 100%   12.77kB/s    0:00:00 (xfr#200, to-chk=3/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/index-background-768x543.jpg
+ DEBUG [4ae5f806] 	         12,687 100%   42.29kB/s    0:00:00           12,687 100%   42.29kB/s    0:00:00 (xfr#201, to-chk=2/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/index-background-e1466272010888.jpg
+ DEBUG [4ae5f806] 	         17,924 100%   59.54kB/s    0:00:00           17,924 100%   59.54kB/s    0:00:00 (xfr#202, to-chk=1/235)
+ DEBUG [4ae5f806] 	uploads/2016/06/index-background.jpg
+ DEBUG [4ae5f806] 	         32,768  21%  101.91kB/s    0:00:01          153,175 100%  468.92kB/s    0:00:00 (xfr#203, to-chk=0/235)
+ DEBUG [4ae5f806] 	
+ DEBUG [4ae5f806] 	sent 2,706,997 bytes  received 4,060 bytes  602,457.11 bytes/sec
+ DEBUG [4ae5f806] 	total size is 3,787,063  speedup is 1.40
+  INFO [4ae5f806] Finished in 3.928 seconds with exit status 0 (successful).

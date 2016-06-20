@@ -1782,3 +1782,425 @@
  DEBUG [31872394] Command: google-chrome http://33.33.33.10
  DEBUG [31872394] 	Se ha abierto una nueva ventana en la sesión actual del navegador.
   INFO [31872394] Finished in 2.049 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-19 11:01:27 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [fc477eeb] Running [ -d $HOME/.rbenv/versions/2.3.0 ] as vagrant@33.33.33.10
+ DEBUG [fc477eeb] Command: [ -d $HOME/.rbenv/versions/2.3.0 ]
+ DEBUG [fc477eeb] Finished in 0.240 seconds with exit status 0 (successful).
+  INFO [eab6d5df] Running /usr/bin/env mkdir -p /tmp/capistrano-sample/ as vagrant@33.33.33.10
+ DEBUG [eab6d5df] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env mkdir -p /tmp/capistrano-sample/ )
+  INFO [eab6d5df] Finished in 0.185 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/capistrano-sample/git-ssh.sh 0.0%
+  INFO Uploading /tmp/capistrano-sample/git-ssh.sh 100.0%
+  INFO [ccb868ee] Running /usr/bin/env chmod +rx /tmp/capistrano-sample/git-ssh.sh as vagrant@33.33.33.10
+ DEBUG [ccb868ee] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env chmod +rx /tmp/capistrano-sample/git-ssh.sh )
+  INFO [ccb868ee] Finished in 0.034 seconds with exit status 0 (successful).
+  INFO [40343f87] Running /usr/bin/env git ls-remote --heads git@github.com:Mikroways/mikroways.net.git as vagrant@33.33.33.10
+ DEBUG [40343f87] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:Mikroways/mikroways.net.git )
+ DEBUG [40343f87] 	Warning: Permanently added 'github.com,192.30.252.123' (RSA) to the list of known hosts.
+ DEBUG [40343f87] 	10314bfb7189e9b7d98d541e3171743c72f87294	refs/heads/demo-capistrano-curso
+53fb3b6f901a1f4d1fc868d20d0449cd55a716e4	refs/heads/master
+  INFO [40343f87] Finished in 2.679 seconds with exit status 0 (successful).
+  INFO [1c38a288] Running /usr/bin/env mkdir -p /opt/sites/jekyll/shared /opt/sites/jekyll/releases as vagrant@33.33.33.10
+ DEBUG [1c38a288] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env mkdir -p /opt/sites/jekyll/shared /opt/sites/jekyll/releases )
+  INFO [1c38a288] Finished in 0.024 seconds with exit status 0 (successful).
+ DEBUG [c0f68173] Running [ -f /opt/sites/jekyll/current/REVISION ] as vagrant@33.33.33.10
+ DEBUG [c0f68173] Command: [ -f /opt/sites/jekyll/current/REVISION ]
+ DEBUG [c0f68173] Finished in 0.036 seconds with exit status 1 (failed).
+ DEBUG [967160ff] Running [ -f /opt/sites/jekyll/repo/HEAD ] as vagrant@33.33.33.10
+ DEBUG [967160ff] Command: [ -f /opt/sites/jekyll/repo/HEAD ]
+ DEBUG [967160ff] Finished in 0.029 seconds with exit status 1 (failed).
+ DEBUG [cc0bb9d6] Running if test ! -d /opt/sites/jekyll; then echo "Directory does not exist '/opt/sites/jekyll'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [cc0bb9d6] Command: if test ! -d /opt/sites/jekyll; then echo "Directory does not exist '/opt/sites/jekyll'" 1>&2; false; fi
+ DEBUG [cc0bb9d6] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO [8f5441b4] Running /usr/bin/env git clone --mirror git@github.com:Mikroways/mikroways.net.git /opt/sites/jekyll/repo as vagrant@33.33.33.10
+ DEBUG [8f5441b4] Command: cd /opt/sites/jekyll && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env git clone --mirror git@github.com:Mikroways/mikroways.net.git /opt/sites/jekyll/repo )
+ DEBUG [8f5441b4] 	Cloning into bare repository '/opt/sites/jekyll/repo'...
+  INFO [8f5441b4] Finished in 7.054 seconds with exit status 0 (successful).
+ DEBUG [472a5b32] Running if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [472a5b32] Command: if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi
+ DEBUG [472a5b32] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [05f80e29] Running /usr/bin/env git remote update --prune as vagrant@33.33.33.10
+ DEBUG [05f80e29] Command: cd /opt/sites/jekyll/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [05f80e29] 	Fetching origin
+  INFO [05f80e29] Finished in 2.513 seconds with exit status 0 (successful).
+ DEBUG [65b32702] Running if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [65b32702] Command: if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi
+ DEBUG [65b32702] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [10f22c24] Running /usr/bin/env mkdir -p /opt/sites/jekyll/releases/20160619140131 as vagrant@33.33.33.10
+ DEBUG [10f22c24] Command: cd /opt/sites/jekyll/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env mkdir -p /opt/sites/jekyll/releases/20160619140131 )
+  INFO [10f22c24] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [f288f161] Running /usr/bin/env git archive master | tar -x -f - -C /opt/sites/jekyll/releases/20160619140131 as vagrant@33.33.33.10
+ DEBUG [f288f161] Command: cd /opt/sites/jekyll/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env git archive master | tar -x -f - -C /opt/sites/jekyll/releases/20160619140131 )
+  INFO [f288f161] Finished in 0.092 seconds with exit status 0 (successful).
+ DEBUG [034a6646] Running if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [034a6646] Command: if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi
+ DEBUG [034a6646] Finished in 0.034 seconds with exit status 0 (successful).
+ DEBUG [3c38bfa1] Running /usr/bin/env git rev-list --max-count=1 master as vagrant@33.33.33.10
+ DEBUG [3c38bfa1] Command: cd /opt/sites/jekyll/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [3c38bfa1] 	53fb3b6f901a1f4d1fc868d20d0449cd55a716e4
+ DEBUG [3c38bfa1] Finished in 0.033 seconds with exit status 0 (successful).
+ DEBUG [d3a5bdf3] Running if test ! -d /opt/sites/jekyll/releases/20160619140131; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619140131'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [d3a5bdf3] Command: if test ! -d /opt/sites/jekyll/releases/20160619140131; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619140131'" 1>&2; false; fi
+ DEBUG [d3a5bdf3] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [db7e50c6] Running /usr/bin/env echo "53fb3b6f901a1f4d1fc868d20d0449cd55a716e4" >> REVISION as vagrant@33.33.33.10
+ DEBUG [db7e50c6] Command: cd /opt/sites/jekyll/releases/20160619140131 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env echo "53fb3b6f901a1f4d1fc868d20d0449cd55a716e4" >> REVISION )
+  INFO [db7e50c6] Finished in 0.034 seconds with exit status 0 (successful).
+ DEBUG [430c075d] Running if test ! -d /opt/sites/jekyll/releases/20160619140131; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619140131'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [430c075d] Command: if test ! -d /opt/sites/jekyll/releases/20160619140131; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619140131'" 1>&2; false; fi
+ DEBUG [430c075d] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [19c1330e] Running $HOME/.rbenv/bin/rbenv exec bundle install --path /opt/sites/jekyll/shared/bundle --without development test --deployment --quiet as vagrant@33.33.33.10
+ DEBUG [19c1330e] Command: cd /opt/sites/jekyll/releases/20160619140131 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; $HOME/.rbenv/bin/rbenv exec bundle install --path /opt/sites/jekyll/shared/bundle --without development test --deployment --quiet )
+  INFO [19c1330e] Finished in 89.475 seconds with exit status 0 (successful).
+ DEBUG [5fbae8c3] Running if test ! -d /opt/sites/jekyll/releases/20160619140131; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619140131'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [5fbae8c3] Command: if test ! -d /opt/sites/jekyll/releases/20160619140131; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619140131'" 1>&2; false; fi
+ DEBUG [5fbae8c3] Finished in 0.034 seconds with exit status 0 (successful).
+  INFO [9815a169] Running $HOME/.rbenv/bin/rbenv exec bundle exec jekyll build --config _config.yml as vagrant@33.33.33.10
+ DEBUG [9815a169] Command: cd /opt/sites/jekyll/releases/20160619140131 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; $HOME/.rbenv/bin/rbenv exec bundle exec jekyll build --config _config.yml )
+ DEBUG [9815a169] 	Configuration file: _config.yml
+ DEBUG [9815a169] 	
+ DEBUG [9815a169] 	            Source: /opt/sites/jekyll/releases/20160619140131
+ DEBUG [9815a169] 	
+ DEBUG [9815a169] 	       Destination: /opt/sites/jekyll/releases/20160619140131/_site
+ DEBUG [9815a169] 	
+ DEBUG [9815a169] 	 Incremental build: disabled. Enable with --incremental
+ DEBUG [9815a169] 	
+ DEBUG [9815a169] 	      Generating... 
+ DEBUG [9815a169] 	
+ DEBUG [9815a169] 	                    done in 0.676 seconds.
+ DEBUG [9815a169] 	
+ DEBUG [9815a169] 	 Auto-regeneration: disabled. Use --watch to enable.
+ DEBUG [9815a169] 	
+  INFO [9815a169] Finished in 1.434 seconds with exit status 0 (successful).
+  INFO [7f293f79] Running /usr/bin/env ln -s /opt/sites/jekyll/releases/20160619140131 /opt/sites/jekyll/releases/current as vagrant@33.33.33.10
+ DEBUG [7f293f79] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env ln -s /opt/sites/jekyll/releases/20160619140131 /opt/sites/jekyll/releases/current )
+  INFO [7f293f79] Finished in 0.034 seconds with exit status 0 (successful).
+  INFO [b6b4847c] Running /usr/bin/env mv /opt/sites/jekyll/releases/current /opt/sites/jekyll as vagrant@33.33.33.10
+ DEBUG [b6b4847c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env mv /opt/sites/jekyll/releases/current /opt/sites/jekyll )
+  INFO [b6b4847c] Finished in 0.032 seconds with exit status 0 (successful).
+ DEBUG [5f9a3719] Running /usr/bin/env ls -xtr /opt/sites/jekyll/releases as vagrant@33.33.33.10
+ DEBUG [5f9a3719] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env ls -xtr /opt/sites/jekyll/releases )
+ DEBUG [5f9a3719] 	20160619140131
+ DEBUG [5f9a3719] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG [51118e95] Running if test ! -d /opt/sites/jekyll/releases; then echo "Directory does not exist '/opt/sites/jekyll/releases'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [51118e95] Command: if test ! -d /opt/sites/jekyll/releases; then echo "Directory does not exist '/opt/sites/jekyll/releases'" 1>&2; false; fi
+ DEBUG [51118e95] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [0f69d2dd] Running /usr/bin/env echo "Branch master (at 53fb3b6f901a1f4d1fc868d20d0449cd55a716e4) deployed as release 20160619140131 by car" >> /opt/sites/jekyll/revisions.log as vagrant@33.33.33.10
+ DEBUG [0f69d2dd] Command: cd /opt/sites/jekyll/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env echo "Branch master (at 53fb3b6f901a1f4d1fc868d20d0449cd55a716e4) deployed as release 20160619140131 by car" >> /opt/sites/jekyll/revisions.log )
+  INFO [0f69d2dd] Finished in 0.030 seconds with exit status 0 (successful).
+  INFO [057514a1] Running google-chrome http://33.33.33.10 as car@localhost
+ DEBUG [057514a1] Command: google-chrome http://33.33.33.10
+ DEBUG [057514a1] 	Se ha abierto una nueva ventana en la sesión actual del navegador.
+  INFO [057514a1] Finished in 0.513 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-19 11:04:18 -0300 cap production wp:db:push
+  INFO ---------------------------------------------------------------------------
+ DEBUG [1e7de109] Running [ -d $HOME/.rbenv/versions/2.3.0 ] as vagrant@33.33.33.10
+ DEBUG [1e7de109] Command: [ -d $HOME/.rbenv/versions/2.3.0 ]
+ DEBUG [1e7de109] Finished in 0.240 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-19 14:32:54 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [94a36145] Running [ -d $HOME/.rbenv/versions/2.3.0 ] as vagrant@33.33.33.10
+ DEBUG [94a36145] Command: [ -d $HOME/.rbenv/versions/2.3.0 ]
+ DEBUG [94a36145] Finished in 0.235 seconds with exit status 0 (successful).
+  INFO [3be66639] Running /usr/bin/env mkdir -p /tmp/capistrano-sample/ as vagrant@33.33.33.10
+ DEBUG [3be66639] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env mkdir -p /tmp/capistrano-sample/ )
+  INFO [3be66639] Finished in 0.177 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/capistrano-sample/git-ssh.sh 0.0%
+  INFO Uploading /tmp/capistrano-sample/git-ssh.sh 100.0%
+  INFO [bbd6bf07] Running /usr/bin/env chmod +rx /tmp/capistrano-sample/git-ssh.sh as vagrant@33.33.33.10
+ DEBUG [bbd6bf07] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env chmod +rx /tmp/capistrano-sample/git-ssh.sh )
+  INFO [bbd6bf07] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [72e91518] Running /usr/bin/env git ls-remote --heads git@github.com:Mikroways/mikroways.net.git as vagrant@33.33.33.10
+ DEBUG [72e91518] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:Mikroways/mikroways.net.git )
+ DEBUG [72e91518] 	Warning: Permanently added 'github.com,192.30.252.123' (RSA) to the list of known hosts.
+ DEBUG [72e91518] 	10314bfb7189e9b7d98d541e3171743c72f87294	refs/heads/demo-capistrano-curso
+53fb3b6f901a1f4d1fc868d20d0449cd55a716e4	refs/heads/master
+  INFO [72e91518] Finished in 2.497 seconds with exit status 0 (successful).
+  INFO [e92dce40] Running /usr/bin/env mkdir -p /opt/sites/jekyll/shared /opt/sites/jekyll/releases as vagrant@33.33.33.10
+ DEBUG [e92dce40] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env mkdir -p /opt/sites/jekyll/shared /opt/sites/jekyll/releases )
+  INFO [e92dce40] Finished in 0.037 seconds with exit status 0 (successful).
+ DEBUG [3ec33b69] Running [ -f /opt/sites/jekyll/current/REVISION ] as vagrant@33.33.33.10
+ DEBUG [3ec33b69] Command: [ -f /opt/sites/jekyll/current/REVISION ]
+ DEBUG [3ec33b69] Finished in 0.030 seconds with exit status 1 (failed).
+ DEBUG [32ee2b79] Running [ -f /opt/sites/jekyll/repo/HEAD ] as vagrant@33.33.33.10
+ DEBUG [32ee2b79] Command: [ -f /opt/sites/jekyll/repo/HEAD ]
+ DEBUG [32ee2b79] Finished in 0.025 seconds with exit status 1 (failed).
+ DEBUG [8cfafbf3] Running if test ! -d /opt/sites/jekyll; then echo "Directory does not exist '/opt/sites/jekyll'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [8cfafbf3] Command: if test ! -d /opt/sites/jekyll; then echo "Directory does not exist '/opt/sites/jekyll'" 1>&2; false; fi
+ DEBUG [8cfafbf3] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [27ecb950] Running /usr/bin/env git clone --mirror git@github.com:Mikroways/mikroways.net.git /opt/sites/jekyll/repo as vagrant@33.33.33.10
+ DEBUG [27ecb950] Command: cd /opt/sites/jekyll && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env git clone --mirror git@github.com:Mikroways/mikroways.net.git /opt/sites/jekyll/repo )
+ DEBUG [27ecb950] 	Cloning into bare repository '/opt/sites/jekyll/repo'...
+  INFO [27ecb950] Finished in 7.462 seconds with exit status 0 (successful).
+ DEBUG [b4233e4a] Running if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [b4233e4a] Command: if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi
+ DEBUG [b4233e4a] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [6213c18b] Running /usr/bin/env git remote update --prune as vagrant@33.33.33.10
+ DEBUG [6213c18b] Command: cd /opt/sites/jekyll/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [6213c18b] 	Fetching origin
+  INFO [6213c18b] Finished in 2.782 seconds with exit status 0 (successful).
+ DEBUG [c560a4d0] Running if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [c560a4d0] Command: if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi
+ DEBUG [c560a4d0] Finished in 0.036 seconds with exit status 0 (successful).
+  INFO [0d2ccf7f] Running /usr/bin/env mkdir -p /opt/sites/jekyll/releases/20160619173257 as vagrant@33.33.33.10
+ DEBUG [0d2ccf7f] Command: cd /opt/sites/jekyll/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env mkdir -p /opt/sites/jekyll/releases/20160619173257 )
+  INFO [0d2ccf7f] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [b4f97dce] Running /usr/bin/env git archive master | tar -x -f - -C /opt/sites/jekyll/releases/20160619173257 as vagrant@33.33.33.10
+ DEBUG [b4f97dce] Command: cd /opt/sites/jekyll/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env git archive master | tar -x -f - -C /opt/sites/jekyll/releases/20160619173257 )
+  INFO [b4f97dce] Finished in 0.088 seconds with exit status 0 (successful).
+ DEBUG [4a3f9484] Running if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [4a3f9484] Command: if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi
+ DEBUG [4a3f9484] Finished in 0.036 seconds with exit status 0 (successful).
+ DEBUG [9f4b6896] Running /usr/bin/env git rev-list --max-count=1 master as vagrant@33.33.33.10
+ DEBUG [9f4b6896] Command: cd /opt/sites/jekyll/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [9f4b6896] 	53fb3b6f901a1f4d1fc868d20d0449cd55a716e4
+ DEBUG [9f4b6896] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG [9aec7897] Running if test ! -d /opt/sites/jekyll/releases/20160619173257; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619173257'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [9aec7897] Command: if test ! -d /opt/sites/jekyll/releases/20160619173257; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619173257'" 1>&2; false; fi
+ DEBUG [9aec7897] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO [6503264e] Running /usr/bin/env echo "53fb3b6f901a1f4d1fc868d20d0449cd55a716e4" >> REVISION as vagrant@33.33.33.10
+ DEBUG [6503264e] Command: cd /opt/sites/jekyll/releases/20160619173257 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env echo "53fb3b6f901a1f4d1fc868d20d0449cd55a716e4" >> REVISION )
+  INFO [6503264e] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG [f064ac6a] Running if test ! -d /opt/sites/jekyll/releases/20160619173257; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619173257'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [f064ac6a] Command: if test ! -d /opt/sites/jekyll/releases/20160619173257; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619173257'" 1>&2; false; fi
+ DEBUG [f064ac6a] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [efafefd1] Running $HOME/.rbenv/bin/rbenv exec bundle install --path /opt/sites/jekyll/shared/bundle --without development test --deployment --quiet as vagrant@33.33.33.10
+ DEBUG [efafefd1] Command: cd /opt/sites/jekyll/releases/20160619173257 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; $HOME/.rbenv/bin/rbenv exec bundle install --path /opt/sites/jekyll/shared/bundle --without development test --deployment --quiet )
+  INFO [efafefd1] Finished in 101.541 seconds with exit status 0 (successful).
+ DEBUG [13460d20] Running if test ! -d /opt/sites/jekyll/releases/20160619173257; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619173257'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [13460d20] Command: if test ! -d /opt/sites/jekyll/releases/20160619173257; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619173257'" 1>&2; false; fi
+ DEBUG [13460d20] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [1eee4c11] Running $HOME/.rbenv/bin/rbenv exec bundle exec jekyll build --config _config.yml as vagrant@33.33.33.10
+ DEBUG [1eee4c11] Command: cd /opt/sites/jekyll/releases/20160619173257 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; $HOME/.rbenv/bin/rbenv exec bundle exec jekyll build --config _config.yml )
+ DEBUG [1eee4c11] 	Configuration file: _config.yml
+ DEBUG [1eee4c11] 	
+ DEBUG [1eee4c11] 	            Source: /opt/sites/jekyll/releases/20160619173257
+ DEBUG [1eee4c11] 	
+ DEBUG [1eee4c11] 	       Destination: /opt/sites/jekyll/releases/20160619173257/_site
+ DEBUG [1eee4c11] 	
+ DEBUG [1eee4c11] 	 Incremental build: disabled. Enable with --incremental
+ DEBUG [1eee4c11] 	
+ DEBUG [1eee4c11] 	      Generating... 
+ DEBUG [1eee4c11] 	
+ DEBUG [1eee4c11] 	                    done in 0.605 seconds.
+ DEBUG [1eee4c11] 	
+ DEBUG [1eee4c11] 	 Auto-regeneration: disabled. Use --watch to enable.
+ DEBUG [1eee4c11] 	
+  INFO [1eee4c11] Finished in 1.417 seconds with exit status 0 (successful).
+  INFO [c3fe70fa] Running /usr/bin/env ln -s /opt/sites/jekyll/releases/20160619173257 /opt/sites/jekyll/releases/current as vagrant@33.33.33.10
+ DEBUG [c3fe70fa] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env ln -s /opt/sites/jekyll/releases/20160619173257 /opt/sites/jekyll/releases/current )
+  INFO [c3fe70fa] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [2a89e928] Running /usr/bin/env mv /opt/sites/jekyll/releases/current /opt/sites/jekyll as vagrant@33.33.33.10
+ DEBUG [2a89e928] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env mv /opt/sites/jekyll/releases/current /opt/sites/jekyll )
+  INFO [2a89e928] Finished in 0.033 seconds with exit status 0 (successful).
+ DEBUG [eb93cd87] Running /usr/bin/env ls -xtr /opt/sites/jekyll/releases as vagrant@33.33.33.10
+ DEBUG [eb93cd87] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env ls -xtr /opt/sites/jekyll/releases )
+ DEBUG [eb93cd87] 	20160619173257
+ DEBUG [eb93cd87] Finished in 0.027 seconds with exit status 0 (successful).
+ DEBUG [8bfd3bdb] Running if test ! -d /opt/sites/jekyll/releases; then echo "Directory does not exist '/opt/sites/jekyll/releases'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [8bfd3bdb] Command: if test ! -d /opt/sites/jekyll/releases; then echo "Directory does not exist '/opt/sites/jekyll/releases'" 1>&2; false; fi
+ DEBUG [8bfd3bdb] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [150db8bf] Running /usr/bin/env echo "Branch master (at 53fb3b6f901a1f4d1fc868d20d0449cd55a716e4) deployed as release 20160619173257 by car" >> /opt/sites/jekyll/revisions.log as vagrant@33.33.33.10
+ DEBUG [150db8bf] Command: cd /opt/sites/jekyll/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env echo "Branch master (at 53fb3b6f901a1f4d1fc868d20d0449cd55a716e4) deployed as release 20160619173257 by car" >> /opt/sites/jekyll/revisions.log )
+  INFO [150db8bf] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO [8e78caf0] Running google-chrome http://33.33.33.10 as car@localhost
+ DEBUG [8e78caf0] Command: google-chrome http://33.33.33.10
+ DEBUG [8e78caf0] 	Se ha abierto una nueva ventana en la sesión actual del navegador.
+  INFO [8e78caf0] Finished in 0.869 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-19 14:35:07 -0300 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [34a88c20] Running [ -d $HOME/.rbenv/versions/2.3.0 ] as vagrant@33.33.33.10
+ DEBUG [34a88c20] Command: [ -d $HOME/.rbenv/versions/2.3.0 ]
+ DEBUG [34a88c20] Finished in 0.407 seconds with exit status 0 (successful).
+  INFO [8469e5c6] Running /usr/bin/env mkdir -p /tmp/capistrano-sample/ as vagrant@33.33.33.10
+ DEBUG [8469e5c6] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env mkdir -p /tmp/capistrano-sample/ )
+  INFO [8469e5c6] Finished in 0.214 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/capistrano-sample/git-ssh.sh 0.0%
+  INFO Uploading /tmp/capistrano-sample/git-ssh.sh 100.0%
+  INFO [809410f0] Running /usr/bin/env chmod +rx /tmp/capistrano-sample/git-ssh.sh as vagrant@33.33.33.10
+ DEBUG [809410f0] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env chmod +rx /tmp/capistrano-sample/git-ssh.sh )
+  INFO [809410f0] Finished in 0.036 seconds with exit status 0 (successful).
+  INFO [4cf1d3f6] Running /usr/bin/env git ls-remote --heads git@github.com:Mikroways/mikroways.net.git as vagrant@33.33.33.10
+ DEBUG [4cf1d3f6] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:Mikroways/mikroways.net.git )
+ DEBUG [4cf1d3f6] 	10314bfb7189e9b7d98d541e3171743c72f87294	refs/heads/demo-capistrano-curso
+53fb3b6f901a1f4d1fc868d20d0449cd55a716e4	refs/heads/master
+  INFO [4cf1d3f6] Finished in 2.423 seconds with exit status 0 (successful).
+  INFO [e7aaec78] Running /usr/bin/env mkdir -p /opt/sites/jekyll/shared /opt/sites/jekyll/releases as vagrant@33.33.33.10
+ DEBUG [e7aaec78] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env mkdir -p /opt/sites/jekyll/shared /opt/sites/jekyll/releases )
+  INFO [e7aaec78] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [18279570] Running [ -f /opt/sites/jekyll/current/REVISION ] as vagrant@33.33.33.10
+ DEBUG [18279570] Command: [ -f /opt/sites/jekyll/current/REVISION ]
+ DEBUG [18279570] Finished in 0.029 seconds with exit status 0 (successful).
+ DEBUG [fd9f7577] Running /usr/bin/env cat /opt/sites/jekyll/current/REVISION 2>/dev/null as vagrant@33.33.33.10
+ DEBUG [fd9f7577] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env cat /opt/sites/jekyll/current/REVISION 2>/dev/null )
+ DEBUG [fd9f7577] 	53fb3b6f901a1f4d1fc868d20d0449cd55a716e4
+ DEBUG [fd9f7577] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [547d2b25] Running [ -f /opt/sites/jekyll/repo/HEAD ] as vagrant@33.33.33.10
+ DEBUG [547d2b25] Command: [ -f /opt/sites/jekyll/repo/HEAD ]
+ DEBUG [547d2b25] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /opt/sites/jekyll/repo
+ DEBUG [4a28581e] Running if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [4a28581e] Command: if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi
+ DEBUG [4a28581e] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [d31e5d15] Running /usr/bin/env git remote update --prune as vagrant@33.33.33.10
+ DEBUG [d31e5d15] Command: cd /opt/sites/jekyll/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [d31e5d15] 	Fetching origin
+  INFO [d31e5d15] Finished in 2.387 seconds with exit status 0 (successful).
+ DEBUG [bb8ef102] Running if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [bb8ef102] Command: if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi
+ DEBUG [bb8ef102] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [b682dde8] Running /usr/bin/env mkdir -p /opt/sites/jekyll/releases/20160619173511 as vagrant@33.33.33.10
+ DEBUG [b682dde8] Command: cd /opt/sites/jekyll/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env mkdir -p /opt/sites/jekyll/releases/20160619173511 )
+  INFO [b682dde8] Finished in 0.040 seconds with exit status 0 (successful).
+  INFO [5e0279ee] Running /usr/bin/env git archive demo-capistrano-curso | tar -x -f - -C /opt/sites/jekyll/releases/20160619173511 as vagrant@33.33.33.10
+ DEBUG [5e0279ee] Command: cd /opt/sites/jekyll/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env git archive demo-capistrano-curso | tar -x -f - -C /opt/sites/jekyll/releases/20160619173511 )
+  INFO [5e0279ee] Finished in 0.085 seconds with exit status 0 (successful).
+ DEBUG [5ded03d8] Running if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [5ded03d8] Command: if test ! -d /opt/sites/jekyll/repo; then echo "Directory does not exist '/opt/sites/jekyll/repo'" 1>&2; false; fi
+ DEBUG [5ded03d8] Finished in 0.027 seconds with exit status 0 (successful).
+ DEBUG [130fc68e] Running /usr/bin/env git rev-list --max-count=1 demo-capistrano-curso as vagrant@33.33.33.10
+ DEBUG [130fc68e] Command: cd /opt/sites/jekyll/repo && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 demo-capistrano-curso )
+ DEBUG [130fc68e] 	10314bfb7189e9b7d98d541e3171743c72f87294
+ DEBUG [130fc68e] Finished in 0.042 seconds with exit status 0 (successful).
+ DEBUG [08165de1] Running if test ! -d /opt/sites/jekyll/releases/20160619173511; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619173511'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [08165de1] Command: if test ! -d /opt/sites/jekyll/releases/20160619173511; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619173511'" 1>&2; false; fi
+ DEBUG [08165de1] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO [d265d909] Running /usr/bin/env echo "10314bfb7189e9b7d98d541e3171743c72f87294" >> REVISION as vagrant@33.33.33.10
+ DEBUG [d265d909] Command: cd /opt/sites/jekyll/releases/20160619173511 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env echo "10314bfb7189e9b7d98d541e3171743c72f87294" >> REVISION )
+  INFO [d265d909] Finished in 0.032 seconds with exit status 0 (successful).
+ DEBUG [0a0a5f43] Running if test ! -d /opt/sites/jekyll/releases/20160619173511; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619173511'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [0a0a5f43] Command: if test ! -d /opt/sites/jekyll/releases/20160619173511; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619173511'" 1>&2; false; fi
+ DEBUG [0a0a5f43] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [50e1c30c] Running $HOME/.rbenv/bin/rbenv exec bundle install --path /opt/sites/jekyll/shared/bundle --without development test --deployment --quiet as vagrant@33.33.33.10
+ DEBUG [50e1c30c] Command: cd /opt/sites/jekyll/releases/20160619173511 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; $HOME/.rbenv/bin/rbenv exec bundle install --path /opt/sites/jekyll/shared/bundle --without development test --deployment --quiet )
+  INFO [50e1c30c] Finished in 19.278 seconds with exit status 0 (successful).
+ DEBUG [83640f6b] Running if test ! -d /opt/sites/jekyll/releases/20160619173511; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619173511'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [83640f6b] Command: if test ! -d /opt/sites/jekyll/releases/20160619173511; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619173511'" 1>&2; false; fi
+ DEBUG [83640f6b] Finished in 0.030 seconds with exit status 0 (successful).
+  INFO [6d8b029b] Running $HOME/.rbenv/bin/rbenv exec bundle exec jekyll build --config _config.yml as vagrant@33.33.33.10
+ DEBUG [6d8b029b] Command: cd /opt/sites/jekyll/releases/20160619173511 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; $HOME/.rbenv/bin/rbenv exec bundle exec jekyll build --config _config.yml )
+ DEBUG [6d8b029b] 	Configuration file: _config.yml
+ DEBUG [6d8b029b] 	
+ DEBUG [6d8b029b] 	            Source: /opt/sites/jekyll/releases/20160619173511
+ DEBUG [6d8b029b] 	
+ DEBUG [6d8b029b] 	       Destination: /opt/sites/jekyll/releases/20160619173511/_site
+ DEBUG [6d8b029b] 	
+ DEBUG [6d8b029b] 	 Incremental build: disabled. Enable with --incremental
+ DEBUG [6d8b029b] 	
+ DEBUG [6d8b029b] 	      Generating... 
+ DEBUG [6d8b029b] 	
+ DEBUG [6d8b029b] 	                    done in 0.531 seconds.
+ DEBUG [6d8b029b] 	
+ DEBUG [6d8b029b] 	 Auto-regeneration: disabled. Use --watch to enable.
+ DEBUG [6d8b029b] 	
+  INFO [6d8b029b] Finished in 1.136 seconds with exit status 0 (successful).
+  INFO [468ed26a] Running /usr/bin/env ln -s /opt/sites/jekyll/releases/20160619173511 /opt/sites/jekyll/releases/current as vagrant@33.33.33.10
+ DEBUG [468ed26a] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env ln -s /opt/sites/jekyll/releases/20160619173511 /opt/sites/jekyll/releases/current )
+  INFO [468ed26a] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [5b8d6f85] Running /usr/bin/env mv /opt/sites/jekyll/releases/current /opt/sites/jekyll as vagrant@33.33.33.10
+ DEBUG [5b8d6f85] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env mv /opt/sites/jekyll/releases/current /opt/sites/jekyll )
+  INFO [5b8d6f85] Finished in 0.045 seconds with exit status 0 (successful).
+ DEBUG [673c7313] Running /usr/bin/env ls -xtr /opt/sites/jekyll/releases as vagrant@33.33.33.10
+ DEBUG [673c7313] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env ls -xtr /opt/sites/jekyll/releases )
+ DEBUG [673c7313] 	20160619173257	20160619173511
+ DEBUG [673c7313] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG [82643b92] Running if test ! -d /opt/sites/jekyll/releases; then echo "Directory does not exist '/opt/sites/jekyll/releases'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [82643b92] Command: if test ! -d /opt/sites/jekyll/releases; then echo "Directory does not exist '/opt/sites/jekyll/releases'" 1>&2; false; fi
+ DEBUG [82643b92] Finished in 0.034 seconds with exit status 0 (successful).
+  INFO [cdd6f65e] Running /usr/bin/env echo "Branch demo-capistrano-curso (at 10314bfb7189e9b7d98d541e3171743c72f87294) deployed as release 20160619173511 by car" >> /opt/sites/jekyll/revisions.log as vagrant@33.33.33.10
+ DEBUG [cdd6f65e] Command: cd /opt/sites/jekyll/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env echo "Branch demo-capistrano-curso (at 10314bfb7189e9b7d98d541e3171743c72f87294) deployed as release 20160619173511 by car" >> /opt/sites/jekyll/revisions.log )
+  INFO [cdd6f65e] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [8eaba29e] Running google-chrome http://33.33.33.10 as car@localhost
+ DEBUG [8eaba29e] Command: google-chrome http://33.33.33.10
+ DEBUG [8eaba29e] 	Se ha abierto una nueva ventana en la sesión actual del navegador.
+  INFO [8eaba29e] Finished in 0.537 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-19 14:36:37 -0300 cap production deploy:rollback
+  INFO ---------------------------------------------------------------------------
+ DEBUG [cc004ecf] Running [ -d $HOME/.rbenv/versions/2.3.0 ] as vagrant@33.33.33.10
+ DEBUG [cc004ecf] Command: [ -d $HOME/.rbenv/versions/2.3.0 ]
+ DEBUG [cc004ecf] Finished in 0.209 seconds with exit status 0 (successful).
+  INFO [f5c7ae09] Running /usr/bin/env mkdir -p /tmp/capistrano-sample/ as vagrant@33.33.33.10
+ DEBUG [f5c7ae09] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env mkdir -p /tmp/capistrano-sample/ )
+  INFO [f5c7ae09] Finished in 0.190 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/capistrano-sample/git-ssh.sh 0.0%
+  INFO Uploading /tmp/capistrano-sample/git-ssh.sh 100.0%
+  INFO [6ed4dc40] Running /usr/bin/env chmod +rx /tmp/capistrano-sample/git-ssh.sh as vagrant@33.33.33.10
+ DEBUG [6ed4dc40] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env chmod +rx /tmp/capistrano-sample/git-ssh.sh )
+  INFO [6ed4dc40] Finished in 0.040 seconds with exit status 0 (successful).
+  INFO [2b3e82e9] Running /usr/bin/env git ls-remote --heads git@github.com:Mikroways/mikroways.net.git as vagrant@33.33.33.10
+ DEBUG [2b3e82e9] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/capistrano-sample/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:Mikroways/mikroways.net.git )
+ DEBUG [2b3e82e9] 	Warning: Permanently added the RSA host key for IP address '192.30.252.121' to the list of known hosts.
+ DEBUG [2b3e82e9] 	10314bfb7189e9b7d98d541e3171743c72f87294	refs/heads/demo-capistrano-curso
+53fb3b6f901a1f4d1fc868d20d0449cd55a716e4	refs/heads/master
+  INFO [2b3e82e9] Finished in 2.391 seconds with exit status 0 (successful).
+  INFO [f6b39dd5] Running /usr/bin/env mkdir -p /opt/sites/jekyll/shared /opt/sites/jekyll/releases as vagrant@33.33.33.10
+ DEBUG [f6b39dd5] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env mkdir -p /opt/sites/jekyll/shared /opt/sites/jekyll/releases )
+  INFO [f6b39dd5] Finished in 0.027 seconds with exit status 0 (successful).
+ DEBUG [51a77c4d] Running [ -f /opt/sites/jekyll/current/REVISION ] as vagrant@33.33.33.10
+ DEBUG [51a77c4d] Command: [ -f /opt/sites/jekyll/current/REVISION ]
+ DEBUG [51a77c4d] Finished in 0.031 seconds with exit status 0 (successful).
+ DEBUG [3c476056] Running /usr/bin/env cat /opt/sites/jekyll/current/REVISION 2>/dev/null as vagrant@33.33.33.10
+ DEBUG [3c476056] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env cat /opt/sites/jekyll/current/REVISION 2>/dev/null )
+ DEBUG [3c476056] 	10314bfb7189e9b7d98d541e3171743c72f87294
+ DEBUG [3c476056] Finished in 0.038 seconds with exit status 0 (successful).
+ DEBUG [6223118c] Running /usr/bin/env ls -xt /opt/sites/jekyll/releases as vagrant@33.33.33.10
+ DEBUG [6223118c] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env ls -xt /opt/sites/jekyll/releases )
+ DEBUG [6223118c] 	20160619173511	20160619173257
+ DEBUG [6223118c] Finished in 0.032 seconds with exit status 0 (successful).
+ DEBUG [ecc968f9] Running if test ! -d /opt/sites/jekyll/releases/20160619173257; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619173257'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [ecc968f9] Command: if test ! -d /opt/sites/jekyll/releases/20160619173257; then echo "Directory does not exist '/opt/sites/jekyll/releases/20160619173257'" 1>&2; false; fi
+ DEBUG [ecc968f9] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [966fc22f] Running $HOME/.rbenv/bin/rbenv exec bundle exec jekyll build --config _config.yml as vagrant@33.33.33.10
+ DEBUG [966fc22f] Command: cd /opt/sites/jekyll/releases/20160619173257 && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; $HOME/.rbenv/bin/rbenv exec bundle exec jekyll build --config _config.yml )
+ DEBUG [966fc22f] 	Configuration file: _config.yml
+ DEBUG [966fc22f] 	
+ DEBUG [966fc22f] 	            Source: /opt/sites/jekyll/releases/20160619173257
+ DEBUG [966fc22f] 	
+ DEBUG [966fc22f] 	       Destination: /opt/sites/jekyll/releases/20160619173257/_site
+ DEBUG [966fc22f] 	
+ DEBUG [966fc22f] 	 Incremental build: disabled. Enable with --incremental
+ DEBUG [966fc22f] 	
+ DEBUG [966fc22f] 	      Generating... 
+ DEBUG [966fc22f] 	
+ DEBUG [966fc22f] 	                    done in 0.383 seconds.
+ DEBUG [966fc22f] 	
+ DEBUG [966fc22f] 	 Auto-regeneration: disabled. Use --watch to enable.
+ DEBUG [966fc22f] 	
+  INFO [966fc22f] Finished in 0.909 seconds with exit status 0 (successful).
+  INFO [fd42161b] Running /usr/bin/env ln -s /opt/sites/jekyll/releases/20160619173257 /opt/sites/jekyll/releases/current as vagrant@33.33.33.10
+ DEBUG [fd42161b] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env ln -s /opt/sites/jekyll/releases/20160619173257 /opt/sites/jekyll/releases/current )
+  INFO [fd42161b] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [4d7d4e94] Running /usr/bin/env mv /opt/sites/jekyll/releases/current /opt/sites/jekyll as vagrant@33.33.33.10
+ DEBUG [4d7d4e94] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env mv /opt/sites/jekyll/releases/current /opt/sites/jekyll )
+  INFO [4d7d4e94] Finished in 0.030 seconds with exit status 0 (successful).
+ DEBUG [03e47bc7] Running /usr/bin/env ls -xt /opt/sites/jekyll/releases as vagrant@33.33.33.10
+ DEBUG [03e47bc7] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env ls -xt /opt/sites/jekyll/releases )
+ DEBUG [03e47bc7] 	20160619173511	20160619173257
+ DEBUG [03e47bc7] Finished in 0.036 seconds with exit status 0 (successful).
+ DEBUG [65b4b281] Running [ `readlink /opt/sites/jekyll/current` != /opt/sites/jekyll/releases/20160619173511 ] as vagrant@33.33.33.10
+ DEBUG [65b4b281] Command: [ `readlink /opt/sites/jekyll/current` != /opt/sites/jekyll/releases/20160619173511 ]
+ DEBUG [65b4b281] Finished in 0.028 seconds with exit status 0 (successful).
+  INFO [76443c73] Running /usr/bin/env tar -czf /opt/sites/jekyll/rolled-back-release-20160619173511.tar.gz /opt/sites/jekyll/releases/20160619173511 as vagrant@33.33.33.10
+ DEBUG [76443c73] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env tar -czf /opt/sites/jekyll/rolled-back-release-20160619173511.tar.gz /opt/sites/jekyll/releases/20160619173511 )
+ DEBUG [76443c73] 	tar: 
+ DEBUG [76443c73] 	Removing leading `/' from member names
+ DEBUG [76443c73] 	
+  INFO [76443c73] Finished in 0.861 seconds with exit status 0 (successful).
+  INFO [885d6165] Running /usr/bin/env rm -rf /opt/sites/jekyll/releases/20160619173511 as vagrant@33.33.33.10
+ DEBUG [885d6165] Command: ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env rm -rf /opt/sites/jekyll/releases/20160619173511 )
+  INFO [885d6165] Finished in 0.031 seconds with exit status 0 (successful).
+ DEBUG [874dacb7] Running if test ! -d /opt/sites/jekyll/releases; then echo "Directory does not exist '/opt/sites/jekyll/releases'" 1>&2; false; fi as vagrant@33.33.33.10
+ DEBUG [874dacb7] Command: if test ! -d /opt/sites/jekyll/releases; then echo "Directory does not exist '/opt/sites/jekyll/releases'" 1>&2; false; fi
+ DEBUG [874dacb7] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [abd74a3d] Running /usr/bin/env echo "car rolled back to release 20160619173257" >> /opt/sites/jekyll/revisions.log as vagrant@33.33.33.10
+ DEBUG [abd74a3d] Command: cd /opt/sites/jekyll/releases && ( export RBENV_ROOT="$HOME/.rbenv" RBENV_VERSION="2.3.0" ; /usr/bin/env echo "car rolled back to release 20160619173257" >> /opt/sites/jekyll/revisions.log )
+  INFO [abd74a3d] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [dadc33ae] Running google-chrome http://33.33.33.10 as car@localhost
+ DEBUG [dadc33ae] Command: google-chrome http://33.33.33.10
+ DEBUG [dadc33ae] 	Se ha abierto una nueva ventana en la sesión actual del navegador.
+  INFO [dadc33ae] Finished in 0.534 seconds with exit status 0 (successful).
