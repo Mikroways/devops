@@ -30,7 +30,7 @@
 <tr>
   <td> ![La Bioguía](images/bioguia.png) </td>
   <td> ![Acofar](images/acofar.png) </td>
-  <td> ![Acofar](images/acofar.png) </td>
+  <td> ![QK Studio](images/qk.png) </td>
 </tr>
 </table>
 
