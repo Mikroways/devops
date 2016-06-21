@@ -1,7 +1,7 @@
 ***
 #DevOps 
 ##Una introducción
-![Mikroways](images/mikroways.svg)
+![Mikroways](images/mikroways-blanco.svg)
 ---
 ## Agenda
 
