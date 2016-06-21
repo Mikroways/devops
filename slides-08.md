@@ -120,4 +120,4 @@ Existen diversos productos que promueven IaC
 **¿Cómo es posible garantizar un merge satisfactorio en todos los casos?**
 </small>
 
----
+***

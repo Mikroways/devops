@@ -13,20 +13,24 @@
   requerimientos específicos.
 
 ---
-## Nuestros clientes
+## Sobre Mikroways
 
+**Algunos de nuestros clientes**
 <table class="product_logos">
 <tr>
-<td> ![Senasa](images/senasa.png) </td><td> ![INTA](images/inta.png) </td>
+  <td> ![Senasa](images/senasa.png) </td>
+  <td> ![INTA](images/inta.png)     </td>
+  <td> ![Edelap](images/edelap.png) </td>
 </tr>
 <tr>
-<td> ![Edelap](images/edelap.png) </td><td> ![UOM](images/uom.png) </td>
+  <td> ![UOM](images/uom.png) </td>
+  <td> ![Fecliba](images/fecliba.png) </td>
+  <td> ![Urgente 24](images/urgente24.png) </td>
 </tr>
 <tr>
-<td> ![Fecliba](images/fecliba.png) </td><td> ![Urgente 24](images/urgente24.png) </td>
-</tr>
-<tr>
-<td> ![La Bioguía](images/bioguia.png) </td><td> ![Acofar](images/acofar.png) </td>
+  <td> ![La Bioguía](images/bioguia.png) </td>
+  <td> ![Acofar](images/acofar.png) </td>
+  <td> ![Acofar](images/acofar.png) </td>
 </tr>
 </table>
 
