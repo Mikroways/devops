@@ -76,7 +76,7 @@ Existen diversos productos que promueven IaC
 <td> ![Chef Logo](images/chef-logo.png) </td><td> [Chef](https://www.chef.io/) </td>
 </tr>
 <tr>
-<td> ![Pupper Logo](images/puppet-logo.png) </td><td> [Puppet Labs](https://puppet.com/) </td>
+<td> ![Puppet Logo](images/puppet-logo.png) </td><td> [Puppet Labs](https://puppet.com/) </td>
 </tr>
 <tr>
 <td> ![Ansible Logo](images/ansible-logo.png) </td><td> [Ansible](https://www.ansible.com/) </td>
