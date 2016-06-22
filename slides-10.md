@@ -355,7 +355,7 @@ docker volume inspect
 ---
 ## Docker compose
 
-Se describe una aplicación compuesta por más de un contenedor mediante un *yml*
+Se describe una aplicación compuesta por más de un contenedor mediante un **yml**
 
 ```yml
 version: "2"

@@ -18,7 +18,7 @@
 * Gestión de la infraestrcutura usando chef-provisioning
 * Docker en producción con Rancher
 ---
-![Chef Logo](images/chef-logo.png)
+![Chef Logo](images/chef-white-logo.png)
 ---
 ## Chef
 
@@ -92,14 +92,97 @@ chef-zero/chef-solo*
 ## Desplegando el potencial de chef
 
 * Bootstrap de nodos
+  * Usaremos knife-ec2
 * Búsquedas
 * Ambientes
 * ssh en paralelo
 * Búsquedas en recetas
   * _Ejemplo con ha-proxy_
 
+---
+## Bootstrap de nodos
+
+* Usaremos Amazon EC2 y un plugin de chef que simplifica y unifica las tareas de
+crear y bootstrapear un nodo 
+* Crearemos antes un rol que describe un web server. Esto nos permitirá realizar
+  búsquedas
+
+```bash
+# Crea/actualiza el rol web-server
+knife role from file roles/web-server.rb
+# Crea dos nodos llamados web-01 y web-02 en amazon con el rol
+# web-server
+knife ec2 server create -I ami-b1a652d1 -f m1.small --ssh-user ubuntu \
+  -N web-01 -r 'role[web-server]'
+knife ec2 server create -I ami-b1a652d1 -f m1.small --ssh-user ubuntu \
+  -N web-02 -r 'role[web-server]'
+## Listamos las instancias de Amazon EC2
+knife ec2 server list
+```
+
 <small>
-[Ver ejemplo]()
+*__Algunos detalles que se omiten se toman de la configuración de knife__*
+</small>
+
+---
+## Un poco de knife
+
+```bash
+knife status
+knife role list
+knife node list
+knife search '*:*'
+knife search 'platform:ubuntu AND (name:web-01 OR role:web-server)'
+knife ssh -x ubuntu 'role:web-server' sudo service nginx stop
+knife exec -E 'search(:node, "role:web-server").each do |node| 
+  puts(
+    node.name => {
+      ip: node.cloud.public_ipv4,
+      mem: node.memory.total,
+      cpu: node.cpu.total
+    }
+  )
+end'
+```
+
+<small>
+*__Lo interesante es que uno puede usar búsquedas en las recetas__*
+</small>
+
+---
+## Creamos un proxy reverso
+
+<small>
+*__Esta receta utiliza búsquedas para configurar los backends de haproxy__*
+</small>
+
+```ruby
+all_web_servers = search(:node, "role:web-server")
+members = []
+all_web_servers.each do |web|
+  members <<
+  {
+    "hostname"  => web['cloud']['public_hostname'],
+    "ipaddress" => web['cloud']['public_ipv4'],
+    "port"      => 80,
+    "ssl_port"  => 80
+  }
+end
+node.default['haproxy']['members'] = members
+
+include_recipe 'haproxy'
+
+```
+
+```bash
+knife ec2 server create -I ami-b1a652d1 -f m1.small --ssh-user ubuntu \
+  -N proxy -r 'recipe[myhaproxy]'
+```
+
+<small>
+Probar con **curl** y eliminar con
+<br />
+`knife ec2 server delete <INSTANCE-ID> -P`
 </small>
 
 ---
@@ -129,7 +212,7 @@ de virtualización
 ## ¿Qué es entonces?
 * Permite configurar nuestro cluster de máquinas de forma agnóstica de la
   plataforma
-* 
+* Evita el uso reiterativo de knife para iniciar VMs 
 ---
 ## Ejemplo
 ---

@@ -8,7 +8,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.box = 'chef/ubuntu-14.04'
 
-  # config.vm.network :private_network, type: 'dhcp'
   config.vm.network :private_network, ip: '33.33.36.10'
 
   config.berkshelf.enabled = true
