@@ -50,7 +50,8 @@
     código de programadores con menos experiencia. Por ejemplo: [flujo tipo GitHub](https://guides.github.com/introduction/flow/)*
 ---
 ### Gestión de proyectos
-* Relacionar los tickets los procedimientos/flujos definidos anteriormente
+* Relacionar los tickets/versiones del producto en producción, con los 
+  procedimientos/flujos definidos anteriormente
   * Esto mismo sugiere git-flow con los [hotfix
     branches](http://nvie.com/posts/a-successful-git-branching-model/#hotfix-branches)
 * Aplicar buenas prácticas de calidad 
@@ -65,8 +66,8 @@
 * Poner una versión de un producto nuevo en producción puede
   * Ser simple si el ambiente ya existe y no requiere nuevas dependencias
   * Ser complejo si el producto a instalar requiere nuevas dependencias
-* Revisar cada una de dependencias satisfacen sus requerimientos
-  * ¿El código provee de ésta información? 
+* Revisar si cada una de las dependencias satisfacen sus requerimientos
+  * ¿El código provee de ésta información?
 * Automatizar los deployments simplificando las tareas repetitivas
   * Usar scripts caseros o herramientas de automatización como Capistrano,
     Ansible, Chef, Puppet, Salt, etc
@@ -79,7 +80,7 @@
   * Colaboración con el cliente
   * Respuesta ante el cambio
 * Aplicando esta metodología se promueve lanzar nuevas versiones en períodos muy
-  cortos de tiempo, lo cuál termina siendo un cuello de botella para muchas
+  cortos de tiempo, lo cuál termina manifestando un cuello de botella en las
   oficinas de IT.
   * Responder a los requerimientos ágiles requiere una operatoria ágil desde IT
   * Empiezan a darse deployments con frecuencias diarias e incluso varios al día

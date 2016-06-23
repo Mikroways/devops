@@ -4,7 +4,7 @@ revealjs_config:
   #  dependencies:
   #  - src: 'js/custom.js'
   history: true
-  parallaxBackgroundImage: 'images/index-background.jpg'
+  parallaxBackgroundImage: 'images/index-background-claro.png'
   parallaxBackgroundSize: '3000px 2120px'
     #  menu:
     #    side: left

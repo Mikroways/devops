@@ -48,7 +48,7 @@ y ciertamente amplio
 
 * DevOps es un movimiento , filosofía o práctica
 * Que se ajusta perfectamente a las metodologías ágiles
-  * Extiende y completa el proceso de integración y deploy continuo asegurando
+  * Extiende y completa el proceso de integración y deployment continuo asegurando
     que el código esté listo para producción agregando valor para los clientes 
 * Un nuevo rol profesional que surge de:
   * Desarrolladores que se interesan por demás en el deploy de las aplicaciones
@@ -122,7 +122,7 @@ Existen diversos productos que promueven IaC
 ## Integración continua
 
 * Promueve el frecuente merge con la rama principal
-  * Tratando así de realizar **re-trabajo**
+  * Tratando así de minimizar el **re-trabajo**
 * Se realizan múltiples merge diarios donde cada desarrollador se compromete a
   seguir un flujo de trabajo completo donde se debe correr y pasar *todos* los
 tests de **unidad e integración**
@@ -137,7 +137,7 @@ tests de **unidad e integración**
 * [Jenkins](https://jenkins.io/)
 
 ---
-## Delivery deployment continuo
+## Delivery y deployment continuo
 
 * Generalmente se confunden **delivery** y **deployment** continuo
   * Deployment continuo admite que cada cambio sea aplicado en producción

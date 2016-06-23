@@ -50,13 +50,13 @@ Asimismo, mostraremos que estas soluciones introdujeron nuevos **problemas**
   producción
   * nginx, HA-proxy, traefik, varnish
   * Montar aplicaciones en lenguajes poco usuales
-    * Python, Ruby, Erlang, Node
+      * Python, Ruby, Erlang, Node
   * Bases de datos NoSQL
     * MongoDB, Redis
   * Sistemas de colas AMQP: RabbitMQ, Qpid
 ---
 ## Alta disponibilidad / Failover / Actualizaciones
-* En los stacks de un servicio determinado se compone de partes diferentes que
+* Los stacks de un servicio determinado se compone de partes diferentes que
   podemos requerir garantizar alta disponibilidad y/o failover
 * Actualizar un servicio es una tarea artesanal y costosa
   * Sobre todo si es un servicio distribuido con muchas dependencias

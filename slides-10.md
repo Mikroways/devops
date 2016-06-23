@@ -113,7 +113,7 @@ __33.33.33.10__*
 ## Capistrano y desarrollos dinámicos
 * En sitios que no son estáticos, existen archivos que deben mantenerse entre
   deploys
-  * Configuració de la base de datos o software
+  * Configuración de la base de datos o software
   * Uploads o archivos generados por la aplicación
 * Capistrano permite definir qué archivos y qué directorios son *compartidos*
 * De aquí la estructura propuesta por capistrano es:

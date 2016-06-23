@@ -17,4 +17,3 @@ bin/*
 
 .kitchen/
 .kitchen.local.yml
-00-sample/log/capistrano.log
