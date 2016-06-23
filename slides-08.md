@@ -27,11 +27,11 @@ y ciertamente amplio
   *  Las conferencias Velocity, en particular la presentación ["10 deploys per
   day - Dev & Ops cooperation at Flickr"](https://www.youtube.com/watch?v=LdOe18KhtT4)
   * Los movimientos de:
-    * Infrastructure as code
-    * Agile infrastructure
-    * Agile system administration
-    * [Lean Startup](http://theleanstartup.com/principles)
-    * Integración y delivery continuo
+      * Infrastructure as code
+      * Agile infrastructure
+      * Agile system administration
+      * [Lean Startup](http://theleanstartup.com/principles)
+      * Integración y delivery continuo
 ---
 ## Orígenes
   * La global disponibilidad de tecnologías de cloud: PaaS/IasS
@@ -111,13 +111,38 @@ Existen diversos productos que promueven IaC
 * Si varios desarrolladores trabajan sobre una rama diferente, se ramifican las
   versiones produciéndose un problema a la hora de integrar ramas: *Merge hell*
 ---
-## Integración Continua
-
+## Proyecto con varias ramas
 
 ![git branches](images/branches-git.png)
 
 <small class="fragment">
 **¿Cómo es posible garantizar un merge satisfactorio en todos los casos?**
 </small>
+---
+## Integración continua
+
+* Promueve el frecuente merge con la rama principal
+  * Tratando así de realizar **re-trabajo**
+* Se realizan múltiples merge diarios donde cada desarrollador se compromete a
+  seguir un flujo de trabajo completo donde se debe correr y pasar *todos* los
+tests de **unidad e integración**
+  * Esto se automatiza con herramientas de CI que *escuchan* cada commit en el
+    SCM
+---
+## Herraminetas de CI
+
+* [Travis](https://travis-ci.org/)
+* [Semaphore](https://semaphoreci.com/)
+* [Gitlab CI](https://about.gitlab.com/gitlab-ci/)
+* [Jenkins](https://jenkins.io/)
+
+---
+## Delivery deployment continuo
+
+* Generalmente se confunden **delivery** y **deployment** continuo
+  * Deployment continuo admite que cada cambio sea aplicado en producción
+  * Delivery continuo permitiría que cada cambio se prepare para estar
+    *disponible* para producción, pero el paso de ponerlo en producción requiere
+de intervención humana
 
 ***

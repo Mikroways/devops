@@ -294,18 +294,63 @@ Podemos incluso tener un cluster con VMs de diferentes proveedores
 ---
 ## Alternativas en boga
 
-* Docker Swarm
-* Rancher
-* Kubernetes
-* Mesos
+* [Docker Swarm](https://docs.docker.com/swarm/)
+* [Rancher Cattle](http://rancher.com/)
+* [Kubernetes](http://kubernetes.io/)
+* [Mesos](http://mesos.apache.org/)
 ---
 ## Además se habla mucho de
 
-* Rancher OS
-* CoreOS
-* Boot2docker
+* [Rancher OS](http://rancher.com/rancher-os/)
+* [CoreOS](https://coreos.com/)
+* [Boot2docker](http://boot2docker.io/)
 
+---
+## Características
+
+* Schedulling de contenedores
+  * Importancia de los labels en docker
+* Service discovery
+  * Zookeper
+  * Consul
+  * Etcd
+* Complicaciones:
+  * Volúmenes compartidos
+  * Monitoreo y Logs
 ---
 # Rancher
 ---
+## Rancher
+
+* Permite configurar ambientes
+  * Con Cattle, Swarm, Kubernetes y ahora Mesos
+* Los ambientes se componen de nodos
+* Los contenedores se manejan con stacks
+  * Usan docker-compose v1
+  * Provee un catálogo de aplicaciones
+  * Permite extender el catálogo con uno propio
+* Simplifica la integración con registries privadas
+* Proxy reverso basado en service discovery
+* Simple escalamiento de contenedores
+
+---
+## Ejemplo
+
+* Deployamos un wordpress desde el catálogo
+  * Fijamos que sólo corra la db en un nodo determinado
+* Escalamos el servicio
+
+---
+## Otro ejemplo
+
+* Creamos una aplicacion propia
+  * El nombre del directorio es importante: nombre del stack
+  * Creamos
+    [`docker-compose.yml`](images/samples/07-rancher/my-custom-app/docker-compose.yml)
+  * Iniciamos el stack: `rancher-compose up`
+  * *Verificamos*
+  * Upgradeamos: `rancher-compose up -u my-app`
+  * *Verificamos*
+  * Realizamos un rollback
+
 ***
