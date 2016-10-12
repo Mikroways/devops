@@ -142,7 +142,7 @@ __33.33.33.10__*
 
 * [RUNDECK](http://rundeck.org/)
 * [Fabric](http://www.fabfile.org/)
-* [Rocketaeer](http://rocketeer.autopergamene.eu/)
+* [Rocketeer](http://rocketeer.autopergamene.eu/)
 * [Deployer](http://deployer.org/)
 ---
 # Vagrant

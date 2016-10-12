@@ -1,5 +1,3 @@
-lock '3.5.0'
-
 set :application, 'capistrano-sample'
 set :repo_url, 'git@github.com:Mikroways/mikroways.net.git'
 #set :branch, 'demo-capistrano-curso'

@@ -10,7 +10,7 @@ y ciertamente amplio
 **Básicamente DevOps promueve:**
 </small>
 <div class="fragment">
-*Maximizar la colaboratividad entre las áreas de desarrollo e infraestructura*
+*Maximizar la colaboración entre las áreas de desarrollo e infraestructura*
 </div>
 ---
 ## Objetivo
@@ -46,7 +46,7 @@ y ciertamente amplio
 ---
 ## Caracterización
 
-* DevOps es un movimiento , filosofía o práctica
+* DevOps es un movimiento, filosofía o práctica
 * Que se ajusta perfectamente a las metodologías ágiles
   * Extiende y completa el proceso de integración y deployment continuo asegurando
     que el código esté listo para producción agregando valor para los clientes 
@@ -65,7 +65,6 @@ y ciertamente amplio
   configuración que son interpretados por alguna herramienta de gestión del
   aprovisionamiento
 * Estos archivos de configuración de la infraestructura se versionan en un SCM
-  virtuales
 
 ---
 ## Herramientas
@@ -87,7 +86,7 @@ Existen diversos productos que promueven IaC
 </table>
 ---
 ## Test de la infraestructura
-* Con las herraminetas anteriores es posible realizar tests de la
+* Con las herramientas anteriores es posible realizar tests de la
   infraestructura:
   * Tests de unidad:
       * [rspec-puppet](http://rspec-puppet.com/)
@@ -129,7 +128,7 @@ tests de **unidad e integración**
   * Esto se automatiza con herramientas de CI que *escuchan* cada commit en el
     SCM
 ---
-## Herraminetas de CI
+## Herramientas de CI
 
 * [Travis](https://travis-ci.org/)
 * [Semaphore](https://semaphoreci.com/)

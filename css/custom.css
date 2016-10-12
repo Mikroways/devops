@@ -14,8 +14,8 @@ table.product_logos td {
 .product_logos td  {
   vertical-align: middle;
 }
-.product_logos a {
-  color: #4a4a4a;
+.product_logos a, .product_logos a:visited {
+  color: #4a4a4a !important;
 }
 
 .product_logos a:hover {
