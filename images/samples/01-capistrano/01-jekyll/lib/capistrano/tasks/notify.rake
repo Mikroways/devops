@@ -2,7 +2,7 @@ namespace :deploy do
   desc 'Notify service of deployment'
   task :notify do
     run_locally do
-        execute "google-chrome http://#{roles(:app).first.hostname}"
+        execute "open -a Safari http://#{roles(:app).first.hostname}"
     end
   end
 

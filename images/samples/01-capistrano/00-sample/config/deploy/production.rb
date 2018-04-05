@@ -1,11 +1,10 @@
 role :demo, %w{localhost}
 
-server '33.33.33.10',
+server '192.168.222.22',
    roles: %w(demo),
    ssh_options: {
-     user: 'vagrant', # overrides user setting above
+     user: 'vagrant',
      forward_agent: true,
      auth_methods: %w(publickey password),
      password: 'vagrant'
    }
-

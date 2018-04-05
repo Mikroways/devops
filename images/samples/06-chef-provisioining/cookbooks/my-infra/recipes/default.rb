@@ -14,7 +14,7 @@ machine_batch do
   end
 end
 
-# Una vm más luego de que se hayan creado las dos anteriores
+# Una vm más, luego de que se hayan creado las dos anteriores
 machine 'proxy' do
   run_list ['recipe[myhaproxy]']
 end

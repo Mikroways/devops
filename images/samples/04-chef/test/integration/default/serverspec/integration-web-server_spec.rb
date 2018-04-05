@@ -32,6 +32,6 @@ server {
   end
 
   describe file('/var/www/index.html') do
-    its(:content) { should contain 'Hola mundo!' }
+    its(:content) { should contain 'Hello world!' }
   end
 end

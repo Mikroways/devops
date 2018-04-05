@@ -1,4 +1,32 @@
-I, [2016-06-21T00:15:16.586513 #12316]  INFO -- Kitchen: -----> Starting Kitchen (v1.6.0)
-I, [2016-06-21T00:15:17.151011 #12316]  INFO -- Kitchen: -----> Verifying <default-debian-7>...
-I, [2016-06-21T00:15:18.680785 #12316]  INFO -- Kitchen: -----> Verifying <default-ubuntu-1404>...
-I, [2016-06-21T00:15:20.243017 #12316]  INFO -- Kitchen: -----> Kitchen is finished. (0m3.66s)
+E, [2018-04-04T11:58:35.763454 #16678] ERROR -- Kitchen: ------Exception-------
+E, [2018-04-04T11:58:35.763575 #16678] ERROR -- Kitchen: Class: Kitchen::ClientError
+E, [2018-04-04T11:58:35.763613 #16678] ERROR -- Kitchen: Message: Could not load the 'docker' driver from the load path. Please ensure that your driver is installed as a gem or included in your Gemfile if using Bundler.
+E, [2018-04-04T11:58:35.763642 #16678] ERROR -- Kitchen: ---Nested Exception---
+E, [2018-04-04T11:58:35.763666 #16678] ERROR -- Kitchen: Class: LoadError
+E, [2018-04-04T11:58:35.763686 #16678] ERROR -- Kitchen: Message: cannot load such file -- kitchen/driver/docker
+E, [2018-04-04T11:58:35.763705 #16678] ERROR -- Kitchen: ------Backtrace-------
+E, [2018-04-04T11:58:35.763723 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/driver.rb:50:in `rescue in for_plugin'
+E, [2018-04-04T11:58:35.763742 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/driver.rb:40:in `for_plugin'
+E, [2018-04-04T11:58:35.763760 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/config.rb:230:in `new_driver'
+E, [2018-04-04T11:58:35.763778 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/config.rb:243:in `new_instance'
+E, [2018-04-04T11:58:35.763796 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/config.rb:139:in `block in build_instances'
+E, [2018-04-04T11:58:35.763814 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/config.rb:138:in `map'
+E, [2018-04-04T11:58:35.763832 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/config.rb:138:in `with_index'
+E, [2018-04-04T11:58:35.763850 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/config.rb:138:in `build_instances'
+E, [2018-04-04T11:58:35.765775 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/config.rb:114:in `instances'
+E, [2018-04-04T11:58:35.765812 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/command.rb:115:in `filtered_instances'
+E, [2018-04-04T11:58:35.765838 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/command.rb:145:in `parse_subcommand'
+E, [2018-04-04T11:58:35.765858 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/command/list.rb:32:in `call'
+E, [2018-04-04T11:58:35.765876 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/cli.rb:56:in `perform'
+E, [2018-04-04T11:58:35.765895 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/cli.rb:116:in `list'
+E, [2018-04-04T11:58:35.765913 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+E, [2018-04-04T11:58:35.765930 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2018-04-04T11:58:35.765948 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/cli.rb:321:in `invoke_task'
+E, [2018-04-04T11:58:35.765966 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+E, [2018-04-04T11:58:35.765984 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+E, [2018-04-04T11:58:35.766002 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/bin/kitchen:13:in `block in <top (required)>'
+E, [2018-04-04T11:58:35.766019 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/lib/kitchen/errors.rb:154:in `with_friendly_errors'
+E, [2018-04-04T11:58:35.766066 #16678] ERROR -- Kitchen: /opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/test-kitchen-1.6.0/bin/kitchen:13:in `<top (required)>'
+E, [2018-04-04T11:58:35.766091 #16678] ERROR -- Kitchen: /usr/local/bin/kitchen:15:in `load'
+E, [2018-04-04T11:58:35.766114 #16678] ERROR -- Kitchen: /usr/local/bin/kitchen:15:in `<main>'
+E, [2018-04-04T11:58:35.766136 #16678] ERROR -- Kitchen: ----------------------

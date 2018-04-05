@@ -1,5 +1,4 @@
-
-desc 'uptime test'
+desc 'Show server uptime'
 task :uptime do
   on roles(:demo), in: :parallel do |host|
     uptime = capture(:uptime)

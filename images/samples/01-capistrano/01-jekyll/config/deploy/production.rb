@@ -1,9 +1,9 @@
-role :app, %w{vagrant@33.33.33.10}
+role :app, %w{vagrant@192.168.23.22}
 
-server '33.33.33.10',
+server '192.168.23.22',
    roles: %w(app),
    ssh_options: {
-     user: 'vagrant', # overrides user setting above
+     user: 'vagrant',
      forward_agent: true,
      auth_methods: %w(publickey password),
      password: 'vagrant'

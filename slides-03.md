@@ -1,141 +1,103 @@
 ***
 # La perspectiva de desarrollo
 ---
-### Ambientes complejos
-* Las aplicaciones ya no son las tradicionales arquitecturas de tres capas
-* Las herramientas a utilizar ya no sólo se conforman de **un** lenguaje,
-  una base de datos SQL y un framework
-* Necesidad de ambientes independientes entre los desarrolladores
-  * Algunas organizaciones promueven un ambiente común de desarrollo donde toda
-    la complejidad se concentra en un cluster compartido por N desarrolladores
-* Dificultad para involucrar nuevos integrantes
-  * Exceso de tiempo para aprender a gestionar la infraestructura en vez de
-    programar
+
+## Arquitectura de aplicaciones
+
+* Monolíticas versus servicios o microservicios.
+* Múltiples lenguajes y frameworks.
+* Diferentes sistemas de bases de datos:
+  * SQL, NoSQL.
+* Sistemas de colas.
+* Servicios de terceros.
 ---
-### Gestión de proyectos
-* Independientemente de la gestión de proyectos teórica y comercial hacemos
-  hincapié en los procedimientos para trabajar
-* Respetar estándares de codificación
-* Utilizar alguna herramienta de versionado de código: GIT
-  * [git-flow](https://github.com/nvie/gitflow): *trabajo con estrategias de branches y manejo de releases*
-  * Permisos sobre las branches: *desarrolladores con más experiencia revisan el
-    código de programadores con menos experiencia. Por ejemplo: [flujo tipo GitHub](https://guides.github.com/introduction/flow/)*
+
+### Arquitecturas de aplicaciones
+
+<tr>
+  <td><img src="images/monolitica.png" height="500"></td>
+  <td><img src="images/microservicios.png" height="500"></td>
+</tr>
 ---
-### Gestión de proyectos
-* Relacionar los tickets/versiones del producto en producción, con los 
-  procedimientos/flujos definidos anteriormente
-  * Esto mismo sugiere git-flow con los [hotfix
-    branches](http://nvie.com/posts/a-successful-git-branching-model/#hotfix-branches)
-* Aplicar buenas prácticas de calidad 
-  * TDD con alta cobertura
-  * Tests de aceptación
-* Aspiraciones para alcanzar:
-  * Integración continua
-  * Delivery continuo
-  * Deployment continuo
----
-### Deployments
-* Poner una versión de un producto nuevo en producción puede
-  * Ser simple si el ambiente ya existe y no requiere nuevas dependencias
-  * Ser complejo si el producto a instalar requiere nuevas dependencias
-* Revisar si cada una de las dependencias satisfacen sus requerimientos
-  * ¿El código provee de ésta información?
-* Automatizar los deployments simplificando las tareas repetitivas
-  * Usar scripts caseros o herramientas de automatización como Capistrano,
-    Ansible, Chef, Puppet, Salt, etc
----
-### Metodologías Ágiles
+
+## Metodologías Ágiles
+
 * El [manifiesto ágil](http://www.agilemanifesto.org/iso/es/) hace énfasis en
   los siguientes valores:
-  * Individuos e interacciones
-  * Software funcionando
-  * Colaboración con el cliente
-  * Respuesta ante el cambio
-* Aplicando esta metodología se promueve lanzar nuevas versiones en períodos muy
-  cortos de tiempo:
-  * Aparecen deployments diarios e incluso varias veces al día
-  * Responder a los requerimientos ágiles requiere una operatoria ágil desde IT
-      * Si esto no sucede se produce un cuello de botella
+  * individuos e interacciones,
+  * software funcionando,
+  * colaboración con el cliente,
+  * respuesta ante el cambio.
+* Desplegar nuevas versiones con mucha frecuencia:
+  * Aparecen deployments diarios e incluso varias veces al día.
+  * Responder a estos requerimientos requiere una operatoria ágil desde IT.
+      * Si esto no sucede se produce un cuello de botella.
 ---
-### TDD
 
-* Cuando deseamos apegarnos a los requisitos de QA es bueno aplicar tests
-* Los tests deben controlarse por un área de QA en cada etapa del desarrollo, estableciendo
-  políticas de aceptación para cada etapa
----
-### TDD
-* Ejemplos de políticas:
-  * El código no es revisado antes de mergerarse si no pasan los test de unidad,
-    funcionales e integración. Tampoco si el analizador de código no garantiza
-    se respetan estándares
-  * Un release no pasa a producción si no pasa todos los tests de unidad,
-    funcionales e integración
-* Es importante poder aplicar [Integración Continua](https://en.wikipedia.org/wiki/Continuous_integration). 
-  Sin embargo, armar un ambiente de éste tipo no es trivial y depende del área
-  de IT
----
-### Versiones de librerías y lenguajes
-* Es común que los desarrolladores surfeen la cresta de las olas
-  * Utilizan versiones muy actuales de determinados productos que complican
-    los ambientes
-  * Algunos lenguajes no permiten, *de forma simple*, tener en el sistema más de una versión de una
-    misma librería o lenguaje. Por ejemplo PHP
-* Esto crea diferencias entre el ambiente de desarrollo y producción
-  * Justamente, ésta es la brecha que debemos achicar
----
-### Gestión de versiones
+## Versiones de librerías y lenguajes
 
-* Si bien el código se maneja con versiones y GIT/SVN mantiene una
-  identificación de cada commit, se necesita manejar un versionado de releases
-  amigable
-* [Semantic Versioning](http://semver.org/) contribuye a entender qué significa
-  que un release 2.5.1 pase a la versión 2.5.2 o 2.6.0
-* ¿De qué forma es posible mantener la traza del modelo de datos respecto de las
-  versiones de código?
+* Es común que los desarrolladores utilicen las versiones más recientes de
+  determinados productos.
+* Algunos lenguajes no permiten, *de forma simple*, tener en el sistema más de
+  una versión de una misma librería o lenguaje.
+* Esto crea diferencias entre el ambiente de desarrollo y producción.
+  * Es esta es la brecha que debemos achicar.
 ---
-### Acceso al ambiente de producción
 
-* Siempre es necesario acceder a un recurso en producción
-* Acceso al dump o código completo
-  * El código no debería ser necesario si se utilizan versiones que respetan el
-    versionado *semver* o desde un SCM
-  * Los datos de una aplicación en producción (no la base de datos) pueden ser
-    necesarios para realizar una prueba
+## Ambiente de desarrollo
+
+* Suele darse uno de tres escenarios.
+  * No existen ambientes de desarrollo:
+      * ¡se trabaja directamente en producción!
+  * Ambiente de desarrollo común y compartido:
+      * difícil administración,
+      * problemas de concurrencia
+  * Ambientes independientes de desarrollo:
+      * Nuevo integrante debe generar todo el ambiente de cero.
+      * Necesidad de sincronizar cambios entre desarrolladores (código,
+        estructura de bases de datos).
+---
+
+## Acceso a producción
+
+* Suele ser necesario acceder a un recurso en producción.
+  * Dump de la BD o versión productiva del código (¡SCM!).
+  * Datos dinámicos de la aplicación.
+      * Archivos subidos o generados durante su uso.
 * A veces, por requerimientos de seguridad o legales, la información debe
-  obtenerse ofuscada
-* Otras veces, alcanza con un dato antiguo que puede extraerse desde un backup
+  obtenerse ofuscada.
+* Otras veces, alcanza con un dato antiguo que puede extraerse desde un backup.
 ---
-### Replica del ambiente de producción
 
-* Poder obtener un ambiente similar al productivo tiene un valor muy grande para
-  desarrollo dado que permite:
-  * Verificar problemas offline
-  * Probar nuevos releases antes de pasarlos a producción
-  * Al cliente verificar en una instancia previa al pasaje a producción
-    de un cambio
-  * Verificar tiempos de actualización
-  * etc
----
-### Estadísticas y monitoreo
+## Réplica del ambiente productivo
 
-* Las estadísticas generalmente se utilizan por IT para conocer cómo se comporta
-  un servidor o recurso
-* Desde desarrollo hay varios aspectos que pueden medirse para luego ayudar a identificar
-  problemas:
-  * Profiling de cada middleware de una aplicación: ORM, servicios externos,
-    renderizado, caching, tiempos de respuesta, etc
-  * Errores en la aplicación
-* Contar con la información estadística nos permite conocer el comportamiento
-  normal de nuestra aplicación
-  * Desconocer estos datos es manejar con el parabrisas lleno de barro
+* Disponer de un ambiente similar al productivo es muy valioso para desarrollo
+  porque permite, entre otras cosas:
+  * Verificar problemas sin tocar producción.
+  * Probar nuevos releases antes de pasarlos a producción.
+  * Asegurarse que el código, que funciona en el ambiente de desarrollo,
+    funcione en el de producción.
+      * ¿Y si el ambiente de desarrollo fuera igual al del producción?
+  * Que el cliente verifique los cambios solicitados antes de aplicarlos en
+    producción.
 ---
-### Estadísticas y monitoreo
-* Cuando un valor se aleja de la media o el desvío estándar por más de un tiempo
-  aceptable, entonces podemos establecer una alerta
-* Generalmente el monitoreo y las alertas se establecen sobre los servicios o
-  sobre los recursos que son cruciales, y ante el mínimo problema se notifica a
-  determinados usuarios
-  * Esto produce innumerables alertas que terminan siendo ignoradas
-* El monitoreo debería concentrase en lo que es de valor para el usuario que
-  utiliza el recurso y no en las partes que constituyen el servicio
+
+## Diagnóstico de problemas
+
+* Comportamiento del software en producción:
+  * importancia de poder visualizar los logs:
+      * Errores
+      * Problemas de seguridad.
+      * Otras situaciones anómalas.
+  * Monitoreo del software:
+      * Aviso en tiempo real cuando se produce una excepción.
+---
+
+## Diagnóstico de problemas
+
+* Profiling de cada middleware de una aplicación: ORM, servicios externos,
+  renderizado, caching, tiempos de respuesta, etc.
+* Generar información estadística para conocer el comportamiento normal de
+  cada aplicación:
+  * Desconocer estos datos es manejar con el parabrisas lleno de barro.
 ***

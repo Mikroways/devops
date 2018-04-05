@@ -6,9 +6,11 @@
 ## Agenda
 
 * Presentación
-* Interacción entre infraestructura y desarrollo
-* Necesidad de ambientes independientes
-* Soluciones y más problemas
+* Interacción entre infraestructura y desarrollo.
+* Perspectiva de desarrollo.
+* Perspectiva de infraestructura.
+* Puesta en producción.
 * DevOps
+* Flujo de trabajo.
 * Herramientas
 ***

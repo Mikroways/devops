@@ -1,38 +1,52 @@
 ***
-# Necesidad de ambientes independientes
+# Ambientes independientes
+
+### Mejorando la calidad global
 ---
+
 ## Introducción
 
-* No disponer de ambientes implicaría:
-  * Tener código versionado o no
-  * La única versión que es igual a producción, es la de producción
-      * Porque alguien cambió algo en producción que no funcionaba
-      * Porque luego de cambiar algo en producción, no se actualizó el código
-        versionado
-  * Las pruebas se realizan en la pc del desarrollador o directamente en
-    producción
+* No disponer de diferentes ambientes implicaría:
+  * La única versión que es igual a producción, es la de producción.
+      * Se cambió algo en producción que no funcionaba y no se actualizó el
+        código versionado.
+  * Las pruebas se realizan en la PC del desarrollador o directamente en
+    producción.
+  * Lo que funciona en desarrollo no anda en producción.
 
 <small class="fragment">
-Pareciera ser imposible que esto suceda, pero muchas organizaciones siguen
-gestionando sus desarrollos de esta forma
+Pareciera imposible que esto suceda, pero muchas organizaciones siguen
+gestionando sus desarrollos de esta forma.
 </small>
 ---
+
 ## Ambientes
 
-* Es común ver alguno de estos ambientes en una organización:
-  * **Desarrollo:** el ambiente de desarrollo es en el cuál los desarrolladores
-    construyen el software
-  * **Testing:** es el ambiente donde se publica el software en fase de pruebas
-    para que sea probado por un grupo definido de personas, entre las que
-    se incluye el usuario final o representantes del mismo
+* Diferentes ambientes permiten:
+  * Desarrollar bajo iguales condiciones.
+  * Validar los cambios con los usuarios.
+  * Realizar pruebas de calidad y seguridad del software.
+  * Minimizar los problemas en producción.
+* Estos ambientes deben gestionarse:
+  * Sobrecarga de trabajo.
+  * Idealmente, todos idénticos entre sí.
+      * ¿Cómo garantizamos esto?
 ---
+
 ## Ambientes
-  * **Pre-producción:** es la instancia previa a producción, y consiste en un
-    ambiente replicado e idéntico al productivo. En este entorno se verifica
-    el correcto funcionamiento de la aplicación y se realizan los ajustes necesarios
-    en caso de no ser así, evitando que los problemas se descubran en el pasaje
-    a producción
-  * **Producción:** es el ambiente que tiene todos los servicios productivos.
-    Este ambiente cuenta con políticas estrictas en cuanto al acceso y la
-    administración del mismo.
+
+* **Desarrollo:** en el cuál se construye el software.
+* **Testing:** se publica el software para que sea probado por un grupo definido
+  de personas, que debería incluir al usuario final o representantes del mismo.
+* **Staging (QA):** idéntico y previo a producción. Permite probar el despliegue
+  y el funcionamiento, realizando cualquier ajuste necesario en esta instancia,
+  evitando problemas en producción.
+* **Producción:** tiene todos los servicios productivos. Este ambiente cuenta
+  con políticas estrictas en cuanto al acceso y la seguridad del mismo.
+---
+
+## Ambientes
+
+Dependiendo de la organización y el flujo de trabajo adoptado, pueden definirse
+más o menos ambientes.
 ***

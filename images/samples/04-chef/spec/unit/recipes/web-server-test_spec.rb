@@ -44,7 +44,7 @@ describe 'web-server::default' do
       expect(chef_run).to render_file('/var/www/index.html').with_content(<<-HTML
 <html>
   <body>
-    <h1>Hola mundo!</h1>
+    <h1>Hello world!</h1>
     <ul>
       <li> IP: #{node.ipaddress} </li>
       <li> CPU: #{node.cpu.total} </li>

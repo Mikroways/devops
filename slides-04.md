@@ -1,113 +1,173 @@
 ***
 # La perspectiva de infraestructura
 ---
-### Servicios críticos
-* Hoy día, servicios como el DNS o Mail se consideran funcionales per se.
-* En el caso del DNS, utilizar TTL pequeños promueve la resilencia
-* Las organizaciones ya utilizan virtualización como una simplificación de sus
-  Datacenters, gestión de la infraestructura, snapshots de VMs y migraciones en
-  caliente
-  * Algunas organizaciones desconfían de la virtualización para algunos
-    servicios críticos para su negocio. Por ejemplo base de datos.
+
+## Gestión de servicios
+
+* Infraestructura gestiona:
+  * Hardware
+  * Red de la organización y proveedores de servicios.
+      * Ruteo, firewalls, switches, VPN.
+  * Plataformas de virtualización.
+  * Servicios en la nube.
+  * Servidores de correo, DNS, sistemas web, LDAP, controladores de dominio,
+    etc.
+* Organizaciones grandes explotan el área en aplicaciones, comunicaciones y
+  seguridad, pero no ocurre siempre.
+* Cuántos más usuarios acceden a los servicios, más complejos se vuelven.
 ---
-### Servicios críticos
+
+## Gestión de servicios
+
+* Para todos los servicios debe asegurar:
+  * Backups
+  * Monitoreo
+  * Disponibilidad: tolerancia a fallos, HA.
+  * Seguridad
+  * Integridad
+* ¡Todos los servicios son críticos!
+* La clave del éxito: **ser invisibles**.
+---
+
+## Gestión de servicios
+
+* El mantenimiento de los servicios también implica:
+  * Actualizar las versiones de software.
+  * Actualizar los sistemas operativos.
 * Es común que la gestión de cuentas de usuarios siga siendo una tarea más del
-  área de infraestructura
-* Mantener actualizadas las versiones de cada servicio crítico evitando posibles
-  vulnerabilidades
+  área de infraestructura.
 
 <small>
 Atender a todas las cuestiones mencionadas demanda tiempo y esfuerzo que no
 dejan lugar para la investigación de nuevas tendencias, prácticas ágiles o
-automatización
+automatización.
 </small>
 ---
-### Gestión manual de los servicios e infraestructura
-* En los grupos de desarrollo, es habitual programar o automatizar
-  cualquier paso repetible, pero no siempre aplica esto mismo en infraestructura
-* Las tareas repetitivas se suelen automatizar con scripts en shell que utilizan
-  herramientas auxiliares: awk, perl, python, sed, php, bc, etc
-  * Soluciones muy acopladas que no pueden reusarse en todos los casos
----
-### El cliente más demandante: desarrollo
-* El área de desarrollo es un área más a la que se le brinda servicio
-* Entre los servicios ofrecidos, pueden mencionarse:
-  * **Hosteo de aplicaciones:** infraestructura deja un hueco donde desarrollo
-    puede subir código. Se debe determinar la forma en que se dan los accesos y
-    a qué se da acceso
-  * **Virtualización:** se ofrece un servicio de virtualización del tipo PAAS.
-    Desarrollo gestiona su infraestructura
-  * **Deploy de aplicaciones:** Sería como el caso de hosteo de aplicaciones,
-    pero además, es responsabilidad del área de infraestructura ejecutar el
-    deployment en producción
----
-### El cliente más demandante: desarrollo
-* Continuando con los servicios que se brinda a desarrollo:
-  * **Gestión de ambientes:** a medida que se van consolidando mejor los grupos
-    de desarrollo e infraestructura, surge la posibilidad de aislar ambientes,
-    como por ejemplo: pruebas, desarrollo, staging, QA, producción
-  * **Servicios para la gestión de proyectos:** es común que además de los
-    servicios críticos, el área de infraestructura brinde servicios que permitan
-    a los desarrolladores manejar tickets, versionado, chat, irc, integración continua, etc
----
-### Ambientes heterogéneos
 
-* Hasta no hace mucho tiempo e incluso en la actualidad, existen organizaciones que siguen
-  imponiendo la homogeneización de sus ambientes
-* Los hechos demuestran que la homogeneización de herramientas informática fracasaron en pos
-  de arquitecturas heterogéneas
----
-### Ambientes heterogéneos
+## Gestión manual
 
-* La heterogeneidad trae problemas al área de infraestructura
-  * Surgen nuevas tendencias que se convierten en requisitos para los nuevos
-    desarrollos: Ruby, NodeJS, Erlang, Redis, Memcached, Websockets, MongoDB, Hadoop, Spark, etc
-  * Cómo conocer qué es lo mejor para cada caso:
+* En los grupos de desarrollo, es habitual programar o automatizar cualquier
+  paso repetible, pero no siempre aplica esto mismo en infraestructura.
+* *Si se automatizan* las tareas repetitivas, se se suele hacer con scripts de
+  shell que utilizan herramientas auxiliares: awk, perl, python, sed, php, bc,
+  etc.
+  * Soluciones muy acopladas que no pueden reusarse en todos los casos.
+---
+
+## Desarrollo como cliente
+
+* El área de desarrollo es un cliente más al que se le brinda servicio.
+* Debido a que produce constantemente aplicaciones o cambios en las mismas, la
+  demanda es muy alta.
+  * Las metodologías ágiles acentúan mucho más esta situación.
+* Es el cliente más demandante, pero no necesariamente el más prioritario.
+---
+
+## Desarrollo como cliente
+
+* Los servidores son responsabilidad de infraestructura.
+  * El acceso a los mismos debería ser exclusivo de esa área.
+  * Infraestructura debe seguir atendiendo todas sus obligaciones.
+  * Se transforma en un cuello de botella para los despliegues en producción.
+* Desarrollo demanda respuestas.
+* Se buscan soluciones alternativas.
+---
+
+## Desarrollo como cliente
+
+* Acceso a los servidores productivos:
+  * Usuario administrador: desarrollo instala los paquetes que necesita.
+  * Usuario limitado: se le da un espacio donde alojar el código y credenciales
+    para acceder a la base de datos.
+  * ¿Equipos compartidos entre diferentes sistemas?
+      * ¡Impacto en otras aplicaciones!
+* Servidores dedicados:
+  * Desarrollo gestiona su infraestructura, sea en equipos físicos o virtuales.
+---
+
+## Desarrollo como cliente
+
+* El área de desarrollo debería desarrollar.
+  * Pierde tiempo gestionando infraestructura.
+  * No es en lo que se especializa.
+      * ¡Esto trae problemas que impactan en el área de infraestructura!
+---
+
+## Desarrollo como cliente
+
+* Además de los sistemas en producción, se tiene:
+  * **Gestión de ambientes:** surge la necesidad de disponer de ambientes con
+    diferentes objetivos: desarrollo, testing, staging, QA, producción.
+  * **Servicios para la gestión de proyectos:** también se brindan servicios que
+    permiten a los desarrolladores manejar tickets, versionado, comunicación de
+    equipos, integración continua, etc.
+---
+
+## Entornos heterogéneos
+
+* Las organizaciones intentaron hace un tiempo homogeneizar tecnologías.
+  * En los hechos esto se ha vuelto un fracaso.
+  * Tecnologías cambian, evolucionan, pasan de moda.
+  * Nuevos paradigmas requieren arquitecturas heterogéneas.
+  * Sistemas legados.
+---
+
+## Entornos heterogéneos
+
+* La heterogeneidad trae problemas:
+  * Surgen tendencias que se convierten en requisitos: Java, Elixir, Rails,
+    Django, NodeJS, Erlang, Redis, Memcached, Websockets, MongoDB, Hadoop,
+    Spark, ElasticSearch, etc.
+  * Infraestructura se enfrenta a:
+      * ¿Cómo gestionar todos los nuevos servicios?
       * ¿Cómo monitorear?
       * ¿Cómo backupear?
-      * ¿Es seguro?
+      * ¿Seguridad?
 ---
-### Compromiso de la seguridad por hosting
-* Cuando las aplicaciones se hostean en servidores propios sin un conocimiento
-  claro de cómo se realizó el desarrollo se corre un alto riesgo
-* Se disponen de varias herramientas que permiten resguardar la seguridad
-  general
-  * Asegurar estos ambientes complica la infraestructura
-  * Si el hosting es compartido en un mismo servidor, es necesario garantizar la
-    independencia de los aplicativos
----
-### Política de backups para las aplicaciones
-* Infraestructura posee políticas de backups claras para sus servicios críticos
-* Cuando se deben definir para una aplicación, el área de desarrollo conoce
-  mejor qué backupear
-  * Desconociendo este dato, generalmente se utilizan snapshots o backups
-    de **toda la aplicación**
-* Dependiendo del esquema de trabajo empleado para obtener el desarrollo, puede
-  que se logre disponer de un versionado de la aplicación que garantice que el
-  código completo puede obtenerse *tal cual la copia está en producción*
-  * En este caso, el backup se limita a las bases de datos empleadas y los datos
-    generados
----
-### Estadísticas y monitoreo de aplicaciones
-* En infraestructura, las estadísticas y monitoreo se realiza sobre lo que es de
-  su interés. Generalmente esto excluye las aplicaciones
-* Conocer el comportamiento de una aplicación (estadística), nos permite tomar
-  decisiones y ver cuál es el comportamiento normal de la misma. Sin embargo,
-  para ello los desarrollos deben:
-  * Hacer buen uso y manejo de **Logs**
-  * Usar herramientas de profiling que permitan recolectar datos útiles para
-    evaluar el comportamiento de una aplicación
----
-### Y mucho más...
 
-* El área de infraestructura tiene que atender otras muchas cuestiones como por
+## Compromiso de la seguridad por hosting
+
+* Asegurar equipos y entornos compartidos.
+* Aislar diferentes sistemas que se ejecutan en los mismos servidores.
+* Limitar el impacto por problemas de seguridad.
+* ¡Todo lo anterior se debe hacer desconociendo cómo funcionan y qué hacen los
+  sistemas!
+---
+
+## Backups, monitoreo y estadísticas
+
+* Infraestructura define:
+  * Políticas de backup.
+  * Mecanismos de monitoreo.
+  * Recolección de datos para generar estadísticas.
+* Lo anterior está bien para los servicios propios de infraestructura, ¿pero
+  para los sistemas?
+  * Backup de las máquinas completas:
+      * ¿Hace falta hacer copias de seguridad del código?
+  * Monitoreo de los servicios:
+      * ¿Garantiza que anden los sistemas?
+  * ¿Y las estadísticas?
+---
+
+## Backups, monitoreo y estadísticas
+
+* En este punto, desarrollo debería:
+  * Explicar cómo se monitorea el sistema (y mejor aún, disponer en la propia
+    aplicación de un mecanismo para hacerlo).
+  * Hacer un **buen uso de los logs**.
+  * Indicar qué datos son los que deben resguardarse (¡y la periodicidad!).
+      * ¿Política de backup corresponde a desarrollo? ¿Al dueño del sistema?
+  * Usar herramientas de profiling que permitan evaluar el comportamiento de la
+    aplicación.
+---
+
+## Y no es todo...
+
+* El área de infraestructura tiene que atender muchas más cuestiones, como por
 ejemplo:
-  * Vencimientos de certificados
-  * Gestión de SPAM para evitar la llegada, así como el bloqueo de nuestros MTA
-    para el envío de SPAM desde nuestros servidores
-  * Problemas de hardware habituales
-  * Pruebas de restauración de backups
-  * Migraciones de datos entre productos. Por ejemplo, una organización pudo
-    haber utilizado en toda su historia, diferentes productos para su correo
-    electrónico: uw-imap, cyrus, courier y dovecot
+  * Vencimientos de certificados.
+  * Gestión de SPAM para evitar la llegada y salida.
+  * Problemas de hardware habituales.
+  * Pruebas de restauración de backups.
+  * Migraciones de datos entre productos.
 ***
