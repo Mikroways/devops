@@ -24,8 +24,8 @@
 * Virtualbox
 * Hyper-V
 * VMWare
-* AWS
 * Docker
+* AWS
 ---
 
 ## Provisioners
@@ -302,7 +302,7 @@ server '192.168.222.22',
 
 <small>
 *Veremos ejemplos de uso de capistrano deployando en un servidor virtual con IP
-__192.168.222.22__*
+__192.168.23.22__*
 ---
 
 ## Ejemplo de Capistrano y Jekyll
@@ -316,7 +316,7 @@ __192.168.222.22__*
     [GitHub](https://github.com/Mikroways/mikroways.net).
   * Se debe correr el comando `jekyll build`
   * ¡Listo!
-* Para probarlo: http://192.168.222.22
+* Para probarlo: http://192.168.23.22
 
 <small class="fragment">
   [Ver el ejemplo](images/samples/01-capistrano/01-jekyll/config/deploy.rb)
