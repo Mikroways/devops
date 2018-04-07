@@ -1,16 +1,7 @@
-# DevOps intro
+# Introducción a DevOps
 
-Este curso se creó utilizando [reveal-js](http://lab.hakim.se/reveal-js),
-cuyo manjeo se simplifica aún más con [reveal-ck](http://jedcn.github.io/reveal-ck/)
-
-El repositorio contiene un archivo de slide en formato
-[Markdown](https://daringfireball.net/projects/markdown/) para cada sección del
-curso:
-
-* `slides-00.md`: Título y temario del curso
-* `slides-01.md`: Presentación
-* `slides-02.md`: ...
-* ...
+Curso de introducción a DevOps con marco teórico y ejemplos prácticos.
+Disponible en [https://devops.presentaciones.mikroways.net](https://devops.presentaciones.mikroways.net)
 
 ## Para visualizar las presentaciones
 
@@ -22,3 +13,7 @@ Correr:
 
 La opción **all** muestra la presentación completa
 
+## Autores
+
+* Christian Rodríguez <christian.rodriguez@mikroways.net>
+* Leandro Di Tommaso <leandro.ditommaso@mikroways.net>
