@@ -1,0 +1,2572 @@
+<section>
+<section>
+
+<h1>DevOps</h1>
+
+<h2>Una introducción</h2>
+
+<p><img src="images/mikroways-blanco.svg" alt="Mikroways"></p>
+
+</section>
+<section>
+
+<h2>Agenda</h2>
+
+<ul>
+<li>Presentación</li>
+<li>Interacción entre infraestructura y desarrollo.</li>
+<li>Perspectiva de desarrollo.</li>
+<li>Perspectiva de infraestructura.</li>
+<li>Puesta en producción.</li>
+<li>DevOps</li>
+<li>Flujo de trabajo.</li>
+<li>Herramientas</li>
+</ul>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>Presentación</h1>
+
+</section>
+<section>
+
+<h2>Sobre Mikroways</h2>
+
+<ul>
+<li>Brindamos servicios de TI, específicamente relacionados a la infraestructura
+tecnológica de nuestros clientes. </li>
+<li>Diseñamos e implementamos soluciones a medida según las necesidades de cada
+cliente.</li>
+<li>Damos soporte para solucionar cualquier problemática que surja en el
+funcionamiento de la infraestructura tecnológica existente.</li>
+<li>Proveemos capacitación al personal de sistemas, adaptando los cursos a los
+requerimientos específicos.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Nuestros servicios</h2>
+
+<ul>
+<li>Devops</li>
+<li>Docker</li>
+<li>Monitoreo inteligente</li>
+<li>Consultoría</li>
+<li>Computación en la nube</li>
+<li>Escalabilidad de aplicaciones web</li>
+<li>Capacitación</li>
+</ul>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>Interacción entre IT y Desarrollo</h1>
+
+</section>
+<section>
+
+<h2>Introducción</h2>
+
+<ul>
+<li>En la mayoría de las organizaciones ocurre que:
+
+<ul>
+<li>Desarrollo e infraestructura son grupos de trabajo disjuntos.</li>
+<li>Desarrollo es uno de varios clientes de infraestructura.
+
+<ul>
+<li>¿Usuario VIP?</li>
+</ul>
+</li>
+<li>Infraestructura atiende cuestiones complejas que son críticas.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>¿Diferentes objetivos?</h2>
+
+<ul>
+<li>Desarrollo debe cumplir con lo que pide el usuario:
+
+<ul>
+<li>Permanentes pedidos de cambios y nuevas funcionalidades.</li>
+<li>¡Todos los pedidos son urgentes!</li>
+</ul>
+</li>
+<li>Infraestructura debe mantener los sistemas estables:
+
+<ul>
+<li>Los cambios son enemigos de la estabilidad.</li>
+<li>El despliegue de cambios es delicado y lleva mucho tiempo.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>¿Diferentes objetivos?</h2>
+
+<ul>
+<li>El objetivo de toda organización es cumplir con su propósito.
+
+<ul>
+<li>Puede ser ganar dinero, brindar un servicio público, etc.</li>
+<li>Todas las áreas de la organización deben trabajar en pos de cumplir ese
+propósito.</li>
+</ul>
+</li>
+</ul>
+
+<p class="fragment">El objetivo entonces de desarrollo y de infraestructura es
+el mismo, <strong>hacer posible que la organización cumpla con su
+propósito.</strong></p>
+
+</section>
+<section>
+
+<h2>Analizaremos la problemática desde</h2>
+
+<ul>
+<li>La perspectiva de desarrollo.</li>
+<li>La perspectiva de infraestructura.</li>
+<li>La puesta en producción: el momento en que desarrollo e infraestructura
+interactúan.</li>
+</ul>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>La perspectiva de desarrollo</h1>
+
+</section>
+<section>
+
+<h2>Arquitectura de aplicaciones</h2>
+
+<ul>
+<li>Monolíticas versus servicios o microservicios.</li>
+<li>Múltiples lenguajes y frameworks.</li>
+<li>Diferentes sistemas de bases de datos:
+
+<ul>
+<li>SQL, NoSQL.</li>
+</ul>
+</li>
+<li>Sistemas de colas.</li>
+<li>Servicios de terceros.</li>
+</ul>
+
+</section>
+<section>
+
+<h3>Arquitecturas de aplicaciones</h3>
+
+<p></p>
+<tr>
+  <td><img src="images/monolitica.png" height="500"></td>
+  <td><img src="images/microservicios.png" height="500"></td>
+</tr>
+
+</section>
+<section>
+
+<h2>Metodologías Ágiles</h2>
+
+<ul>
+<li>El <a href="http://www.agilemanifesto.org/iso/es/">manifiesto ágil</a> hace énfasis en
+los siguientes valores:
+
+<ul>
+<li>individuos e interacciones,</li>
+<li>software funcionando,</li>
+<li>colaboración con el cliente,</li>
+<li>respuesta ante el cambio.</li>
+</ul>
+</li>
+<li>Desplegar nuevas versiones con mucha frecuencia:
+
+<ul>
+<li>Aparecen deployments diarios e incluso varias veces al día.</li>
+<li>Responder a estos requerimientos requiere una operatoria ágil desde IT.
+
+<ul>
+<li>Si esto no sucede se produce un cuello de botella.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Versiones de librerías y lenguajes</h2>
+
+<ul>
+<li>Es común que los desarrolladores utilicen las versiones más recientes de
+determinados productos.</li>
+<li>Algunos lenguajes no permiten, <em>de forma simple</em>, tener en el sistema más de
+una versión de una misma librería o lenguaje.</li>
+<li>Esto crea diferencias entre el ambiente de desarrollo y producción.
+
+<ul>
+<li>Es esta es la brecha que debemos achicar.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Ambiente de desarrollo</h2>
+
+<ul>
+<li>Suele darse uno de tres escenarios.
+
+<ul>
+<li>No existen ambientes de desarrollo:
+
+<ul>
+<li>¡se trabaja directamente en producción!</li>
+</ul>
+</li>
+<li>Ambiente de desarrollo común y compartido:
+
+<ul>
+<li>difícil administración,</li>
+<li>problemas de concurrencia</li>
+</ul>
+</li>
+<li>Ambientes independientes de desarrollo:
+
+<ul>
+<li>Nuevo integrante debe generar todo el ambiente de cero.</li>
+<li>Necesidad de sincronizar cambios entre desarrolladores (código,
+estructura de bases de datos).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Acceso a producción</h2>
+
+<ul>
+<li>Suele ser necesario acceder a un recurso en producción.
+
+<ul>
+<li>Dump de la BD o versión productiva del código (¡SCM!).</li>
+<li>Datos dinámicos de la aplicación.
+
+<ul>
+<li>Archivos subidos o generados durante su uso.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>A veces, por requerimientos de seguridad o legales, la información debe
+obtenerse ofuscada.</li>
+<li>Otras veces, alcanza con un dato antiguo que puede extraerse desde un backup.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Réplica del ambiente productivo</h2>
+
+<ul>
+<li>Disponer de un ambiente similar al productivo es muy valioso para desarrollo
+porque permite, entre otras cosas:
+
+<ul>
+<li>Verificar problemas sin tocar producción.</li>
+<li>Probar nuevos releases antes de pasarlos a producción.</li>
+<li>Asegurarse que el código, que funciona en el ambiente de desarrollo,
+funcione en el de producción.
+
+<ul>
+<li>¿Y si el ambiente de desarrollo fuera igual al del producción?</li>
+</ul>
+</li>
+<li>Que el cliente verifique los cambios solicitados antes de aplicarlos en
+producción.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Diagnóstico de problemas</h2>
+
+<ul>
+<li>Comportamiento del software en producción:
+
+<ul>
+<li>importancia de poder visualizar los logs:
+
+<ul>
+<li>Errores</li>
+<li>Problemas de seguridad.</li>
+<li>Otras situaciones anómalas.</li>
+</ul>
+</li>
+<li>Monitoreo del software:
+
+<ul>
+<li>Aviso en tiempo real cuando se produce una excepción.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Diagnóstico de problemas</h2>
+
+<ul>
+<li>Profiling de cada middleware de una aplicación: ORM, servicios externos,
+renderizado, caching, tiempos de respuesta, etc.</li>
+<li>Generar información estadística para conocer el comportamiento normal de
+cada aplicación:
+
+<ul>
+<li>Desconocer estos datos es manejar con el parabrisas lleno de barro.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>La perspectiva de infraestructura</h1>
+
+</section>
+<section>
+
+<h2>Gestión de servicios</h2>
+
+<ul>
+<li>Infraestructura gestiona:
+
+<ul>
+<li>Hardware</li>
+<li>Red de la organización y proveedores de servicios.
+
+<ul>
+<li>Ruteo, firewalls, switches, VPN.</li>
+</ul>
+</li>
+<li>Plataformas de virtualización.</li>
+<li>Servicios en la nube.</li>
+<li>Servidores de correo, DNS, sistemas web, LDAP, controladores de dominio,
+etc.</li>
+</ul>
+</li>
+<li>Organizaciones grandes explotan el área en aplicaciones, comunicaciones y
+seguridad, pero no ocurre siempre.</li>
+<li>Cuántos más usuarios acceden a los servicios, más complejos se vuelven.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Gestión de servicios</h2>
+
+<ul>
+<li>Para todos los servicios debe asegurar:
+
+<ul>
+<li>Backups</li>
+<li>Monitoreo</li>
+<li>Disponibilidad: tolerancia a fallos, HA.</li>
+<li>Seguridad</li>
+<li>Integridad</li>
+</ul>
+</li>
+<li>¡Todos los servicios son críticos!</li>
+<li>La clave del éxito: <strong>ser invisibles</strong>.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Gestión de servicios</h2>
+
+<ul>
+<li>El mantenimiento de los servicios también implica:
+
+<ul>
+<li>Actualizar las versiones de software.</li>
+<li>Actualizar los sistemas operativos.</li>
+</ul>
+</li>
+<li>Es común que la gestión de cuentas de usuarios siga siendo una tarea más del
+área de infraestructura.</li>
+</ul>
+
+<p><small>
+Atender a todas las cuestiones mencionadas demanda tiempo y esfuerzo que no
+dejan lugar para la investigación de nuevas tendencias, prácticas ágiles o
+automatización.
+</small></p>
+
+</section>
+<section>
+
+<h2>Gestión manual</h2>
+
+<ul>
+<li>En los grupos de desarrollo, es habitual programar o automatizar cualquier
+paso repetible, pero no siempre aplica esto mismo en infraestructura.</li>
+<li>
+<em>Si se automatizan</em> las tareas repetitivas, se se suele hacer con scripts de
+shell que utilizan herramientas auxiliares: awk, perl, python, sed, php, bc,
+etc.
+
+<ul>
+<li>Soluciones muy acopladas que no pueden reusarse en todos los casos.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Desarrollo como cliente</h2>
+
+<ul>
+<li>El área de desarrollo es un cliente más al que se le brinda servicio.</li>
+<li>Debido a que produce constantemente aplicaciones o cambios en las mismas, la
+demanda es muy alta.
+
+<ul>
+<li>Las metodologías ágiles acentúan mucho más esta situación.</li>
+</ul>
+</li>
+<li>Es el cliente más demandante, pero no necesariamente el más prioritario.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Desarrollo como cliente</h2>
+
+<ul>
+<li>Los servidores son responsabilidad de infraestructura.
+
+<ul>
+<li>El acceso a los mismos debería ser exclusivo de esa área.</li>
+<li>Infraestructura debe seguir atendiendo todas sus obligaciones.</li>
+<li>Se transforma en un cuello de botella para los despliegues en producción.</li>
+</ul>
+</li>
+<li>Desarrollo demanda respuestas.</li>
+<li>Se buscan soluciones alternativas.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Desarrollo como cliente</h2>
+
+<ul>
+<li>Acceso a los servidores productivos:
+
+<ul>
+<li>Usuario administrador: desarrollo instala los paquetes que necesita.</li>
+<li>Usuario limitado: se le da un espacio donde alojar el código y credenciales
+para acceder a la base de datos.</li>
+<li>¿Equipos compartidos entre diferentes sistemas?
+
+<ul>
+<li>¡Impacto en otras aplicaciones!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Servidores dedicados:
+
+<ul>
+<li>Desarrollo gestiona su infraestructura, sea en equipos físicos o virtuales.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Desarrollo como cliente</h2>
+
+<ul>
+<li>El área de desarrollo debería desarrollar.
+
+<ul>
+<li>Pierde tiempo gestionando infraestructura.</li>
+<li>No es en lo que se especializa.
+
+<ul>
+<li>¡Esto trae problemas que impactan en el área de infraestructura!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Desarrollo como cliente</h2>
+
+<ul>
+<li>Además de los sistemas en producción, se tiene:
+
+<ul>
+<li>
+<strong>Gestión de ambientes:</strong> surge la necesidad de disponer de ambientes con
+diferentes objetivos: desarrollo, testing, staging, QA, producción.</li>
+<li>
+<strong>Servicios para la gestión de proyectos:</strong> también se brindan servicios que
+permiten a los desarrolladores manejar tickets, versionado, comunicación de
+equipos, integración continua, etc.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Entornos heterogéneos</h2>
+
+<ul>
+<li>Las organizaciones intentaron hace un tiempo homogeneizar tecnologías.
+
+<ul>
+<li>En los hechos esto se ha vuelto un fracaso.</li>
+<li>Tecnologías cambian, evolucionan, pasan de moda.</li>
+<li>Nuevos paradigmas requieren arquitecturas heterogéneas.</li>
+<li>Sistemas legados.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Entornos heterogéneos</h2>
+
+<ul>
+<li>La heterogeneidad trae problemas:
+
+<ul>
+<li>Surgen tendencias que se convierten en requisitos: Java, Elixir, Rails,
+Django, NodeJS, Erlang, Redis, Memcached, Websockets, MongoDB, Hadoop,
+Spark, ElasticSearch, etc.</li>
+<li>Infraestructura se enfrenta a:
+
+<ul>
+<li>¿Cómo gestionar todos los nuevos servicios?</li>
+<li>¿Cómo monitorear?</li>
+<li>¿Cómo backupear?</li>
+<li>¿Seguridad?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Compromiso de la seguridad por hosting</h2>
+
+<ul>
+<li>Asegurar equipos y entornos compartidos.</li>
+<li>Aislar diferentes sistemas que se ejecutan en los mismos servidores.</li>
+<li>Limitar el impacto por problemas de seguridad.</li>
+<li>¡Todo lo anterior se debe hacer desconociendo cómo funcionan y qué hacen los
+sistemas!</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Backups, monitoreo y estadísticas</h2>
+
+<ul>
+<li>Infraestructura define:
+
+<ul>
+<li>Políticas de backup.</li>
+<li>Mecanismos de monitoreo.</li>
+<li>Recolección de datos para generar estadísticas.</li>
+</ul>
+</li>
+<li>Lo anterior está bien para los servicios propios de infraestructura, ¿pero
+para los sistemas?
+
+<ul>
+<li>Backup de las máquinas completas:
+
+<ul>
+<li>¿Hace falta hacer copias de seguridad del código?</li>
+</ul>
+</li>
+<li>Monitoreo de los servicios:
+
+<ul>
+<li>¿Garantiza que anden los sistemas?</li>
+</ul>
+</li>
+<li>¿Y las estadísticas?</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Backups, monitoreo y estadísticas</h2>
+
+<ul>
+<li>En este punto, desarrollo debería:
+
+<ul>
+<li>Explicar cómo se monitorea el sistema (y mejor aún, disponer en la propia
+aplicación de un mecanismo para hacerlo).</li>
+<li>Hacer un <strong>buen uso de los logs</strong>.</li>
+<li>Indicar qué datos son los que deben resguardarse (¡y la periodicidad!).
+
+<ul>
+<li>¿Política de backup corresponde a desarrollo? ¿Al dueño del sistema?</li>
+</ul>
+</li>
+<li>Usar herramientas de profiling que permitan evaluar el comportamiento de la
+aplicación.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Y no es todo...</h2>
+
+<ul>
+<li>El área de infraestructura tiene que atender muchas más cuestiones, como por
+ejemplo:
+
+<ul>
+<li>Vencimientos de certificados.</li>
+<li>Gestión de SPAM para evitar la llegada y salida.</li>
+<li>Problemas de hardware habituales.</li>
+<li>Pruebas de restauración de backups.</li>
+<li>Migraciones de datos entre productos.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>Puesta en producción</h1>
+
+<h3>El momento en que desarrollo e infraestructura interactúan</h3>
+
+</section>
+<section>
+
+<h2>Puesta en producción</h2>
+
+<ul>
+<li>Deben definirse procedimientos para:
+
+<ul>
+<li>Deploy de nuevas aplicaciones.</li>
+<li>Upgrade de aplicaciones existentes.</li>
+<li>Rollback</li>
+</ul>
+</li>
+<li>¿Cómo se actualiza una base de datos?
+
+<ul>
+<li>¡¿Y el rollback?!</li>
+</ul>
+</li>
+<li>¿Infraestructura y desarrollo deberían hacerlo en conjunto?
+
+<ul>
+<li>¿README con instrucciones?</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Puesta en producción</h2>
+
+<ul>
+<li>Cada caso requiere tiempo y, muchas veces, poner los sistemas offline.</li>
+<li>Con las formas tradicionales de desarrollo:
+
+<ul>
+<li>Pasaban semanas entre cambios en producción.</li>
+<li>Algunas organizaciones tenían días definidos para la puesta en producción.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Puesta en producción</h2>
+
+<p><img src="images/desarrollos-tradicionales.png" alt="Desarrollos tradicionales"></p>
+
+</section>
+<section>
+
+<h2>Puesta en producción</h2>
+
+<ul>
+<li>Con las metodologías ágiles los cambios en producción <strong>deben</strong> ser muy
+frecuentes.</li>
+<li>Infraestructura no cuenta con las herramientas necesarias para agilizar la
+puesta en producción de forma segura.
+
+<ul>
+<li>¡Es un trabajo manual!</li>
+</ul>
+</li>
+<li>La promesa de las metologías ágiles encuentra un importante obstáculo...</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Puesta en producción</h2>
+
+<p><img src="images/desarrollos-agiles.png" alt="Desarrollos ágiles"></p>
+
+</section>
+<section>
+
+<h2>Deploy de nuevas aplicaciones</h2>
+
+<ul>
+<li>Es el caso ideal, se arranca sin historia previa.</li>
+<li>Se deben considerar varias cuestiones:
+
+<ul>
+<li>La aplicación corre con un usuario determinado.</li>
+<li>Crear la estructura de directorios necesaria.</li>
+<li>Instalación de servicios que son requeridos:
+
+<ul>
+<li>Rotación de logs.</li>
+<li>Servicios asincrónicos.</li>
+<li>Creación de usuarios y bases de datos necesarios.</li>
+</ul>
+</li>
+<li>Definir y aplicar las políticas de backups.</li>
+<li>Estadísticas y monitoreo.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Upgrade de aplicación existente</h2>
+
+<ul>
+<li>Revisar si alguno de los puntos considerados en el caso anterior varía.</li>
+<li>Actualizar el código, preservando en lo posible la versión anterior.</li>
+<li>Aplicar parches necesarios a la base de datos.</li>
+<li>Poner el sistema offline es la solución más segura pero no siempre es una
+opción:
+
+<ul>
+<li><a href="http://martinfowler.com/bliki/BlueGreenDeployment.html">Blue-green deployment</a></li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Rollback</h2>
+
+<ul>
+<li>Es volver atrás los cambios realizados.
+
+<ul>
+<li>Los cambios no funcionan según lo esperando.</li>
+</ul>
+</li>
+<li>Conservando una copia del código anterior, se vuelve a apuntar a esa versión.
+
+<ul>
+<li>Usando links simbólicos es muy simple.</li>
+<li>Si hay cambios en la base de datos ya no es tan sencillo.</li>
+</ul>
+</li>
+<li>Si se utiliza blue green deployments, entonces sólo se cambia el proxy
+reverso.
+
+<ul>
+<li>Si la base de datos se puso en sólo lectura.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Actualizaciones de las bases de datos</h2>
+
+<ul>
+<li>El versionado del código resuelve la simplicidad de actualizar y realizar
+rollbacks.
+
+<ul>
+<li>Con las bases de datos no sucede lo mismo.</li>
+</ul>
+</li>
+<li>Versionar la estructura de la BD con el código no aporta demasiado.
+
+<ul>
+<li>Cómo aplicar un parche a un modelo y deshacerlo en caso de rollback.</li>
+<li>Estos parches deben ser idempotentes.</li>
+<li>No siempre un parche a una BD tiene vuelta atrás.</li>
+</ul>
+</li>
+<li>Algunos parches pueden ser costosos en BBDD grandes.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Otras cuestiones a considerar</h2>
+
+<ul>
+<li>Ante un cambio de versión es aconsejable notificar a los usuarios con
+anticipación de la interrupción del servicio.
+
+<ul>
+<li>Requiere conocer el dominio de usuarios afectados.</li>
+<li>Programar el envío masivo de correos.</li>
+<li>Planificar y notificar con anticipación mejoran la calidad del servicio.</li>
+</ul>
+</li>
+<li>Gestión de contratos:
+
+<ul>
+<li>Cumplir con el SLA.</li>
+<li>Vencimiento de hosting.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>Ambientes independientes</h1>
+
+<h3>Mejorando la calidad global</h3>
+
+</section>
+<section>
+
+<h2>Introducción</h2>
+
+<ul>
+<li>No disponer de diferentes ambientes implicaría:
+
+<ul>
+<li>La única versión que es igual a producción, es la de producción.
+
+<ul>
+<li>Se cambió algo en producción que no funcionaba y no se actualizó el
+código versionado.</li>
+</ul>
+</li>
+<li>Las pruebas se realizan en la PC del desarrollador o directamente en
+producción.</li>
+<li>Lo que funciona en desarrollo no anda en producción.</li>
+</ul>
+</li>
+</ul>
+
+<p><small class="fragment">
+Pareciera imposible que esto suceda, pero muchas organizaciones siguen
+gestionando sus desarrollos de esta forma.
+</small></p>
+
+</section>
+<section>
+
+<h2>Ambientes</h2>
+
+<ul>
+<li>Diferentes ambientes permiten:
+
+<ul>
+<li>Desarrollar bajo iguales condiciones.</li>
+<li>Validar los cambios con los usuarios.</li>
+<li>Realizar pruebas de calidad y seguridad del software.</li>
+<li>Minimizar los problemas en producción.</li>
+</ul>
+</li>
+<li>Estos ambientes deben gestionarse:
+
+<ul>
+<li>Sobrecarga de trabajo.</li>
+<li>Idealmente, todos idénticos entre sí.
+
+<ul>
+<li>¿Cómo garantizamos esto?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Ambientes</h2>
+
+<ul>
+<li>
+<strong>Desarrollo:</strong> en el cuál se construye el software.</li>
+<li>
+<strong>Testing:</strong> se publica el software para que sea probado por un grupo definido
+de personas, que debería incluir al usuario final o representantes del mismo.</li>
+<li>
+<strong>Staging (QA):</strong> idéntico y previo a producción. Permite probar el despliegue
+y el funcionamiento, realizando cualquier ajuste necesario en esta instancia,
+evitando problemas en producción.</li>
+<li>
+<strong>Producción:</strong> tiene todos los servicios productivos. Este ambiente cuenta
+con políticas estrictas en cuanto al acceso y la seguridad del mismo.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Ambientes</h2>
+
+<p>Dependiendo de la organización y el flujo de trabajo adoptado, pueden definirse
+más o menos ambientes.</p>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>Soluciones</h1>
+
+<h2>(¡y nuevos problemas!)</h2>
+
+</section>
+<section>
+
+<h2>Introducción</h2>
+
+<p>En este apartado veremos qué metodologías y/o herramientas han surgido
+para <strong>solucionar</strong> algunas de las problemáticas mencionadas.
+</p>
+<div class="fragment">
+Asimismo, mostraremos que estas soluciones introdujeron nuevos <strong>problemas</strong>.
+</div>
+
+</section>
+<section>
+
+<h2>Virtualización</h2>
+
+<ul>
+<li>Existen diferentes alternativas de virtualización, tanto libres como
+licenciadas, con diferentes capacidades.</li>
+<li>El uso de cualquier herramienta disponible para virtualizar, ofrece mejoras
+sustanciales:
+
+<ul>
+<li>Backup de VMs.</li>
+<li>Gestión simplificada de servidores, virtuales en lugar de físicos.</li>
+<li>Migración en caliente de VMs entre equipos físicos.</li>
+<li>Mejor aprovechamiento de recursos de hardware.</li>
+<li>Instalación de SO basada en templates que permite disponer rápidamente de
+servidores pre-instalados.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Complicaciones con la virtualización</h2>
+
+<ul>
+<li>Muchas de sus ventajas requieren un storage.</li>
+<li>Las características más atractivas suelen proveerse en versiones licenciadas.</li>
+<li>Se administran más servidores que si se utilizaran equipos físicos:
+
+<ul>
+<li>Esto se debe a que un servicio aislado es más seguro e independiente, con lo
+cuál su reemplazo o actualización se simplifica.</li>
+<li>Por esta razón, crece el uso de VMs, dificultando el mantenimiento de su 
+inventario, que rápidamente se desactualiza.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Distribución de aplicaciones</h2>
+
+<ul>
+<li>Cuando varias aplicaciones comparten requerimientos, es tentador utilizar el
+mismo servidor para alojarlas:
+
+<ul>
+<li>Se reduce la cantidad de servidores a gestionar.</li>
+<li>Se compromete la seguridad de todas las aplicaciones instaladas.</li>
+</ul>
+</li>
+<li>Los sistemas pueden agruparse por distintos criterios. Por ejemplo, por:
+
+<ul>
+<li>criticidad,</li>
+<li>tecnologías,</li>
+<li>conjuntos de usuarios.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Alta disponibilidad / Failover / Actualizaciones</h2>
+
+<ul>
+<li>Los stacks de un servicio determinado se componen de partes diferentes sobre
+las cuales quizá sea necesario garantizar alta disponibilidad y/o failover.</li>
+<li>Actualizar un servicio es una tarea artesanal y costosa.
+
+<ul>
+<li>Sobre todo si es un servicio distribuido con muchas dependencias.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>DevOps</h1>
+
+</section>
+<section>
+
+<h2>¿Qué es DevOps?</h2>
+
+<ul>
+<li>Metodología para el desarrollo y puesta en producción del software.</li>
+<li>Promueve una fuerte integración y colaboración entre desarolladores de
+software y administradores de sistemas.</li>
+<li>Incrementa la productividad de los equipos, al mismo tiempo que permite
+generar software de mayor calidad, con una alta frecuencia de despliegues en
+producción.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>¿Qué es DevOps?</h2>
+
+<ul>
+<li>Se lo suele asociar a una filosofía, pero es porque en realidad requiere un
+importante cambio cultural.
+
+<ul>
+<li>Acerca mucho las áreas de desarrollo e infraestructura.
+
+<ul>
+<li>El mayor impacto se da en esta última.</li>
+</ul>
+</li>
+<li>El cambio cultural es la barrera más difícil de superar para su adopción.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Orígenes</h2>
+
+<ul>
+<li>Aproximadamente en el año 2009, ante la convergencia de diferentes trabajos:
+
+<ul>
+<li> Las conferencias Velocity, en particular la presentación <a href="https://www.youtube.com/watch?v=LdOe18KhtT4">"10 deploys per
+day - Dev &amp; Ops cooperation at Flickr"</a>
+
+<ul>
+<li>Aquí además se acuña el término.</li>
+</ul>
+</li>
+<li>Los movimientos de <em>IaC (Infraestructure as Code)</em>, <em>Agile infraestructure</em>
+y <em>Agile system administration</em>.</li>
+<li>El movimiento de <a href="http://theleanstartup.com/principles">Lean Startup</a>.</li>
+<li>El movimiento de integración y despliegue continuo.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Orígenes</h2>
+
+<ul>
+<li>La gran disponibilidad de tecnologías de cloud: PaaS/IaaS.
+
+<ul>
+<li>AWS</li>
+<li>Google Compute Engine</li>
+<li>Microsoft Azure</li>
+<li>Heroku</li>
+<li>Digital Ocean</li>
+<li>Softlayer</li>
+<li>Rackspace</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Orígenes</h2>
+
+<p>Como recurso adicional, hay un <a href="https://www.youtube.com/watch?v=o7-IuYS0iSE">interesante
+video</a> de Damon Edwards que resume
+la historia de DevOps (¡hasta 2012!).</p>
+
+</section>
+<section>
+
+<h2>Caracterización</h2>
+
+<ul>
+<li>DevOps se ajusta perfectamente a las metodologías ágiles:
+
+<ul>
+<li>extiende y completa el proceso de integración y despliegue continuo,
+asegurando que el código esté listo para producción, agregando así valor
+para los clientes.</li>
+</ul>
+</li>
+<li>Surge un nuevo perfil profesional:
+
+<ul>
+<li>La organización que desea incorporar DevOps debe formar a sus
+desarrolladores y administradores de sistemas para reunir las capacidades y
+conocimientos requeridos.
+
+<ul>
+<li>Desarrolladores que piensan como administradores y administradores que
+piensan como desarrolladores.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Infraestructure as code</h2>
+
+<ul>
+<li>IaC es el proceso por el cuál se gestionan y aprovisionan máquinas (físicas o
+virtuales) completas.</li>
+<li>Este aprovisionamiento se realiza a través de archivos de configuración que
+son interpretados por alguna herramienta de orquestación.</li>
+<li>Estos archivos de configuración se versionan en un SCM.</li>
+<li>Se programa una vez y se repite miles de veces.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Infraestructure as code</h2>
+
+<ul>
+<li>Claves:
+
+<ul>
+<li>Idempotencia</li>
+<li>Multiplataforma</li>
+<li>Flexibilidad</li>
+<li>¿Facilidad de aprendizaje?</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Herramientas</h2>
+
+<p>Existen diversos productos que se basan en IaC
+</p>
+<table class="product_logos">
+<tr>
+<td> <img src="images/chef-logo.png" alt="Chef Logo"> </td>
+<td> <a href="https://www.chef.io/">Chef</a> </td>
+</tr>
+<tr>
+<td> <img src="images/puppet-logo.png" alt="Puppet Logo"> </td>
+<td> <a href="https://puppet.com/">Puppet Labs</a> </td>
+</tr>
+<tr>
+<td> <img src="images/ansible-logo.png" alt="Ansible Logo"> </td>
+<td> <a href="https://www.ansible.com/">Ansible</a> </td>
+</tr>
+<tr>
+<td> <img src="images/saltstack-logo.png" alt="Saltstack Logo"> </td>
+<td> <a href="https://saltstack.com/">SaltStack</a> </td>
+</tr>
+</table>
+
+</section>
+<section>
+
+<h2>Test de la infraestructura</h2>
+
+<ul>
+<li>Si la infraestructura se puede programar... ¡también se puede testear!</li>
+<li>Tests de unidad:
+
+<ul>
+<li><a href="http://rspec-puppet.com/">rspec-puppet</a></li>
+<li><a href="https://github.com/sethvargo/chefspec">ChefSpec</a></li>
+</ul>
+</li>
+<li>Tests de integración
+
+<ul>
+<li><a href="http://serverspec.org/">ServerSpec</a></li>
+<li><a href="https://kitchen.ci">Kitchen CI</a></li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Conceptos relacionados</h2>
+
+<ul>
+<li>A continuación describiremos brevemente los siguientes conceptos:
+
+<ul>
+<li>Integración continua (continuous integration).</li>
+<li>Entrega continua (continuous delivery).</li>
+<li>Despliegue continuo (continuous deployment).</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Integración continua</h2>
+
+<ul>
+<li>Considerar el trabajo diario de un equipo de desarrolladores.
+
+<ul>
+<li>Cada desarrollador trabaja en una rama determinada en el SCM.</li>
+<li>Las ramas deben integrarse luego en la principal.
+
+<ul>
+<li>En un proyecto con varios desarrolladores, el momento de integrar todas
+esas ramas puede ser muy difícil (<strong>merge hell</strong>).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Proyecto con varias ramas</h2>
+
+<p><img src="images/branches-git.png" alt="git branches"></p>
+
+<p><small class="fragment">
+<strong>¿Cómo es posible garantizar un merge satisfactorio en todos los casos?</strong>
+</small></p>
+
+</section>
+<section>
+
+<h2>Integración continua</h2>
+
+<ul>
+<li>Integrar frecuentemente las ramas derivadas con la principal.
+
+<ul>
+<li>¿Qué tan frecuente?</li>
+</ul>
+</li>
+<li>Al integrar frecuentemente:
+
+<ul>
+<li>Se minimizan los errores y el trabajo para hacer los merge.</li>
+<li>Se detectan de forma temprana los problemas.</li>
+</ul>
+</li>
+<li>Requiere definir un flujo de trabajo que todos respeten.</li>
+<li>Para hacer el merge, el código debe pasar todos los tests <strong>de unidad e
+integración</strong>.
+
+<ul>
+<li>Esto se puede automatizar con herramientas de CI.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Herramientas de CI</h2>
+
+<ul>
+<li><a href="https://travis-ci.org/">Travis</a></li>
+<li><a href="https://semaphoreci.com/">Semaphore</a></li>
+<li><a href="https://about.gitlab.com/gitlab-ci/">Gitlab CI</a></li>
+<li><a href="https://jenkins.io/">Jenkins</a></li>
+</ul>
+
+</section>
+<section>
+
+<h2>Entrega continua y despliegue continuo</h2>
+
+<ul>
+<li>Generalmente se confunden ambos conceptos.
+
+<ul>
+<li>Despliegue continuo significa que cada cambio se aplica directamente en
+producción.</li>
+<li>Entrega continua hace que cada cambio esté <em>disponible</em> para producción,
+pero la puesta en producción requiere intervención humana.</li>
+</ul>
+</li>
+<li>Ambos mecanismos son posteriores en el tiempo a la integración continua.</li>
+</ul>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>Flujo de trabajo</h1>
+
+</section>
+<section>
+
+<h2>Introducción</h2>
+
+<p>Es importante definir un flujo de trabajo que considere completamente las tareas
+desde que comienza el desarrollo hasta que se ponen los sistemas en producción.</p>
+
+<p>¡Considerando que todas son tareas iterativas y continuas!</p>
+
+</section>
+<section>
+
+<h2>Gestión de proyectos</h2>
+
+<ul>
+<li>Sistema de tickets para seguimiento del proyecto.</li>
+<li>Respetar estándares de codificación.</li>
+<li>Utilizar una herramienta de versionado de código.</li>
+<li>Gestionar los cambios en la base de datos.</li>
+<li>Determinar versionado del producto.</li>
+<li>Establecer un flujo de trabajo y reglas para el equipo de desarrollo.</li>
+<li>Testing del software.</li>
+<li>Reglas para pasaje a producción.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Versionado del código</h2>
+
+<ul>
+<li>Versionar el código: hoy en día, GIT.</li>
+<li>Commits atómicos:
+
+<ul>
+<li>Cada commit debe atacar un problema específico.</li>
+<li>Documentar correctamente el propio commit.
+
+<ul>
+<li>Simplifica la comunicación del equipo.</li>
+</ul>
+</li>
+<li>Relacionar los commits con tickets en el sistema correspondiente.</li>
+</ul>
+</li>
+<li>Usar plataforma de gestión del código.
+
+<ul>
+<li>Gitlab, Github, Bitbucket.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Versionado del código</h2>
+
+<ul>
+<li>Adoptar un flujo de trabajo para la gestión del código:
+
+<ul>
+<li>
+<a href="https://github.com/nvie/gitflow">git-flow</a>: trabajo con estrategias de
+branches y manejo de releases.
+
+<ul>
+<li>Concepto de <a href="http://nvie.com/posts/a-successful-git-branching-model/#hotfix-branches">hotfix
+branches</a>.</li>
+<li>Punto débil: no considera que se puedan mantener varias versiones
+productivas del software (solución con support branches, cherry pick).</li>
+</ul>
+</li>
+<li>Permisos sobre las ramas: desarrolladores experimentados revisan el código
+de programadores nóveles. Por ejemplo: <a href="https://guides.github.com/introduction/flow/">flujo tipo
+GitHub</a>.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Versionado de la base de datos</h2>
+
+<ul>
+<li>Versionar la base de datos no es algo habitual pero sí importante.</li>
+<li>Necesitamos disponer de un mecanismo para poder ir hacia adelante y hacia
+atrás en la estructura de una base de datos.</li>
+<li>Algunos frameworks incorporan mecanismos para gestionar el versionado de la
+base de datos.</li>
+<li>Un parche no es versionado, dado que no permite volver atrás en la historia.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Versionado del software</h2>
+
+<ul>
+<li>Es importante disponer de una convención para versionar cada release del
+software.
+
+<ul>
+<li>
+<a href="http://semver.org/">Semantic Versioning</a>
+
+<ul>
+<li>Define claramente el significado de cada número en un esquema X.Y.Z.</li>
+<li>Permite establecer reglas de dependencia y automatización (ejemplo: si
+sólo cambia el último número aplicar directamente en producción).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Establecer una correspondencia entre la versión del código y la del modelo de
+datos.</li>
+<li>La creación de un release implica que se hayan cumplido todos los requisitos
+de calidad del software.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Calidad del software</h2>
+
+<ul>
+<li>Aplicar buenas prácticas de calidad:
+
+<ul>
+<li>TDD con alta cobertura.</li>
+<li>Tests de aceptación.</li>
+<li>Tests de estilo (y estándares) de codificación.</li>
+</ul>
+</li>
+<li>Considerar en el flujo que se pueda lograr:
+
+<ul>
+<li>Integración continua.</li>
+<li>Entrega continua.</li>
+<li>Despliegue continuo.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>TDD</h2>
+
+<ul>
+<li>
+<strong>Test-driven development</strong> es una técnica que promueve que primero se
+escriban los tests y luego el código que pase esos tests.</li>
+<li>Simplifica el desarrollo, al conocer exactamente lo que el código debe hacer.</li>
+<li>Garantiza que todo el código tenga tests (o la mayoría del mismo).</li>
+<li>Incrementa significativamente la calidad del software.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>TDD</h2>
+
+<ul>
+<li>Los tests deben controlarse por un área de QA en cada etapa del desarrollo,
+estableciendo políticas de aceptación para cada etapa.</li>
+<li>Ejemplos de políticas:
+
+<ul>
+<li>El código no es revisado antes de mergerarse si no pasan los test de unidad,
+funcionales e integración. Tampoco si el analizador de código no garantiza
+que se respetan los estándares.</li>
+<li>Un release no se pone en producción si no pasa todos los tests de unidad,
+funcionales, integración y aceptación.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Despliegues</h2>
+
+<ul>
+<li>Establecer reglas para desplegar el software en producción.</li>
+<li>Automatizar todas las tareas repetitivas.</li>
+<li>Según las reglas definidas, considerar la posibilidad de poder automatizar
+también la puesta en producción.</li>
+<li>La automatización puede hacerse mediante scripts caseros o con herramientas
+específicas.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Mantenimiento del software</h2>
+
+<ul>
+<li>El trabajo no termina cuando el software se pone en producción.</li>
+<li>Mecanismos para:
+
+<ul>
+<li>Backups</li>
+<li>Monitoreo y estadísticas.</li>
+</ul>
+</li>
+<li>Automatizar esas configuraciones:
+
+<ul>
+<li>Al desplegar un software en producción, disponer de mecanismos que
+actualicen automáticamente los productos de backups y monitoreo.</li>
+<li>Se garantiza que todo sistema en producción dispone de lo anterior.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Monitoreo y estadísticas</h2>
+
+<ul>
+<li>Recolectar constantemente información del software en producción.
+
+<ul>
+<li>Uso de recursos.</li>
+<li>Tiempos de respuesta de cada componente.</li>
+<li>Errores en cada capa.</li>
+</ul>
+</li>
+<li>Lo anterior permite:
+
+<ul>
+<li>Conocer el comportamiento normal del software.</li>
+<li>Detectar y corregir errores: <strong>mejora continua.</strong>
+</li>
+<li>¡Aprender!</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Monitoreo y estadísticas</h2>
+
+<ul>
+<li>Si conocemos el comportamiento normal del software entonces podemos:
+
+<ul>
+<li>Identificar los momentos en que los valores se escapan de lo normal.</li>
+<li>“Personalizar” el monitoreo para cada sistema.</li>
+<li>¡Generar alertas significativas!</li>
+</ul>
+</li>
+<li>Las estadísticas permiten:
+
+<ul>
+<li>Tomar decisiones informadas.</li>
+<li>Entender el uso del hardware.</li>
+<li><strong>Escalar los servicios de forma automática.</strong></li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Escalamiento horizontal</h2>
+
+<ul>
+<li>Dos formas de hacerlo:
+
+<ul>
+<li>Alguien detecta que el servicio está lento (o se prevé un uso intensivo) y
+se escala manualmente.</li>
+<li>El software de monitoreo detecta que los valores normales cambiaron y
+dispara una acción para escalar de forma automática.</li>
+</ul>
+</li>
+<li>Escalado:
+
+<ul>
+<li>
+<em>Hacia arriba:</em> para atender mayor cantidad de usuarios.</li>
+<li>
+<em>Hacia abajo:</em> para ahorrar costos.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Escalamiento horizontal</h2>
+
+<ul>
+<li>El escalamiento de un sistema no es trivial.
+
+<ul>
+<li>Debe considerarse desde el diseño del software y de la propia
+infraestructura.</li>
+</ul>
+</li>
+<li>Los microservicios simplificaron el escalamiento, al permitir escalar sólo las
+componentes saturadas.</li>
+</ul>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>Herramientas</h1>
+
+</section>
+<section>
+
+<h1>Vagrant</h1>
+
+<p><img src="images/vagrant-background.png" alt="Vagrant background"></p>
+
+</section>
+<section>
+
+<h2>Vagrant</h2>
+
+<ul>
+<li>Permite construir y gestionar máquinas virtuales con un flujo de trabajo
+sencillo y rápido.</li>
+<li>Reduce significativamente el tiempo necesario para generar ambientes de
+desarrollo.</li>
+<li>Aisla las dependencias y sus configuraciones en un ambiente consistente y
+descartable.</li>
+<li>Utiliza un archivo de texto plano (<code>Vagrantfile</code>) para definir la
+configuración completa.</li>
+<li>Disponible para Mac, Linux y Windows.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Providers</h2>
+
+<ul>
+<li>Virtualbox</li>
+<li>Hyper-V</li>
+<li>VMWare</li>
+<li>Docker</li>
+<li>AWS</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Provisioners</h2>
+
+<ul>
+<li>File</li>
+<li>Shell</li>
+<li>Ansible</li>
+<li>CFEngine</li>
+<li>Chef</li>
+<li>Puppet</li>
+<li>Docker</li>
+<li>Salt</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Comandos</h2>
+<pre><code class="bash">vagrant up
+vagrant destroy
+vagrant ssh
+vagrant provision
+vagrant reload [--provision]
+vagrant box list
+</code></pre>
+</section>
+<section>
+
+<h2>Ejemplo: shell provisioning</h2>
+<pre><code class="ruby">Vagrant.configure(2) do |config|
+  config.vm.box = "bento/ubuntu-16.04"
+  config.vm.box_check_update = false
+  config.vm.network "private_network", ip: "192.168.222.22"
+
+  config.vm.provision "shell", inline: &lt;&lt;-SHELL
+     sudo apt-get update
+     sudo apt-get install -y apache2
+  SHELL
+end
+</code></pre>
+<p><small class="fragment">
+<a href="images/samples/02-vagrant/01-simple/Vagrantfile">Ejemplo de un servidor con Apache</a>
+</small></p>
+
+</section>
+<section>
+
+<h2>Ejemplos: multimachine</h2>
+<pre><code class="ruby">Vagrant.configure(2) do |config|
+  config.vm.define 'master', primary: true do |app|
+    app.vm.box = "bento/ubuntu-16.04"
+    app.vm.network "private_network", ip: "192.168.222.20"
+    app.vm.provision "docker" do |d|
+      ...
+    end
+  end
+  (1..3).each do |num|
+    config.vm.define "node-#{num}" do |app|
+      app.vm.box = "bento/ubuntu-16.04"
+      app.vm.network "private_network", ip: "192.168.222.2#{num}"
+      app.vm.provision "docker" do |d|
+        ...
+      end
+    end
+  end
+</code></pre>
+<p><small class="fragment">
+<a href="images/samples/02-vagrant/02-multi-machines/Vagrantfile">Ejemplo de un cluster de Docker Swarm</a>
+</small></p>
+
+</section>
+<section>
+
+<h2>Ejemplo: cluster de Rancher</h2>
+
+<ul>
+<li>Este ejemplo levanta 3 máquinas:
+
+<ul>
+<li>1 será el servidor de Rancher.</li>
+<li>2 máquinas actúan como nodos de procesamiento.</li>
+</ul>
+</li>
+<li>Instala todo el software necesario.</li>
+<li>Registra ambos nodos en el servidor de Rancher.</li>
+<li>Deja el cluster listo para ser usado.</li>
+</ul>
+
+<p><small class="fragment">
+<a href="images/samples/02-vagrant/03-rancher/Vagrantfile">Vagrantfile</a><br>
+<a href="https://github.com/leoditommaso/demo-docker">Repositorio completo</a>
+</small></p>
+
+</section>
+<section>
+
+<h1>Docker</h1>
+
+<p><img src="images/docker-logo.png" alt="Docker logo"></p>
+
+</section>
+<section>
+
+<h2>Docker</h2>
+
+<ul>
+<li>Permite correr contenedores aislados unos de otros.</li>
+<li>Promueve la portabilidad, permitiendo contenedores autosuficientes que son
+creados según las necesidades de una aplicación.</li>
+<li>Los contenedores usados en desarrollo pueden usarse en ambientes de testing y
+producción.
+
+<ul>
+<li>Minimiza la brecha entre desarrollo e infraestructura.</li>
+</ul>
+</li>
+<li>Se basa en en el concepto de inmutabilidad.</li>
+<li>Funciona en Mac, Linux y Windows.</li>
+<li>Los contenedores pueden ejecutar tanto Linux como Windows.</li>
+<li>Puede utilizarse para aplicaciones gráficas.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Docker: conceptos</h2>
+
+<ul>
+<li>Docker funciona a partir de:
+
+<ul>
+<li>
+<strong>Docker engine:</strong> set de herramientas para gestionar Docker. Incluye el
+servicio de Docker, una API REST y un cliente de línea de comandos para
+interactuar con el daemon.</li>
+<li>
+<strong>Docker hub/registry:</strong> repositorio de imágenes públicas o privadas a
+partir de las cuales se crean los contenedores.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Docker: comandos</h2>
+<pre><code class="bash">docker search
+docker images
+docker pull
+docker run
+docker ps
+docker diff
+docker commit
+docker inspect
+docker log
+</code></pre>
+</section>
+<section>
+
+<h2>Ejemplo: MySQL</h2>
+
+<p><strong>Iniciamos una instancia de Mysql con Docker</strong></p>
+<pre><code class="bash">docker run -p 33060:3306 -e MYSQL_ROOT_PASSWORD=devops -d mysql:5.7
+
+mysql -u root -h 127.0.0.1 --port 33060 -pdevops
+</code></pre>
+<p><small class="fragment">
+<em>¿Qué sucede si eliminamos el contenedor?</em>
+</small></p>
+
+</section>
+<section>
+
+<h2>Volúmenes</h2>
+<pre><code class="bash">docker volume ls
+docker volume create
+docker volume rm
+docker volume inspect
+</code></pre>
+</section>
+<section>
+
+<h2>Ejemplo: MySQL con volúmenes</h2>
+
+<p><strong>Iniciamos una instancia de Mysql con docker</strong></p>
+<pre><code class="bash">docker run -p 33060:3306 -e MYSQL_ROOT_PASSWORD=devops -v /tmp/mysql:/var/lib/mysql -d mysql:5.7
+
+mysql -u root -h 127.0.0.1 --port 33060 -pdevops
+</code></pre>
+<p><small class="fragment">
+<em>¿Qué sucede si eliminamos el contenedor?</em>
+</small></p>
+
+</section>
+<section>
+
+<h2>Docker Compose</h2>
+
+<p>Se describe una aplicación compuesta por más de un contenedor mediante un <strong>yml</strong></p>
+<pre><code class="yml">version: "2"
+services:
+  wordpress:
+    image: wordpress
+    links:
+      - db:mysql
+    ports:
+      - 8080:80
+  db:
+    image: mysql:5.7
+</code></pre>
+<p><small class="fragment">
+<a href="images/samples/03-docker/docker-compose.yml">Ver ejemplo completo</a>
+</small></p>
+
+</section>
+<section>
+
+<h2>Docker Compose: comandos</h2>
+<pre><code class="bash">docker-compose up
+docker-compose ps
+docker-compose stop
+docker-compose rm
+docker-compose scale
+</code></pre>
+</section>
+<section>
+
+<p><img src="images/capistrano-logo.png" alt="Capistrano Logo"></p>
+
+</section>
+<section>
+
+<h2>Automatizando los deploys</h2>
+
+<ul>
+<li>El objetivo es automatizar la instalación/actualización de una aplicación en
+un servidor remoto.</li>
+<li>No todos los desarrollos tienen las mismas necesidades:
+
+<ul>
+<li>Realizar un build.</li>
+<li>Publicar un artefacto.</li>
+<li>Instalar dependencias.</li>
+<li>Subir/Descargar código/artefacto.</li>
+<li>Correr scripts.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Un ejemplo: Capistrano</h2>
+<pre><code class="ruby">role :demo, %w{srv-01 srv-02 srv-03}
+task :uptime do
+  on roles(:demo), in: :parallel do |host|
+    uptime = capture(:uptime)
+    puts "#{host.hostname} reports: #{uptime}"
+  end
+end
+</code></pre>
+<p><small class="fragment">
+<a href="images/samples/01-capistrano/00-sample/config/deploy.rb">Ver ejemplo</a>
+</small></p>
+
+</section>
+<section>
+
+<h2>Uso de Capistrano</h2>
+<pre><code class="bash">cap install # Inicializa el directorio
+cap -T # Lista todas las posibles tareas disponibles
+</code></pre>
+</section>
+<section>
+
+<h2>Uso de Capistrano</h2>
+
+<ul>
+<li>Instaura la noción de ambientes:
+
+<ul>
+<li>Por defecto inicializa dos ambientes: <em>production y staging</em>.</li>
+<li>Los ambientes configuran los accesos.</li>
+<li>Las tareas son las mismas para cada ambiente.</li>
+</ul>
+</li>
+</ul>
+
+<p><code>production.rb</code></p>
+<pre><code class="ruby">role :demo, %w{localhost}
+
+server '192.168.222.22',
+   roles: %w(demo),
+   ssh_options: {
+     user: 'vagrant',
+     forward_agent: true,
+     auth_methods: %w(publickey password),
+     password: 'vagrant'
+   }
+</code></pre>
+</section>
+<section>
+
+<h2>Uso de Capistrano</h2>
+
+<ul>
+<li>Además de los ambientes, Capistrano define <strong>roles</strong>. Por ejemplo: <em>web, app,
+db</em>.
+
+<ul>
+<li>Un servidor tiene un rol.</li>
+<li>En un server con un determinado rol, hay que realizar diferentes tareas. Por
+ejemplo: assets en <em>web</em>, deploy en <em>app</em>, dump en <em>db</em>.</li>
+</ul>
+</li>
+<li>Además de las tareas predefinidas, permite extenderlo con tareas propias, ya
+sean locales como remotas.</li>
+<li>Las tareas predefinidas permiten realizar <strong>deploy</strong> y <strong>rollback</strong>.</li>
+</ul>
+
+<p><small>
+<em>Veremos ejemplos de uso de capistrano deployando en un servidor virtual con IP
+<strong>192.168.23.22</strong></em></small></p>
+
+</section>
+<section>
+
+<h2>Ejemplo de Capistrano y Jekyll</h2>
+
+<ul>
+<li>
+<a href="https://jekyllrb.com/">Jekyll</a> es un generador de sitios web estáticos.
+
+<ul>
+<li>El sitio web de <a href="http://www.mikroways.net/">Mikroways</a> fue desarrollado con
+Jekyll.</li>
+</ul>
+</li>
+<li>Desplegaremos en la VM el sitio usando Jekyll. Para ello:
+
+<ul>
+<li>El servidor debe tener instalado Ruby.</li>
+<li>Se debe descargar el código del sitio desde
+<a href="https://github.com/Mikroways/mikroways.net">GitHub</a>.</li>
+<li>Se debe correr el comando <code>jekyll build</code>
+</li>
+<li>¡Listo!</li>
+</ul>
+</li>
+<li>Para probarlo: <a href="http://192.168.23.22">http://192.168.23.22</a></li>
+</ul>
+
+<p><small class="fragment">
+  <a href="images/samples/01-capistrano/01-jekyll/config/deploy.rb">Ver el ejemplo</a>
+</small></p>
+
+</section>
+<section>
+
+<h2>Ejemplo de Capistrano y Jekyll</h2>
+
+<ul>
+<li>Con Capistrano:
+
+<ul>
+<li>Hacemos el despliegue del sitio: <code>cap production deploy</code>
+</li>
+<li>
+<em>En el servidor ejecutamos</em> <code>jekyll build</code>
+</li>
+<li><em>Probamos acceder al sitio con el navegador</em></li>
+</ul>
+</li>
+<li>Probamos una nueva versión del sitio.</li>
+<li>Hacemos un rollback: <code>cap production deploy:rollback</code>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Capistrano y desarrollos dinámicos</h2>
+
+<ul>
+<li>En sitios que no son estáticos, existen archivos que deben mantenerse entre
+despliegues:
+
+<ul>
+<li>Configuración de la base de datos o software.</li>
+<li>Uploads o archivos generados por la aplicación.</li>
+</ul>
+</li>
+<li>Capistrano permite definir qué archivos y qué directorios son <em>compartidos</em>.</li>
+<li>De aquí la estructura propuesta por Capistrano es:</li>
+</ul>
+<pre><code class="bash">  base_dir
+  ├── current -&gt; /opt/sites/jekyll/releases/20180405173257
+  ├── releases
+  │   └── YYYYMMDDHHmmii
+  ├── repo
+  └── shared
+</code></pre>
+</section>
+<section>
+
+<h2>Otras Herramientas</h2>
+
+<ul>
+<li><a href="http://rundeck.org/">RUNDECK</a></li>
+<li><a href="http://www.fabfile.org/">Fabric</a></li>
+<li><a href="http://rocketeer.autopergamene.eu/">Rocketeer</a></li>
+<li><a href="http://deployer.org/">Deployer</a></li>
+</ul>
+
+</section>
+<section>
+
+<p><img src="images/chef-white-logo.png" alt="Chef Logo"></p>
+
+</section>
+<section>
+
+<h2>Chef</h2>
+
+<ul>
+<li>Chef permite modelar y automatizar la infraestructura y aplicaciones como si
+fueran código.</li>
+<li>Es altamente flexible y potente.</li>
+<li>La consecuencia es que la infraestructura se vuelve:
+
+<ul>
+<li>Versionable</li>
+<li>Testeable</li>
+<li>Replicable</li>
+<li>Idempotente</li>
+</ul>
+</li>
+<li>Se programa en Ruby usando una DSL (domain-specific language).</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Conceptos de Chef</h2>
+
+<ul>
+<li>Para lograr su objetivo se utilizan definiciones reutilizables llamadas
+<strong>cookbooks</strong> y <strong>recipes</strong>.</li>
+<li>El <strong>Chef server</strong> reúne todo el repositorio de configuraciones que utilizarán
+luego los nodos para configurarse.</li>
+<li>Se interactúa con los nodos y el servidor usando el comando <strong>knife</strong>.</li>
+<li>Los <strong>nodos</strong> representan a cada equipo gestionado con Chef.</li>
+<li>Por medio de <strong>data bags</strong>, <strong>roles</strong> y <strong>atributos</strong> se personaliza cada
+servidor.</li>
+<li>Cada nodo tiene una <strong>run list</strong> que indica todas las recetas que se le
+aplicarán.</li>
+<li>Se puede buscar sobre todas las entidades de Chef.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Arquitectura</h2>
+
+<p><img alt="Chef architecture" src="images/chef-architecture.png" height="500"></p>
+
+</section>
+<section>
+
+<h2>Ejemplo de una receta</h2>
+<pre><code class="ruby">package 'nginx'
+
+service 'nginx' do
+  action [:enable, :start]
+end
+
+template '/etc/nginx/sites-enabled/www.conf' do
+  source 'nginx-default.conf.erb'
+  variables(
+    server_name: 'www.mikroways.net',
+    document_root: '/var/www'
+  )
+  notifies :restart, 'service[nginx]', :immediately
+end
+</code></pre>
+<p><small class="fragment">
+<a href="images/samples/04-chef/recipes/default.rb">Ver ejemplo completo</a>
+<br>
+<em>Es posible probar las recetas con una versión de chef llamada
+chef-zero/chef-solo</em>
+</small></p>
+
+</section>
+<section>
+
+<h2>TDD</h2>
+
+<ul>
+<li>Ejemplo de <a href="images/samples/04-chef/spec/unit/recipes/web-server-test_spec.rb">test de
+unidad</a>.
+
+<ul>
+<li>Basados en <a href="https://github.com/sethvargo/chefspec">ChefSpec</a>.</li>
+<li><code>rspec</code></li>
+<li><code>rubocop</code></li>
+<li><code>foodcritic</code></li>
+</ul>
+</li>
+<li>Ejemplo de <a href="images/samples/04-chef/test/integration/default/serverspec/integration-web-server_spec.rb">test de
+integración</a>
+
+<ul>
+<li>Basados en <a href="http://kitchen.ci/">Test Kitchen</a>.</li>
+<li>Probamos un test implementado con <a href="http://serverspec.org/">ServerSpec</a> en
+plataformas Debian 7 y Ubuntu 14.04.</li>
+<li><code>kitchen</code></li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Desplegando el potencial de Chef</h2>
+
+<p>Video</p>
+
+</section>
+<section>
+
+<h2>Alternativas a Chef</h2>
+
+<ul>
+<li>Ansible: muy sencillo, más tentador para administradores de sistemas.</li>
+<li>Saltstack</li>
+<li>Puppet: principal competencia.</li>
+</ul>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>chef-provisioning</h1>
+
+</section>
+<section>
+
+<h2>Introducción</h2>
+
+<ul>
+<li>Chef-provisioning extiende chef permitiendo crear VMs en diferentes
+plataformas de virtualización. Algunas de ellas son:
+
+<ul>
+<li>Vagrant</li>
+<li>AWS</li>
+<li>Azure</li>
+<li>DigitalOcean</li>
+<li>VMWare</li>
+<li>XenServer</li>
+<li>Google Compute Engine</li>
+<li>IBM SoftLayer</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>¿Para qué sirve?</h2>
+
+<ul>
+<li>Permite crear, iniciar y aprovisionar máquinas, abstrayendo al usuario de la
+plataforma subyacente.</li>
+<li>Evita el uso reiterativo de knife para iniciar VMs.</li>
+<li>Posibilita restaurar de forma completa una infraestructura.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Ejemplo</h2>
+<pre><code class="ruby">chef_role 'web-server' do
+  run_list ["recipe[apt]","recipe[web-server]"]
+end
+
+machine_batch do
+  machine 'web-01' do
+    run_list ['role[web-server]']
+  end
+  machine 'web-02' do
+    run_list ['role[web-server]']
+  end
+end
+
+machine 'proxy' do
+  run_list ['recipe[myhaproxy]']
+end
+
+</code></pre>
+<p><em><strong>Corremos en nuestra PC</strong></em></p>
+<pre><code class="bash">chef-client -z -r 'my-infra::chef,my-infra::aws,my-infra'
+</code></pre>
+</section>
+<section>
+
+<h2>Eliminando todo</h2>
+<pre><code class="ruby">chef_role 'web-server' do
+  action :delete
+end
+
+machine_batch do
+  action :destroy
+  machines 'web-01', 'web-02', 'proxy'
+end
+</code></pre>
+<p><em><strong>Corremos en nuestra PC</strong></em></p>
+<pre><code class="bash">chef-client -z -r 'my-infra::chef,my-infra::aws,my-infra::delete'
+</code></pre>
+</section>
+<section>
+
+<h2>Y ahora con Vagrant</h2>
+<pre><code class="bash">
+chef-client -z -r 'my-infra::chef,my-infra::vagrant,my-infra'
+
+</code></pre>
+<p>Esto es muy importante, porque sólo cambiando el driver de aprovisionamiento,
+podemos reusar nuestra infraestructura definida.</p>
+
+<p><small class="fragment">
+Podemos incluso tener un cluster con VMs de diferentes proveedores.
+</small></p>
+
+</section>
+<section>
+
+<h2>Terraform</h2>
+
+<p><a href="https://www.terraform.io/">
+<img alt="Terraform logo" src="images/terraform-logo.png" height="300px">
+</a></p>
+
+<p><em><strong>La alternativa a chef-provisioning</strong></em></p>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>Clusters de contenedores</h1>
+
+<p><img src="images/docker-cluster.png" height="350"></p>
+
+</section>
+<section>
+
+<h2>Productos para clusters</h2>
+
+<ul>
+<li><a href="https://docs.docker.com/swarm/">Docker Swarm</a></li>
+<li><a href="http://rancher.com/">Cattle</a></li>
+<li><a href="http://kubernetes.io/">Kubernetes</a></li>
+<li><a href="http://mesos.apache.org/">Mesos</a></li>
+</ul>
+
+</section>
+<section>
+
+<h2>Características</h2>
+
+<ul>
+<li>Scheduling de contenedores.
+
+<ul>
+<li>Importancia de los labels en Docker.</li>
+</ul>
+</li>
+<li>Service discovery:
+
+<ul>
+<li>Zookeper</li>
+<li>Consul</li>
+<li>Etcd</li>
+</ul>
+</li>
+<li>Complicaciones:
+
+<ul>
+<li>Volúmenes compartidos.</li>
+<li>Monitoreo y logs.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Sistemas operativos para Docker</h2>
+
+<ul>
+<li><a href="http://rancher.com/rancher-os/">Rancher OS</a></li>
+<li><a href="https://coreos.com/">CoreOS</a></li>
+<li><a href="http://boot2docker.io/">Boot2docker</a></li>
+</ul>
+
+</section>
+<section>
+
+<p><img src="images/rancher-logo-white.png" alt="Rancher logo"></p>
+
+</section>
+<section>
+
+<h2>Rancher</h2>
+
+<ul>
+<li>Permite configurar ambientes con:
+
+<ul>
+<li>Cattle, Swarm, Kubernetes y Mesos.</li>
+</ul>
+</li>
+<li>Los ambientes se componen de nodos.</li>
+<li>Los contenedores se agrupan en stacks y se crean con docker-compose.</li>
+<li>Provee un catálogo de aplicaciones que se puede extender.</li>
+<li>Simplifica la integración con registries privadas.</li>
+<li>Proxy reverso basado en service discovery.</li>
+<li>Simplifica el escalamiento de contenedores.</li>
+<li>Tiene una API REST que permite interactuar con el cluster.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Ejemplo</h2>
+
+<ul>
+<li>Desplegar un Wordpress desde el catálogo.
+
+<ul>
+<li>Establecer una restricción para que el RDBMS corra en un nodo determinado.</li>
+</ul>
+</li>
+<li>Escalar el servicio.</li>
+</ul>
+
+</section>
+<section>
+
+<h2>Otro ejemplo</h2>
+
+<ul>
+<li>Aplicación propia:
+
+<ul>
+<li>El nombre del directorio es importante ya que le da el nombre al stack.</li>
+<li>Crear:
+<a href="images/samples/07-rancher/my-custom-app/docker-compose.yml"><code>docker-compose.yml</code></a>
+</li>
+<li>Iniciar el stack: <code>rancher-compose up</code>
+</li>
+<li><em>Verificar</em></li>
+<li>Actualizar: <code>rancher-compose up -u my-app</code>
+</li>
+<li><em>Verificar</em></li>
+<li>Realizar un rollback.</li>
+</ul>
+</li>
+</ul>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>¿Preguntas?</h1>
+
+</section>
+</section>
+
+<section>
+<section>
+
+<h1>Gracias</h1>
+
+<p><small>
+<br>
+<a href="mailto:contacto@mikroways.net">contacto@mikroways.net</a>
+<br>
+<a href="https://www.mikroways.net">www.mikroways.net</a>
+</small></p>
+
+</section>
+</section>
